@@ -66,3 +66,14 @@ p {
 
     margin-top: 8px;
 }
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    h1,
+    p {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
