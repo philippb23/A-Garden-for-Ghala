@@ -11,26 +11,48 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-
 <body>
 
-    <main class="welcome">
+    <!-- Welcome screen -->
+
+    <main class="welcome screen active" id="welcome-screen">
 
         <div class="welcome-title">
 
             <h1>A Garden for Ghala</h1>
 
             <p>A little world made just for you.</p>
-	    
-            <button class="enter-button">
-    		Enter the garden
-	    </button>
+
+            <button class="enter-button" id="enter-button">
+                Enter the garden
+            </button>
 
         </div>
 
     </main>
 
-</body>
 
+    <!-- First garden location: The forest -->
+
+    <section class="forest-scene screen" id="forest-screen">
+
+        <div class="forest-content">
+
+            <h1>The Forest</h1>
+
+            <p>A quiet path awaits you.</p>
+
+            <button class="enter-button" id="back-button">
+                Return
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/main.js"></script>
+
+</body>
 
 </html>
