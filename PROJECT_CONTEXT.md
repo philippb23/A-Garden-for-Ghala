@@ -38,7 +38,9 @@ should not depend on the state of the friendship on the birthday itself.
   -----------------------------------------------------------------------
   Category                            Current decision
   ----------------------------------- -----------------------------------
-  Overall style                       Dreamy, cohesive illustrated world
+  Overall style                       Photorealistic, cinematic environments
+                                      with a cohesive Twilight-inspired
+                                      atmosphere; 2.5D depth from layers
 
   Navigation                          First-person-feeling,
                                       point-and-click hotspots
@@ -48,9 +50,9 @@ should not depend on the state of the friendship on the birthday itself.
 
   Main flower                         Pink lilies
 
-  Lily appearance                     Illustrated; include closed buds,
-                                      partially open buds, and fully
-                                      bloomed flowers
+  Lily appearance                     Realistic botanical imagery;
+                                      include closed buds, partially
+                                      open buds, and fully bloomed flowers
 
   Main interaction                    Click a partially open lily; it
                                       slowly blooms and reveals a
@@ -306,23 +308,33 @@ will be: - sourced from suitable asset libraries, - generated
 specifically when useful, - or created through code (CSS/SVG) where
 practical.
 
-The chosen art direction is **consistent illustrations**. Avoid mixing
-unrelated art styles. A coherent asset pack or a set of custom-generated
-backgrounds is preferable.
+The current art direction is **photorealistic, cinematic scenery and
+realistic botanical assets**, not cartoony or pixel-art illustration.
+The forest should evoke the *Twilight* films' Pacific Northwest
+atmosphere: deep blue-green evergreens, layered mist, moss, wet foliage,
+cool diffused light, and a gradual transition toward pink/peach sunrise.
+The lily clearing should feel warmer and more inviting while remaining
+photorealistic, with natural pink lilies and soft sunrise light.
+
+The creator does not plan to draw assets manually. Source existing
+photographs and suitable transparent botanical assets online, checking
+licenses. Aim for a cohesive photographic look; avoid mixing unrelated
+visual styles.
 
 ### Asset approach
 
   -----------------------------------------------------------------------
   Asset                               Preferred approach
   ----------------------------------- -----------------------------------
-  Main forest, clearing, beach        Sourced or custom-generated
-  backgrounds                         matching illustrations
+  Main forest, clearing, beach        Sourced photographic backgrounds;
+  backgrounds                         use layered photos/cutouts for 2.5D
 
-  Lily illustrations                  Matching illustrated SVGs or
-                                      transparent PNGs
+  Lily imagery                        Realistic botanical photographs or
+                                      transparent PNGs with matching light
 
-  Separate lily petals                Layered SVG if available, to
-                                      support a true bloom animation
+  Separate lily petals                Layered botanical assets if available;
+                                      otherwise use image-state swaps or
+                                      restrained scale/glow transitions
 
   Butterflies, cat, decorative        Matching illustrations or SVG/PNG
   objects                             assets
@@ -346,10 +358,10 @@ downloaded asset before including it in the public website. Record each
 asset's source, creator, license, attribution requirement, and intended
 use in an asset register (for example, `ASSET_CREDITS.md`).
 
-Generated assets should be art-directed to match the same palette,
-lighting, perspective, and illustration style. If the backgrounds are
-generated, create them as a coordinated set rather than unrelated
-individual images.
+If any generated or edited assets are considered later, they must match
+the same photographic realism, palette, lighting, and perspective. The
+current preference is to source existing internet photographs and
+assets rather than draw artwork.
 
 ## 8. Navigation and technical design
 
@@ -442,69 +454,49 @@ The target is a finished, tested website by **December 13, 2026**, with
 December 20 as a backup deadline. Start development on November 11 if
 possible.
 
-### Week 1 --- November 11--17: Foundation
+### Revised four-week plan --- November 11--December 8, 2026
 
--   Prepare VS Code and GitHub.
--   Create the repository and folder structure.
--   Create the first HTML/CSS/JS files.
--   Build the entrance screen.
--   Create one initial illustrated forest scene.
--   Implement a basic transition into the scene.
--   Create and maintain this project context document.
--   Commit the first working version.
+The development order has changed: build the lily clearing first because
+its visual assets are expected to be easier to source than the specific
+photorealistic forest background. This is a change in sequencing, not a
+change to the three-area world.
 
-**Deliverable:** a website that opens locally, shows the entrance, and
-transitions into the first scene.
+**Week 1 --- November 11--17: Lily clearing prototype**
+-   Find a realistic woodland/meadow clearing photograph.
+-   Find realistic pink lily assets that fit the background.
+-   Organize downloaded assets and record their licenses/sources.
+-   Add the clearing background and first lily to the existing website.
+-   Establish the first visual composition and test it in the browser.
 
-### Week 2 --- November 18--24: World and navigation
+**Deliverable:** a first photorealistic lily-clearing prototype with at
+least one flower positioned in the scene.
 
--   Establish the consistent visual asset style.
--   Source or generate matching forest, lily clearing, and beach
-    backgrounds.
--   Build the three main areas.
--   Implement the hotspot navigation system.
--   Connect the locations into a loop.
--   Add basic scene transitions.
--   Test navigation on mobile.
+**Week 2 --- November 18--24: Complete lily interactions**
+-   Add approximately five interactive lilies.
+-   Implement bud/partially-open/bloomed states using suitable assets.
+-   Add restrained bloom transitions and personal message reveals.
+-   Refine the clearing's atmosphere and responsive layout.
 
-**Deliverable:** a connected, navigable three-area world.
+**Deliverable:** a usable lily clearing with its core flower interactions.
 
-### Week 3 --- November 25--December 1: Lilies and messages
+**Week 3 --- November 25--December 1: Forest, beach, and navigation**
+-   Source the photorealistic Twilight-inspired forest background and
+    suitable layered foreground/midground elements.
+-   Source a matching beach/coast background.
+-   Build the three environments and connect them with hotspots.
+-   Add basic transitions and 2.5D parallax where suitable layers exist.
 
--   Source or prepare illustrated pink lily assets.
--   Implement bud, partially open, opening, and bloomed states.
--   Add slow bloom animations.
--   Implement personal message reveals.
--   Add approximately five lily interactions.
--   Test message layout on mobile.
+**Deliverable:** all three areas can be visited and navigated.
 
-**Deliverable:** interactive lilies that bloom and reveal personal
-messages.
+**Week 4 --- December 2--8: Puzzle, Leo, atmosphere, and release**
+-   Implement the garden puzzle and hidden path to Leo's clearing.
+-   Add Leo's quiet bench reveal after puzzle completion.
+-   Add selected environmental details, audio, and final sequence.
+-   Test mobile/desktop, optimize assets, verify licensing, and deploy.
 
-### Week 4 --- December 2--8: Discoveries, puzzles, and sound
-
--   Add butterflies, fireflies, and falling petals.
--   Implement one thoughtful hidden puzzle and its reward.
--   Add the hidden route to the secluded bench clearing.
--   Reveal Leo resting peacefully on the bench only after the puzzle is solved.
--   Add piano and rain ambience, audio controls, and mute behavior.
--   Implement the final birthday sequence.
-
-**Deliverable:** the complete experience can be explored from beginning
-to end.
-
-### Week 5 --- December 9--13: Polish and publish
-
--   Test every hotspot and interaction.
--   Fix bugs.
--   Test on different phone sizes and desktop.
--   Optimize backgrounds and audio.
--   Check loading performance.
--   Verify asset credits and licensing.
--   Publish using GitHub Pages.
--   Test the public link on a separate device.
-
-**Deliverable:** finished and published website.
+**Deliverable:** a complete, tested first release. This four-week target
+is ambitious; protect the core experience and simplify optional details
+if asset sourcing or implementation takes longer than expected.
 
 ### December 14--20: Backup and refinement
 
@@ -601,10 +593,11 @@ Leo. - She appreciates sweet, sentimental words.
 
 ------------------------------------------------------------------------
 
-**Current next step:** On November 11, 2026, set up the GitHub
-repository and local project, create the first entrance page, and get
-one illustrated forest scene displaying in the browser. Then implement
-the first working hotspot transition.
+**Current next step (November 11, 2026):** Begin the lily clearing.
+Find a photorealistic woodland clearing background and realistic pink
+lily assets, then integrate the background and first lily into the
+existing website. The forest asset search remains open and will continue
+later; do not settle for cartoony artwork just to fill the scene.
 
 
 ---
