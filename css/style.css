@@ -106,3 +106,32 @@ p {
         transform: none;
     }
 }
+
+
+/* =================================
+   5. Entrance button
+================================= */
+
+.enter-button {
+    margin-top: 35px;
+    padding: 13px 30px;
+
+    background: transparent;
+    border: 1px solid rgba(255, 220, 235, 0.7);
+    border-radius: 30px;
+
+    color: #fff5f5;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.enter-button:hover {
+    background: rgba(255, 220, 235, 0.15);
+    border-color: #fff5f5;
+    transform: translateY(-3px);
+}
