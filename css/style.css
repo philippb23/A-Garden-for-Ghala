@@ -135,3 +135,74 @@ p {
     border-color: #fff5f5;
     transform: translateY(-3px);
 }
+
+
+/* =================================
+   6. Screen transitions
+================================= */
+
+.screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 1s ease,
+        visibility 0s linear 1s;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        opacity 1s ease,
+        visibility 0s;
+}
+
+
+/* =================================
+   7. Forest scene
+================================= */
+
+.forest-scene {
+    background:
+        radial-gradient(
+            ellipse at 50% 80%,
+            rgba(112, 93, 119, 0.35),
+            transparent 60%
+        ),
+        linear-gradient(
+            180deg,
+            #10182b 0%,
+            #202b39 55%,
+            #665267 100%
+        );
+
+    color: #fff5f5;
+    text-align: center;
+}
+
+.forest-content {
+    padding: 25px;
+}
+
+.forest-content h1 {
+    font-size: 48px;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+.forest-content p {
+    color: #f5dce5;
+    font-size: 18px;
+}
+
