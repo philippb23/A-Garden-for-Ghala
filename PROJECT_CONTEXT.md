@@ -207,13 +207,31 @@ option to add more if time allows.
 ### Leo, the orange cat
 
 Ghala previously had a small orange cat named **Leo**, whom she adored
-and misses. Include a small orange cat resting quietly somewhere in the
-world, perhaps: - asleep underneath a tree, - sitting on a bench, -
-curled up near a peaceful garden spot.
+and misses. The creator has refined Leo's appearance into a **surprise
+reward for solving the garden puzzle**, rather than an incidental cat
+that she might stumble across during ordinary exploration.
 
-Keep this gentle and comforting. Do not turn Leo into a sad memorial or
-make the cat a major plot point. The idea is a small, thoughtful
-discovery.
+Current planned sequence:
+
+1. Ghala solves the garden's thoughtful, clue-based puzzle.
+2. Solving it opens a previously inaccessible, secluded path or hidden
+   area.
+3. She follows the path into a quiet clearing with a small wooden bench
+   beneath a tree.
+4. Leo is resting peacefully on the bench, curled up and asleep. The
+   discovery should be unexpected; do not foreshadow his presence too
+   obviously before the puzzle is solved.
+
+Keep the reveal gentle, warm, and comforting. Avoid a dramatic entrance,
+flashing reward effects, or a sad memorial tone. The clearing may have
+slightly warmer sunrise light than the surrounding forest, making it
+feel like a peaceful little sanctuary. A subtle idle animation (such as
+slight tail movement) could be considered if practical.
+
+**Still undecided:** What Leo does when clicked. One option is for him
+to slowly open his eyes or lift his head; the creator has not yet chosen
+whether he should wake or remain asleep. Do not treat this interaction
+as finalized until confirmed.
 
 ### Hidden details
 
@@ -227,7 +245,9 @@ curiosity without making exploration stressful.
 ### Puzzle design
 
 The creator likes the idea of a hidden lily puzzle that opens a secret
-route or reveals a hidden area.
+route or reveals a hidden area. The current preferred reward is a
+surprise encounter with Leo, resting on a bench in a secluded clearing
+that becomes accessible only after the puzzle is solved.
 
 Puzzle requirements: - It should require some thought and feel rewarding
 to solve. - It should not be so easy that the solution is immediately
@@ -463,10 +483,10 @@ messages.
 
 ### Week 4 --- December 2--8: Discoveries, puzzles, and sound
 
--   Add the orange cat Leo as a quiet environmental detail.
 -   Add butterflies, fireflies, and falling petals.
 -   Implement one thoughtful hidden puzzle and its reward.
--   Add the hidden route or discovery area.
+-   Add the hidden route to the secluded bench clearing.
+-   Reveal Leo resting peacefully on the bench only after the puzzle is solved.
 -   Add piano and rain ambience, audio controls, and mute behavior.
 -   Implement the final birthday sequence.
 
@@ -503,7 +523,7 @@ Keep the initial version achievable.
   Personal messages                        Approximately 5--6
   Hidden puzzles                          1 thoughtful puzzle
   Hidden discoveries              1--2 or more if time allows
-  Cat                               1 small appearance of Leo
+  Cat                               1 surprise appearance of Leo after puzzle completion
   Main soundtrack                                Gentle piano
   Environmental sound               Soft rain/nature ambience
   Final sequence          1 garden/world-wide birthday reveal
@@ -585,3 +605,31 @@ Leo. - She appreciates sweet, sentimental words.
 repository and local project, create the first entrance page, and get
 one illustrated forest scene displaying in the browser. Then implement
 the first working hotspot transition.
+
+
+---
+
+## 14. Updated decision — Leo as the puzzle reward (November 10, 2026)
+
+This decision supersedes the earlier idea of Leo being a small,
+incidental environmental detail somewhere in the ordinary world.
+
+- **Unlock condition:** The garden puzzle must be solved before the
+  hidden clearing can be reached.
+- **Reveal:** The puzzle opens a secret path leading to a secluded,
+  peaceful clearing.
+- **Setting:** A small wooden bench beneath a tree, with gentle,
+  slightly warmer sunrise lighting.
+- **Leo:** A small orange cat, curled up and peacefully asleep on the
+  bench. His appearance should be an unexpected, emotionally warm
+  discovery.
+- **Tone:** Quiet and comforting. No dramatic reveal, reward fanfare,
+  sad memorial framing, or obvious hints that reveal the surprise early.
+- **Optional animation:** A subtle tail movement while resting.
+- **Interaction not yet decided:** Whether clicking Leo makes him slowly
+  open his eyes/lift his head or whether he remains asleep is still open.
+
+The puzzle therefore has a more personal reward than simply opening an
+extra route: it leads to this quiet encounter with Leo. Keep the
+implementation achievable and do not let optional cat animation
+jeopardize the core experience.
