@@ -1,0 +1,68 @@
+
+/* =================================
+   A GARDEN FOR GHALA
+   Main stylesheet
+================================= */
+
+
+/* 1. Basic page settings */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Georgia, serif;
+    color: #fff5f5;
+
+    /* Blended pre-sunrise atmosphere */
+
+    background:
+        radial-gradient(
+            ellipse at 75% 75%,
+            rgba(190, 119, 151, 0.65),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #171b35 0%,
+            #454158 48%,
+            #9b7189 100%
+        );
+
+    /* Center the welcome content */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 2. Welcome text */
+
+.welcome-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: normal;
+    letter-spacing: 2px;
+
+    margin: 0;
+}
+
+p {
+    font-size: 18px;
+    letter-spacing: 1px;
+
+    color: #f5dce5;
+
+    margin-top: 8px;
+}
