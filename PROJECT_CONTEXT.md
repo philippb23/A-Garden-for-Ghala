@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 10, 2026*
+*Last updated: November 13, 2026*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -201,8 +201,7 @@ independently moving.
     personal memories or present generated text as an actual shared
     memory.
 
-Initial scope: approximately five interactive lilies/messages, with the
-option to add more if time allows.
+Garden scope: an abundant, lush clearing with many lilies and greenery between them. Every lily is clickable and blooms, but only five carefully positioned special lilies reveal personal messages. The special lilies are scattered across different parts of the clearing, not clustered together, and have no obvious glow or visual marker. A subtle 0/5 progress indicator communicates that five discoveries exist without revealing their locations. Finding all five special lilies unlocks the garden puzzle. Use an optional, user-requested hint if she gets stuck; never interrupt exploration with automatic hints.
 
 ## 5. Personal details and discoveries
 
@@ -367,9 +366,7 @@ assets rather than draw artwork.
 
 ### Navigation
 
-Use a first-person-feeling **point-and-click hotspot** system. The user
-sees an illustrated viewpoint and clicks a path marker, doorway, bridge,
-or other interactive region to move to another viewpoint.
+Use a first-person-feeling exploratory scene system. The visitor sees a full-screen photographic viewpoint and can use subtle path hotspots to move between locations. Within wide scenes, allow gentle cursor-controlled horizontal panoramic movement (and touch-drag on mobile) so the image shifts as she looks around. This can begin with a single oversized photographic background; layered parallax is optional rather than mandatory.
 
 -   No continuous 3D movement is required.
 -   Each scene is an illustrated background with positioned hotspots.
@@ -511,8 +508,9 @@ Keep the initial version achievable.
   Component                                    Initial target
   --------------------- -------------------------------------
   Main environments          3 (forest, lily clearing, beach)
-  Interactive lilies                          Approximately 5
-  Personal messages                        Approximately 5--6
+  Lily garden                  Abundant flowers with greenery between them
+  Interactive lilies            Many clickable lilies; five special discoveries
+  Personal messages                        Exactly five special-lily messages
   Hidden puzzles                          1 thoughtful puzzle
   Hidden discoveries              1--2 or more if time allows
   Cat                               1 surprise appearance of Leo after puzzle completion
@@ -593,11 +591,7 @@ Leo. - She appreciates sweet, sentimental words.
 
 ------------------------------------------------------------------------
 
-**Current next step (November 11, 2026):** Begin the lily clearing.
-Find a photorealistic woodland clearing background and realistic pink
-lily assets, then integrate the background and first lily into the
-existing website. The forest asset search remains open and will continue
-later; do not settle for cartoony artwork just to fill the scene.
+**Current next step (November 13, 2026):** Begin the lily clearing asset search and prototype. Use the Lovable demo screenshots as composition/interaction references, not as final artwork. Find real, licensable photographic backgrounds and matching realistic pink lily assets; integrate the background and first flower. The forest asset search remains open; aim for a more distinctly Twilight-inspired Pacific Northwest forest. Do not use generic AI-looking imagery as final artwork.
 
 
 ---
@@ -626,3 +620,56 @@ The puzzle therefore has a more personal reward than simply opening an
 extra route: it leads to this quiet encounter with Leo. Keep the
 implementation achievable and do not let optional cat animation
 jeopardize the core experience.
+
+
+---
+
+## 15. Updated visual and interaction decisions from the Lovable prototype (November 13, 2026)
+
+The creator reviewed a Lovable-generated demo and supplied screenshots of the welcome screen, forest, beach, lily clearing, and hidden clearing. Treat these screenshots as references for composition, typography, atmosphere, and interaction patterns—not as approved final artwork or proof of asset licensing.
+
+### Welcome screen
+- Preserve the demo's elegant serif typography, centered title, small uppercase eyebrow text, italic subtitle, restrained entrance button, and full-screen photographic composition.
+- Keep the wording "A Garden for Ghala" and "A little world made just for you." The small phrase "A birthday in a small world" was also liked as part of the opening treatment.
+
+### Panoramic scene navigation
+- The creator particularly liked dragging left/right to look around the forest.
+- Use a wide photographic scene that shifts gently horizontally in response to cursor movement; support touch-drag on mobile.
+- This can be implemented with one oversized image first. Layered 2.5D parallax is optional and can be added only where it improves depth.
+- Preserve visible, subtle path hotspots and connected navigation. Do not shrink the scene during movement or transitions.
+
+### Forest
+- Preserve the demo's composition idea: a large tree as a central visual anchor and two visible routes, one toward warm light/the garden and another toward the sea.
+- Replace the current forest image with more convincing photorealistic Pacific Northwest / Twilight-inspired scenery: tall dense evergreens, moss, ferns, cool blue-green/grey tones, mist, overcast diffused light, and a mysterious romantic atmosphere.
+- Fireflies may remain as restrained environmental details.
+- Do not use copyrighted Twilight film stills, official artwork, or actor likenesses.
+
+### Beach
+- The creator strongly likes the demo's beach photograph and sunset composition. Preserve this visual direction: coastal sea stacks, warm pink/orange sunset, reflective wet sand, and driftwood in the foreground.
+- Keep small environmental interactions such as clickable shells that reveal short quotes/messages, and birds flying overhead.
+- Source a real, properly licensed photograph for the final website rather than assuming the demo image is reusable.
+
+### Lily clearing
+- Preserve the warm sunrise, distant mountain silhouettes, mist, and woodland-meadow composition as a visual reference.
+- Expand the garden substantially: an abundant spread of pink lilies with visible greenery between flowers, rather than only five foreground flowers.
+- Many lilies should be present in varied positions, heights, angles, and growth stages. Avoid a repetitive grid or identical placement.
+- Every lily is clickable and blooms. Most are ordinary blooms with no message.
+- Exactly five special lilies are deliberately scattered across different parts of the clearing. They must not be clustered in one area.
+- Special lilies should not have obvious glow, outlines, or other markers that reveal their positions. Discovery should reward exploration.
+- A subtle progress indicator should communicate five discoveries, e.g. "Little discoveries 0/5", without revealing locations or over-explaining the mechanic.
+- Each special lily reveals one creator-written/approved personal message after blooming.
+- Once all five special lilies have been found, unlock the garden puzzle. The puzzle then opens the hidden route to Leo's clearing.
+- Include an optional hint that the visitor can request if stuck; do not show unsolicited hints or interrupt exploration.
+- Keep flower photography and background photography cohesive in lighting, perspective, colour temperature, sharpness, and scale.
+
+### Hidden clearing and Leo
+- Preserve the demo's composition: an enormous old tree, warm light entering from the left, a wooden bench beneath the tree, and three small picture frames hanging on the trunk.
+- The cat shown in the demo is the wrong colour. Leo was orange; use an orange cat.
+- The creator may provide the actual photographs of Leo that Ghala previously shared. Use those real photographs in the three frames rather than fabricated photos. Do not invent or generate fake photos of the specific cat.
+- Prefer a real photographic cat asset or a carefully matched realistic cutout for the sleeping cat in the scene.
+- Keep the reveal quiet, warm, and comforting, not memorial-like.
+
+### Final artwork rule
+- Lovable is a prototype/reference for layout, scene composition, and interaction. It is not the source of final art assets.
+- The creator prefers existing real photography/assets and does not want generic AI-generated-looking imagery in the final website.
+- Verify the specific licence and attribution requirements of every final asset before publication; record them in ASSET_CREDITS.md.
