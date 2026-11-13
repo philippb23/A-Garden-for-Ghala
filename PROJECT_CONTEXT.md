@@ -130,15 +130,26 @@ should make it possible to move back and forth between the forest, lily
 clearing, and beach without restarting the experience. Use hotspots at
 visible paths, gates, bridges, or other natural transitions.
 
-A possible first visit: - Start in a misty forest at the edge of
-sunrise. - Follow a path into a clearing full of pink lilies. - Continue
-through the forest toward the coast. - Reach a peaceful beach. - Be able
-to return to the other areas through connecting paths.
+### Intended first-visit progression and area priority
 
-The creator also likes the idea of starting in the forest and
-discovering the lily garden as the world opens up. Keep that as the
-current preferred opening, while allowing the exact first scene to be
-adjusted during prototyping.
+The current preferred progression is:
+
+1. **Lily garden clearing:** complete the abundant garden, find all five
+   special lilies, and read their personal messages.
+2. **Garden puzzle:** finding all five special lilies unlocks the
+   thoughtful garden puzzle.
+3. **Leo's hidden clearing:** solving the puzzle opens the secret path
+   to Leo's secluded tree-and-bench scene.
+4. **Beach/coast:** explore the sunset shoreline, shells, birds, and
+   other small discoveries.
+5. **Forest:** an optional, lower-priority area to build last if time
+   allows. It remains desirable as another place to explore, but must
+   not delay the garden, puzzle, Leo, beach, or a tested release.
+
+This is the preferred progression for a first visit, not a requirement
+to make the world permanently linear. Once areas are unlocked, provide
+clear, natural ways to revisit them. Prioritize a complete, polished
+core experience over including every planned environment.
 
 ### Environment and composition
 
@@ -229,10 +240,28 @@ slightly warmer sunrise light than the surrounding forest, making it
 feel like a peaceful little sanctuary. A subtle idle animation (such as
 slight tail movement) could be considered if practical.
 
-**Still undecided:** What Leo does when clicked. One option is for him
-to slowly open his eyes or lift his head; the creator has not yet chosen
-whether he should wake or remain asleep. Do not treat this interaction
-as finalized until confirmed.
+### Petting interaction
+
+Leo should be interactable once Ghala reaches the clearing:
+
+- On desktop, hovering over Leo changes the cursor to a hand/pointer to
+  show that he can be petted.
+- Clicking him triggers a gentle petting response and a soft, realistic
+  purring sound, as though she can still reach out and interact with him.
+- On phones and tablets, tapping Leo triggers the same response; do not
+  rely on hover for touch devices.
+- Keep the response calm and affectionate. Leo can remain comfortably
+  resting while subtly responding to the petting; avoid a startling
+  animation or loud sound.
+- The purr should be played only after the visitor interacts, respecting
+  browser audio restrictions. Provide a graceful silent fallback if
+  audio is unavailable or muted.
+- The interaction should be repeatable so she can pet him more than
+  once. A small natural response (such as a slight movement or a more
+  contented settling motion) may accompany the purr if practical.
+
+This petting-and-purring interaction is now a confirmed part of Leo's
+clearing, not an undecided idea.
 
 ### Hidden details
 
@@ -453,47 +482,55 @@ possible.
 
 ### Revised four-week plan --- November 11--December 8, 2026
 
-The development order has changed: build the lily clearing first because
-its visual assets are expected to be easier to source than the specific
-photorealistic forest background. This is a change in sequencing, not a
-change to the three-area world.
+The core experience takes priority over completing every environment.
+Build in this order: lily clearing and messages, garden puzzle, Leo's
+clearing, beach, then the optional forest.
 
 **Week 1 --- November 11--17: Lily clearing prototype**
--   Find a realistic woodland/meadow clearing photograph.
--   Find realistic pink lily assets that fit the background.
--   Organize downloaded assets and record their licenses/sources.
--   Add the clearing background and first lily to the existing website.
--   Establish the first visual composition and test it in the browser.
+- Find a realistic woodland/meadow clearing photograph.
+- Find realistic pink lily assets that fit the background.
+- Organize downloaded assets and record their licenses/sources.
+- Add the clearing background and first lily to the existing website.
+- Establish the first visual composition and test it in the browser.
 
 **Deliverable:** a first photorealistic lily-clearing prototype with at
 least one flower positioned in the scene.
 
-**Week 2 --- November 18--24: Complete lily interactions**
--   Add approximately five interactive lilies.
--   Implement bud/partially-open/bloomed states using suitable assets.
--   Add restrained bloom transitions and personal message reveals.
--   Refine the clearing's atmosphere and responsive layout.
+**Week 2 --- November 18--24: Finish lilies and build the puzzle**
+- Complete the abundant lily garden and its bloom interactions.
+- Add exactly five special lilies, personal message reveals, and the
+  subtle discovery counter.
+- Unlock the garden puzzle only after all five messages are found.
+- Design and implement the garden-themed puzzle, including an optional
+  hint she can request.
 
-**Deliverable:** a usable lily clearing with its core flower interactions.
+**Deliverable:** a complete lily-clearing experience with five messages
+and a working puzzle.
 
-**Week 3 --- November 25--December 1: Forest, beach, and navigation**
--   Source the photorealistic Twilight-inspired forest background and
-    suitable layered foreground/midground elements.
--   Source a matching beach/coast background.
--   Build the three environments and connect them with hotspots.
--   Add basic transitions and 2.5D parallax where suitable layers exist.
+**Week 3 --- November 25--December 1: Leo's clearing and the beach**
+- Build the secret path and Leo's secluded tree-and-bench clearing as
+  the reward for solving the puzzle.
+- Add Leo's repeatable petting interaction, hand cursor on desktop,
+  touch interaction on mobile, and gentle purring sound.
+- Use the real photographs the creator may supply for the three
+  hanging frames; use an orange cat for Leo.
+- Build the beach as another explorable area, preserving its sunset,
+  coastal scenery, clickable shells, and birds.
+- Add navigation to revisit completed areas.
 
-**Deliverable:** all three areas can be visited and navigated.
+**Deliverable:** the core progression from lilies to puzzle to Leo,
+plus a usable beach area.
 
-**Week 4 --- December 2--8: Puzzle, Leo, atmosphere, and release**
--   Implement the garden puzzle and hidden path to Leo's clearing.
--   Add Leo's quiet bench reveal after puzzle completion.
--   Add selected environmental details, audio, and final sequence.
--   Test mobile/desktop, optimize assets, verify licensing, and deploy.
+**Week 4 --- December 2--8: Optional forest, atmosphere, testing, release**
+- If the core experience is stable and time allows, source and build
+  the photorealistic Twilight-inspired forest as an optional final area.
+- Add selected environmental details, audio, and the final sequence.
+- Test mobile/desktop, optimize assets, verify licensing, and deploy.
+- If time is tight, omit or simplify the forest rather than delaying
+  the garden, puzzle, Leo, beach, testing, or release.
 
-**Deliverable:** a complete, tested first release. This four-week target
-is ambitious; protect the core experience and simplify optional details
-if asset sourcing or implementation takes longer than expected.
+**Deliverable:** a complete, tested first release of the core experience.
+The forest is a stretch goal, not a release blocker.
 
 ### December 14--20: Backup and refinement
 
@@ -520,16 +557,19 @@ Keep the initial version achievable.
 
 ### Priority order
 
-1.  A working website and navigation.
-2.  Three connected environments.
-3.  Lily bloom interactions and personal messages.
-4.  A complete final sequence.
-5.  Sound, puzzle, cat, and environmental details.
-6.  Visual polish and optional extras.
+1. A working website and reliable navigation.
+2. Complete lily clearing: abundant flowers, five special lilies, and
+   all five personal messages.
+3. The garden puzzle and its optional hint.
+4. Leo's hidden clearing, including repeatable petting and purring.
+5. The beach and its small interactive discoveries.
+6. A photorealistic forest as an optional stretch goal.
+7. Sound, extra environmental details, and visual polish.
 
-If time becomes limited or the creator becomes employed, protect
-priorities 1--4 and simplify optional details rather than sacrificing
-the complete experience.
+The forest is the lowest-priority environment and should be built last,
+only if the core experience is already stable. If time becomes limited,
+omit or simplify the forest rather than sacrificing the lily messages,
+puzzle, Leo, beach, testing, or a complete release.
 
 ## 11. How to continue across ChatGPT conversations
 
@@ -688,6 +728,20 @@ Current asset-selection guidance:
 - Aim for a small reusable set of complementary assets (for example, a flowering lily with leaves, a cleaner individual bloom, and buds) rather than buying many one-off flowers.
 - Before any purchase or use, verify the exact licence permits embedding the asset in a publicly accessible website and record the source, creator, licence, attribution, and intended use in `ASSET_CREDITS.md`.
 
-A promising clearing-background photograph has been identified and downloaded at its highest available resolution (5807 × 7748 pixels). It is a portrait image with warm sunrise light, trees framing the sides, and foreground meadow vegetation. It is a leading candidate, not yet a final approved website asset: the landscape crop still needs to be made and its source/licence must be verified. Preserve the original unchanged and make a separate 16:9 landscape export, aiming to retain both the sunrise and a substantial portion of the meadow.
+A promising clearing-background photograph has been identified and downloaded at its highest available resolution (5807 × 7748 pixels). It is a portrait image with warm sunrise light, trees framing the sides, and foreground meadow vegetation. The creator has completed a separate landscape crop, preserving the sunrise and a substantial portion of the meadow. The cropped file has not yet been uploaded to GitHub or integrated into the website. Preserve the original unchanged; verify the source/licence before public use and upload the landscape export when ready.
 
 No flower candidate has yet been finalized, purchased, licensed, or integrated. The next asset decision should be made by testing the candidate lily image against the cropped clearing background before spending money.
+
+
+## 17. Confirmed interaction update — Leo (November 13, 2026)
+
+Leo is now planned as an interactable part of the hidden clearing. On
+desktop, hovering over him changes the cursor to a hand/pointer; clicking
+him triggers a gentle petting response and soft purring. On touch
+devices, tapping him triggers the same interaction. The response should
+be repeatable, calm, and affectionate, with Leo remaining comfortably
+resting and perhaps making a small natural movement. Play the purr only
+after user interaction, respect browser audio restrictions, and provide
+a silent fallback. This is intended to create the feeling that Ghala can
+still reach out and pet him.
+
