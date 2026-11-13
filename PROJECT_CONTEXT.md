@@ -673,3 +673,21 @@ The creator reviewed a Lovable-generated demo and supplied screenshots of the we
 - Lovable is a prototype/reference for layout, scene composition, and interaction. It is not the source of final art assets.
 - The creator prefers existing real photography/assets and does not want generic AI-generated-looking imagery in the final website.
 - Verify the specific licence and attribution requirements of every final asset before publication; record them in ASSET_CREDITS.md.
+
+
+---
+
+## 16. Asset search update — November 13, 2026
+
+The creator has started comparing sources for realistic pink lily assets. Transparent botanical cutouts can be expensive (one option encountered was approximately AED 27.50), while several free libraries searched so far have had limited suitable choices. Some promising-looking results have appeared on Pixabay and PNGTree, but no paid asset has been approved or purchased.
+
+Current asset-selection guidance:
+- Do not buy a flower asset until it has been tested against the chosen clearing background for realism, lighting, colour, scale, and composition.
+- A lily image that includes natural leaves or a small amount of greenery is not automatically unsuitable. Foliage can help the flower sit naturally in the meadow; only remove excess background/greenery if it makes placement awkward or visually cluttered.
+- If a candidate has a separable subject, background removal and edge cleanup may be tested in Photopea. Results depend on contrast, overlapping leaves, and edge complexity.
+- Aim for a small reusable set of complementary assets (for example, a flowering lily with leaves, a cleaner individual bloom, and buds) rather than buying many one-off flowers.
+- Before any purchase or use, verify the exact licence permits embedding the asset in a publicly accessible website and record the source, creator, licence, attribution, and intended use in `ASSET_CREDITS.md`.
+
+A promising clearing-background photograph has been identified and downloaded at its highest available resolution (5807 × 7748 pixels). It is a portrait image with warm sunrise light, trees framing the sides, and foreground meadow vegetation. It is a leading candidate, not yet a final approved website asset: the landscape crop still needs to be made and its source/licence must be verified. Preserve the original unchanged and make a separate 16:9 landscape export, aiming to retain both the sunrise and a substantial portion of the meadow.
+
+No flower candidate has yet been finalized, purchased, licensed, or integrated. The next asset decision should be made by testing the candidate lily image against the cropped clearing background before spending money.
