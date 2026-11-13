@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 13, 2026*
+*Last updated: November 13, 2026 (late-night session)*
 
 This is the project's living development log. Keep it concise and update it whenever meaningful work is completed, a decision changes implementation, or the next task changes.
 
@@ -16,7 +16,7 @@ For the full creative brief, confirmed preferences, design decisions, technical 
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
 
-The repository, project brief, and initial website prototype are in place. The creator has chosen to build the lily clearing first while the more difficult photorealistic forest assets are still being sourced.
+The repository, project brief, and initial website prototype are in place. The creator has chosen to build the lily clearing first while the more difficult photorealistic forest assets are still being sourced. The clearing-background candidate has been downloaded at 5807 × 7748 pixels, but still needs a separate landscape crop and licence verification. Lily asset research is ongoing; one candidate with substantial greenery is being evaluated, but no flower has been selected or purchased. No new scene code or flower integration was completed in this session.
 
 ## 2. Completed
 
@@ -33,8 +33,8 @@ The repository, project brief, and initial website prototype are in place. The c
 
 ## 3. In progress
 
-- [ ] Begin the lily-clearing prototype: source a realistic woodland clearing background and matching pink lily assets.
-- [ ] Integrate the clearing background and first lily into the existing website.
+- [ ] Finalize the clearing background: make a separate 16:9 crop from the 5807 × 7748 source image while preserving the sunrise and meadow, then verify the source licence. 
+- [ ] Evaluate the current lily candidate (including whether its surrounding foliage should be retained or cleaned up), verify its licence, then integrate the clearing background and first lily into the existing website.
 - [ ] Continue searching for a photorealistic, Twilight-inspired forest background; reject cartoony/pixel-art assets that do not match the intended style.
 
 Nothing in this section should be marked complete until it has actually been tested or verified.
@@ -58,15 +58,15 @@ Nothing in this section should be marked complete until it has actually been tes
 
 ## 5. Next task
 
-**Next development session — November 12, 2026**
+**Next development session — November 13, 2026 (after sleep)**
 
 ### Goal: Start the photorealistic lily clearing
 
-1. Find a suitable realistic woodland/meadow clearing photograph.
-2. Find realistic pink lily images or transparent botanical assets that fit the scene.
-3. Check source, license, attribution requirements, and image dimensions before use.
-4. Download and organize the chosen assets in the project folder.
-5. Add the clearing background and first lily to the existing website.
+1. Crop the downloaded clearing photograph to a separate 16:9 landscape image; keep the original unchanged.
+2. Verify the clearing photograph's source and licence before public use.
+3. Evaluate the current lily candidate against the background, including whether its greenery should remain or be removed.
+4. Verify the lily asset's licence before purchase or use; do not spend money until it passes the visual test.
+5. Organize approved assets and add the clearing background and first lily to the existing website.
 
 **Definition of done:** The website displays the first version of the lily clearing with at least one realistic pink lily. No need to finish all five flowers in this session.
 
@@ -159,3 +159,14 @@ Keep this file factual. Distinguish clearly between completed, in-progress, plan
 - Add an optional hint that the visitor can request, without automatic interruptions.
 - Preserve the hidden clearing's large tree, warm light, bench, and three hanging photo frames. Correct Leo's appearance to orange; use real photos supplied by the creator in the frames rather than fabricated cat photographs.
 - Final artwork preference reaffirmed: source existing real photography/assets and verify licences. Lovable's generated/demo imagery is a design reference, not automatically approved for final use.
+
+
+### November 13, 2026 — Late-night asset research session
+
+- Compared options for sourcing realistic pink lily assets. Transparent cutouts can be relatively expensive (one encountered option was about AED 27.50), and the free libraries searched so far have not offered many strong matches.
+- Found a possible lily candidate with substantial surrounding greenery. It has not yet been reviewed closely enough to decide whether the foliage should be retained or edited; no purchase or final selection has been made.
+- Agreed not to purchase assets until they have been tested against the clearing background and their licences checked. Natural foliage may be useful rather than something that must automatically be cut away.
+- Identified and downloaded a promising sunrise woodland/meadow background at 5807 × 7748 pixels. It is still a candidate: create a separate 16:9 landscape crop, preserve the original, and verify the source/licence before publishing.
+- No code changes, background integration, or first-flower implementation were completed in this session. The next session should continue with the crop and candidate asset evaluation, then move into the first integration.
+- The creator wrapped up for the night and plans to resume after sleeping.
+
