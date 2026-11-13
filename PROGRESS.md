@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 13, 2026 (late-night session)*
+*Last updated: November 13, 2026*
 
 This is the project's living development log. Keep it concise and update it whenever meaningful work is completed, a decision changes implementation, or the next task changes.
 
@@ -10,13 +10,13 @@ For the full creative brief, confirmed preferences, design decisions, technical 
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype; lily-clearing design decisions and asset selection  
-**Project status:** Initial welcome screen and working welcome-to-forest navigation implemented locally and tested; development order revised to build the lily clearing first  
+**Overall phase:** Foundation prototype; preparing the lily-clearing scene and assets  
+**Project status:** Initial welcome screen and working welcome-to-forest navigation implemented locally and tested; build order confirmed as lily clearing → puzzle → Leo → beach → optional forest  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
 
-The repository, project brief, and initial website prototype are in place. The creator has chosen to build the lily clearing first while the more difficult photorealistic forest assets are still being sourced. The clearing-background candidate has been downloaded at 5807 × 7748 pixels, but still needs a separate landscape crop and licence verification. Lily asset research is ongoing; one candidate with substantial greenery is being evaluated, but no flower has been selected or purchased. No new scene code or flower integration was completed in this session.
+The repository, project brief, and initial website prototype are in place. The confirmed build order is to finish the lily clearing and its five messages first, then the garden puzzle, Leo's hidden clearing, and the beach; the forest is a lower-priority optional area to attempt last. The 5807 × 7748 clearing-background candidate has now been cropped to landscape locally, but the cropped file is not yet uploaded to GitHub and its source/licence still needs verification. Lily asset research is ongoing; one candidate with substantial greenery is being evaluated, but no flower has been selected or purchased. Leo's clearing will include a repeatable petting interaction with a hand cursor on desktop, tap support on mobile, and a gentle purring sound. No scene code or interaction implementation has been completed yet.
 
 ## 2. Completed
 
@@ -33,9 +33,9 @@ The repository, project brief, and initial website prototype are in place. The c
 
 ## 3. In progress
 
-- [ ] Finalize the clearing background: make a separate 16:9 crop from the 5807 × 7748 source image while preserving the sunrise and meadow, then verify the source licence. 
+- [ ] Upload the completed landscape crop of the clearing background to GitHub; verify its source/licence before public use.
 - [ ] Evaluate the current lily candidate (including whether its surrounding foliage should be retained or cleaned up), verify its licence, then integrate the clearing background and first lily into the existing website.
-- [ ] Continue searching for a photorealistic, Twilight-inspired forest background; reject cartoony/pixel-art assets that do not match the intended style.
+- [ ] Defer forest asset research until the lily clearing, puzzle, Leo, and beach are on track; the forest is optional and lowest priority.
 
 Nothing in this section should be marked complete until it has actually been tested or verified.
 
@@ -44,12 +44,12 @@ Nothing in this section should be marked complete until it has actually been tes
 - [x] Initial welcome screen and "Enter the garden" interaction (working prototype).
 - [x] Basic welcome-to-placeholder-forest transition and return navigation.
 - [ ] Photorealistic lily-clearing scene and realistic flower assets.
-- [ ] Photorealistic Twilight-inspired forest and beach environments.
-- [ ] Connected point-and-click hotspot navigation.
-- [ ] Interactive pink lilies and bloom animations.
-- [ ] Personal message reveals.
-- [ ] Leo the orange cat and optional environmental discoveries.
-- [ ] Hidden puzzle and reward.
+- [ ] Interactive pink lilies, bloom animations, and five personal message reveals.
+- [ ] Hidden garden puzzle and optional hint.
+- [ ] Leo's orange-cat clearing, unlocked by the puzzle, with petting and purring interaction.
+- [ ] Beach environment and its small interactive discoveries.
+- [ ] Connected point-and-click hotspot navigation between completed areas.
+- [ ] Photorealistic Twilight-inspired forest (optional stretch goal; build last).
 - [ ] Piano / rain ambience and audio controls.
 - [ ] Final birthday sequence.
 - [ ] Mobile and desktop testing.
@@ -58,26 +58,33 @@ Nothing in this section should be marked complete until it has actually been tes
 
 ## 5. Next task
 
-**Next development session — November 13, 2026 (after sleep)**
+**Next development session — November 14, 2026**
 
-### Goal: Start the photorealistic lily clearing
+### Goal: Upload and prepare the lily-clearing assets
 
-1. Crop the downloaded clearing photograph to a separate 16:9 landscape image; keep the original unchanged.
+1. Upload the completed landscape crop to the repository, keeping the
+   original unchanged. Confirm the intended filename/path before
+   documenting it.
 2. Verify the clearing photograph's source and licence before public use.
-3. Evaluate the current lily candidate against the background, including whether its greenery should remain or be removed.
-4. Verify the lily asset's licence before purchase or use; do not spend money until it passes the visual test.
-5. Organize approved assets and add the clearing background and first lily to the existing website.
+3. Evaluate the current lily candidate against the background, including
+   whether its greenery should remain or be removed.
+4. Verify the lily asset's licence before purchase or use; do not spend
+   money until it passes the visual test.
+5. Organize approved assets and integrate the clearing background and
+   first lily into the existing website.
 
-**Definition of done:** The website displays the first version of the lily clearing with at least one realistic pink lily. No need to finish all five flowers in this session.
+**Definition of done:** The cropped background is stored in the
+repository with its source/licence recorded, and the first realistic
+lily is ready to integrate or has been integrated.
 
 ## 6. Milestone tracker
 
 | Target dates | Milestone | Status |
 |---|---|---|
 | Nov 11–17 | Lily-clearing prototype and first realistic flower | In progress |
-| Nov 18–24 | Complete lily interactions and messages | Not started |
-| Nov 25–Dec 1 | Photorealistic forest/beach and connected navigation | Not started |
-| Dec 2–8 | Puzzle, Leo, atmosphere, testing, and first release | Not started |
+| Nov 18–24 | Complete five lily messages and garden puzzle | Not started |
+| Nov 25–Dec 1 | Leo's hidden clearing and beach environment | Not started |
+| Dec 2–8 | Optional forest, atmosphere, testing, and first release | Not started |
 | Dec 9–13 | Original buffer for polish and contingency | Not started |
 | Dec 14–20 | Contingency and final refinements, if needed | Not started |
 
@@ -143,7 +150,7 @@ At the end of each substantial work session:
 
 Keep this file factual. Distinguish clearly between completed, in-progress, planned, and undecided work.
 
-**Immediate next action:** On November 12, begin the lily clearing: select a realistic woodland/meadow background and matching pink lily assets, check their licenses, then integrate the background and first flower into the existing website.
+**Immediate next action:** Upload the completed landscape crop of the lily-clearing background, verify its source/licence, evaluate the candidate lily asset, and begin integrating the clearing. Follow the revised progression: lilies and messages → puzzle → Leo (including petting and purring) → beach → optional forest.
 
 
 ### November 13, 2026 — Lovable prototype review and garden interaction decisions
@@ -170,3 +177,12 @@ Keep this file factual. Distinguish clearly between completed, in-progress, plan
 - No code changes, background integration, or first-flower implementation were completed in this session. The next session should continue with the crop and candidate asset evaluation, then move into the first integration.
 - The creator wrapped up for the night and plans to resume after sleeping.
 
+
+
+### November 13, 2026 — Revised progression and Leo interaction
+
+- Confirmed the preferred experience/build order: finish the lily clearing and its five personal messages; then the garden puzzle; then Leo's hidden clearing; then the beach. The forest is now a lower-priority optional area to attempt last.
+- Confirmed Leo will be interactable: desktop hover changes the cursor to a hand/pointer, clicking pets him and plays a gentle purr, and tapping provides the same interaction on mobile. The response should be repeatable, subtle, and affectionate, with a silent fallback if audio is unavailable or muted.
+- Revised the accelerated four-week milestones to reflect this sequence: Week 1 lily-clearing prototype; Week 2 five lily messages and puzzle; Week 3 Leo's clearing and beach; Week 4 optional forest, atmosphere, testing, and release.
+- The creator confirmed that the lily-clearing background has already been cropped to landscape locally. Upload to GitHub is still pending; the source/licence must also be verified before public use.
+- No website code, scene integration, flower interaction, or Leo interaction was implemented as part of this planning update.
