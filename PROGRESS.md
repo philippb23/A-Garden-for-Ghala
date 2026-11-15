@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 15, 2026 — Lily discovery and journal planning*
+*Last updated: November 15, 2026 — Discovery Journal message display fixed locally*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,7 +8,7 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype; all six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing now has an initial click-to-bloom/message/counter prototype in local working files; the data-driven message structure and journal are still being verified and extended.  
+**Overall phase:** Foundation prototype; all six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing now has a working local test flow for special-lily clicks, message display, discovery counting, and reopening the discovered message from the Discovery Journal. The test entry and single test lily are scaffolding; the five final discoveries and puzzle gate are not implemented.  
 **Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The Lily Clearing also links to a temporary Puzzle screen, which links to Leo's Hidden Clearing. Return paths from the new scenes have been tested. The puzzle and Leo buttons are temporary testing shortcuts; discovery/unlock logic is not implemented yet.  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
@@ -40,8 +40,9 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 
 ## 3. In progress
 
-- [ ] Verify the current data-driven special-lily interaction locally: bloom animation, unique discovery IDs, message display, and duplicate-discovery prevention.
-- [ ] Add a Discovery Journal that records only discovered special lilies and allows their messages to be reopened.
+- [x] Verify the current single-test-lily interaction locally: clicking the special lily records the discovery and displays its title/message; the journal lists the discovered entry and can reopen the same message.
+- [ ] Extend the tested prototype to five unique special lilies, verify ordinary-lily behaviour and duplicate-discovery prevention, and add persistent progress if appropriate.
+- [x] Add the initial Discovery Journal locally: it lists discovered entries only and allows the discovered test message to be reopened.
 - [ ] Keep the Muthhila entry capable of an Arabic-first, right-to-left presentation, distinct from ordinary message entries.
 - [ ] Unlock the Puzzle only after all five unique special lilies have been discovered; remove temporary testing shortcuts when the real gates are tested.
 
@@ -74,12 +75,12 @@ Nothing should be marked complete until it has actually been implemented and tes
 
 **Next development session — November 15, 2026**
 
-### Goal: Complete the reusable lily discovery and journal system
+### Goal: Extend the working test discovery/journal into the complete five-lily system
 
-1. Verify the structured message data and unique IDs for special lilies.
-2. Implement/retest click-to-bloom behaviour without making ordinary flowers reveal messages.
-3. Keep the subtle discovery counter accurate from 0/5 to 5/5.
-4. Add a Discovery Journal that stores only unlocked discoveries and lets the visitor reopen their messages.
+1. Expand the current one-lily test registry to five unique special-lily entries.
+2. Verify ordinary lilies bloom without revealing messages or incrementing the counter.
+3. Verify each special lily increments the counter once only, even when clicked repeatedly.
+4. Keep the Discovery Journal limited to discovered entries and allow messages to be reopened and closed reliably.
 5. Preserve a distinct Arabic-first, right-to-left presentation option for the Muthhila discovery.
 6. Unlock access to the puzzle only after all five special lilies have been discovered. Remove the temporary testing shortcut once the real unlock flow is working.
 
@@ -160,9 +161,18 @@ Keep this file factual. Distinguish between completed, in-progress, planned, and
 
 ### November 15, 2026 — Lily discovery architecture and journal planning
 
-- Began the Lily Clearing interaction prototype: ordinary versus special lilies, bloom animation, a discovery counter, unique discovery IDs, and a data-driven message registry are the intended structure. The latest data-driven message changes still need to be verified in the browser before being marked complete.
+- Began the Lily Clearing interaction prototype: ordinary versus special lilies, bloom animation, a discovery counter, unique discovery IDs, and a data-driven message registry.
 - Confirmed the Discovery Journal concept: a small journal control in the clearing, entries appear only after their corresponding special lily is discovered, and previously unlocked messages can be reopened.
 - The journal must not reveal undiscovered messages or special-lily locations. It should preserve the 0/5–5/5 progress and support a distinct Arabic-first, right-to-left Muthhila entry.
 - The five flower images and their positions will be selected later, after the clearing artwork and flower placement are finalised. Do not assign final special-lily locations yet.
 - Puzzle access remains gated by all five unique discoveries; current direct-entry controls are temporary testing shortcuts.
 - No final personal message wording or full lyric text has been added to the public repository.
+
+### November 15, 2026 — Discovery Journal message display fixed locally
+
+- Added the missing `<h2 id="lily-message-title"></h2>` element to the Lily Clearing message panel in the local `index.html`. The JavaScript was attempting to set the title on an element that did not exist, causing a null-reference error.
+- Confirmed locally that clicking the test special lily now displays both the discovery title and message.
+- Confirmed that the journal entry can call the same message-display function to reopen the discovery.
+- Added a CSS `[hidden]` rule to ensure hidden panels are not accidentally displayed by component styling; journal layering/clickability was checked during debugging.
+- The current implementation is still a one-lily test scaffold. The five real special lilies, final content, flower toggle/closing behaviour, persistent storage, and five-discovery puzzle gate remain future work.
+- The code changes are in the creator's local files; this GitHub update records project status and does not upload `index.html`, `style.css`, or `main.js`.
