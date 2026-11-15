@@ -777,3 +777,46 @@ The creator wants to incorporate two songs by Mohammed Abdu that Ghala loves: **
 ### Content and implementation status
 
 These are design decisions only. No music playback, lyric reveal, or special-lily interaction has been implemented or tested yet. Keep the full lyric text out of public project documentation; store only the song references and presentation requirements here. The creator will choose/approve the exact excerpts and write/approve personal notes during implementation.
+
+
+---
+
+## 19. Current implementation update — November 15, 2026
+
+This section records the current implementation and supersedes any older descriptions above that conflict with the forest-first navigation or current build order.
+
+### Confirmed navigation and scene structure
+
+- The **Welcome** screen leads to the **Forgotten Forest**.
+- The Forgotten Forest is the first environment and the initial navigation hub; it is not a separate Garden hub.
+- **Path of Light** leads from the Forest to the **Lily Clearing**.
+- **Path of Whispers** leads from the Forest to the **Beach**.
+- The Lily Clearing leads to a **Puzzle** screen, which is intended to unlock only after all five special lilies have been discovered.
+- Solving the puzzle is intended to unlock **Leo's Hidden Clearing**.
+- The Beach, Lily Clearing, Puzzle, Leo's Clearing, and Forest should remain revisitable through natural return routes.
+
+### Current local prototype status
+
+- The Welcome, Forest, Lily Clearing, Beach, Puzzle, and Leo's Hidden Clearing screens now exist in the local HTML prototype.
+- Basic transitions between these screens have been implemented and tested locally.
+- The Forest has a responsive two-panel layout for Path of Light and Path of Whispers; this is a structural placeholder until the final forest photograph and scene-integrated hotspots are added.
+- Beach, Puzzle, and Leo's Hidden Clearing are navigable placeholders, not finished environments.
+- Temporary testing buttons currently allow direct access to the Puzzle and Leo's Clearing. These bypass the intended unlock conditions and must be replaced by the real five-lily discovery and puzzle-completion gates before release.
+- The Lily Clearing background and pink lily cutout are integrated locally. A CSS filter has been adjusted to soften the lily's saturation and warm its colour to better match the sunrise meadow. Fine blending work remains for the visual-polish phase.
+
+### Current build order
+
+The agreed workflow is to finish navigation and overall scene structure for every playable area first, then implement core interactions and progression, then complete visual layout, and finally add final photographs/backgrounds/assets and atmospheric polish. Use placeholders where needed; do not delay navigation work while waiting for final imagery.
+
+### Immediate next development task
+
+Begin the five special-lily discovery system in the Lily Clearing:
+
+1. Represent ordinary lilies and exactly five special lilies.
+2. Add click-to-bloom behaviour.
+3. Reveal creator-written/approved messages only for the special lilies.
+4. Add a subtle discovery counter (0/5).
+5. Unlock the Puzzle only when all five special lilies have been discovered.
+6. Remove the temporary Puzzle and Leo testing shortcuts once the real progression gates are in place.
+
+Do not mark planned interactions, final artwork, puzzle logic, or Leo interaction as complete until implemented and tested.
