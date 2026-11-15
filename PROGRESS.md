@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 14, 2026*
+*Last updated: November 15, 2026*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -14,7 +14,7 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
 
-The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub. The local Lily Clearing scene uses the background and flower, but the visual integration still needs review from a browser screenshot. The current Forest screen remains a simple placeholder with one Lily Clearing button; the proposed two-path structure has not yet been implemented. Puzzle, Leo interaction, and Beach scene remain unimplemented.
+The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub. The local Lily Clearing scene uses the background and flower, but the visual integration still needs review from a browser screenshot. The current Forest screen remains a simple placeholder with one Lily Clearing button; the proposed two-path structure has not yet been implemented. Puzzle, Leo interaction, Beach scene, and music-inspired lily interactions remain unimplemented.
 
 ## 2. Completed
 
@@ -45,12 +45,13 @@ Nothing should be marked complete until it has actually been implemented and tes
 - [ ] Full Twilight-inspired Forgotten Forest visual scene and two-path composition.
 - [ ] Beach environment and its small interactive discoveries.
 - [ ] Abundant pink lilies with natural variation and bloom interactions.
-- [ ] Five hidden special lilies and creator-written personal message reveals.
+- [ ] Five hidden special lilies and creator-written personal message reveals, including an Arabic-first “Muthhila” lyric reveal and a possible “Ma Tmaneitak”-inspired discovery.
 - [ ] Subtle discovery counter (e.g. “Little discoveries 0/5”).
 - [ ] Garden puzzle, unlocked after all five special lilies are found.
 - [ ] Leo's hidden clearing, unlocked by the puzzle, with repeatable petting and gentle purring.
 - [ ] Connected point-and-click navigation and revisit paths between discovered locations.
 - [ ] Piano/rain ambience and audio controls.
+- [ ] Optional, user-initiated playback of the relevant “Muthhila” recording passage from an authorised embed/licensed source; lyrics remain the primary reveal and playback must not autoplay.
 - [ ] Mobile and desktop testing.
 - [ ] Asset licensing and credits review.
 - [ ] GitHub Pages deployment and public-link testing.
@@ -118,3 +119,13 @@ The forest is no longer an optional stretch goal: it is the opening scene and in
 ---
 
 Keep this file factual. Distinguish between completed, in-progress, planned, and undecided work. Continue building in small steps with explanations so the creator understands and participates in the code.
+
+
+### November 15, 2026 — Music-inspired lily discoveries
+
+- Confirmed that Ghala loves Mohammed Abdu's **“Muthhila”** and **“Ma Tmaneitak.”**
+- The creator and Ghala recently listened to “Muthhila” together; she especially loves its romantic lyrics and the ending passage.
+- Confirmed that the “Muthhila” special lily should reveal a selected passage in **Arabic**, preserving the original wording and presenting it right-to-left with suitable Arabic typography. Arabic is the primary experience; an English translation is optional.
+- Confirmed that optional playback may be offered through a discreet play/replay control, but the song must not autoplay and the lyric reveal must work fully without audio.
+- “Ma Tmaneitak” may inspire another lily, but its exact passage and personal message remain undecided.
+- These are design decisions only. No lyric reveal or playback has been implemented or tested. Full lyric text is intentionally not stored in the public project documentation.
