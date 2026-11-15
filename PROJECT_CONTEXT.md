@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 15, 2026*
+*Last updated: November 15, 2026 — Discovery Journal test flow verified locally*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -847,3 +847,30 @@ The creator approved adding a Discovery Journal to the Lily Clearing. Its purpos
 - The puzzle remains unavailable until all five unique special lilies have been discovered.
 - A first pass of click-to-bloom, counter, and message code has been drafted in the local prototype. The latest data-driven message-registry refactor and browser behaviour still require verification; do not describe the complete journal or puzzle gate as implemented until tested.
 - Temporary test IDs/content are scaffolding only. Replace them with the five creator-approved entries after the artwork is ready. Do not store full copyrighted lyric text or private personal messages in public project documentation.
+
+
+---
+
+## 21. Local test milestone — Discovery Journal message display (November 15, 2026)
+
+The initial one-lily test flow has now been debugged and verified locally.
+
+- The Lily Clearing message panel in `index.html` was missing the title heading expected by the JavaScript. Adding `<h2 id="lily-message-title"></h2>` resolved the null-reference error in `showDiscovery()`.
+- Clicking the test special lily now displays the discovery title and message.
+- The journal entry invokes the same `showDiscovery()` function and can reopen the test message.
+- The journal's discovered-only listing and the close/return flow are part of the current local test implementation.
+- A global `[hidden] { display: none !important; }` rule was added to ensure elements marked hidden remain hidden even when other CSS display rules apply.
+
+### Scope and remaining work
+
+This is a successful **single test-lily** milestone, not completion of the full discovery system. The test content and `test-lily` ID are temporary. Still to implement and verify:
+
+1. Five unique special lilies and their creator-approved entries.
+2. Ordinary lily bloom behaviour without message reveal or counter increase.
+3. One-time counting for each special lily, including repeat clicks.
+4. Optional bloom/close toggle behaviour, if retained after testing.
+5. Progress persistence across page refreshes, if desired.
+6. Puzzle unlock only after all five discoveries; remove temporary testing shortcuts.
+7. Arabic-first, RTL Muthhila presentation and any authorised optional audio.
+
+The current HTML/CSS/JavaScript edits remain in local working files and were **not uploaded** to GitHub in this documentation-only update.
