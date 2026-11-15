@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 13, 2026*
+*Last updated: November 15, 2026*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -745,3 +745,35 @@ after user interaction, respect browser audio restrictions, and provide
 a silent fallback. This is intended to create the feeling that Ghala can
 still reach out and pet him.
 
+
+
+---
+
+## 18. Music-inspired special lily discoveries — November 15, 2026
+
+The creator wants to incorporate two songs by Mohammed Abdu that Ghala loves: **“Muthhila”** and **“Ma Tmaneitak.”** They listened to “Muthhila” together recently; Ghala especially loves the romantic lyrics and the ending passage. Both the romantic meaning and Mohammed Abdu's vocal delivery matter to her, with the romantic meaning being the main appeal.
+
+### Confirmed Muthhila lily presentation
+
+- One of the five special lilies should be dedicated to **“Muthhila.”**
+- When opened, the lily blooms and reveals a selected passage from the song's **original Arabic lyrics** as the primary discovery message.
+- Arabic is intentional and should remain the main presentation. Ghala has said the song feels much more romantic and expressive in Arabic, her first language, than in English.
+- Present Arabic with correct right-to-left direction and alignment, generous line spacing, and an elegant Arabic typeface. The English translation is optional and should not displace the Arabic.
+- The passage should be recognisable and retain its original wording; do not paraphrase it merely for the sake of changing it.
+- A separate creator-written personal note may appear after or alongside the lyrics. Keep song lyrics and the creator's own words visually distinct.
+
+### Optional song playback
+
+- Playback is **optional**, not automatic and not required to understand or enjoy the discovery.
+- Provide a discreet play/replay control for the corresponding part of the actual recording if a suitable authorised embed or licensed source is available.
+- Do not download or self-host an unauthorised copy of the commercial recording. Check the provider's embedding terms and browser playback restrictions; if playback cannot be provided reliably, the Arabic lyric reveal still works on its own.
+- Do not make the visitor's first lily click depend on audio autoplay succeeding.
+
+### Ma Tmaneitak
+
+- **“Ma Tmaneitak”** is another song Ghala loves and may inspire a different special lily/message.
+- Its exact lyric passage and personal note have not yet been selected. Do not invent or finalise lyrics or personal wording.
+
+### Content and implementation status
+
+These are design decisions only. No music playback, lyric reveal, or special-lily interaction has been implemented or tested yet. Keep the full lyric text out of public project documentation; store only the song references and presentation requirements here. The creator will choose/approve the exact excerpts and write/approve personal notes during implementation.
