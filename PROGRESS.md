@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 15, 2026*
+*Last updated: November 15, 2026 — Lily discovery and journal planning*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,7 +8,7 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype; all six scene placeholders and basic navigation are implemented and tested locally.  
+**Overall phase:** Foundation prototype; all six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing now has an initial click-to-bloom/message/counter prototype in local working files; the data-driven message structure and journal are still being verified and extended.  
 **Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The Lily Clearing also links to a temporary Puzzle screen, which links to Leo's Hidden Clearing. Return paths from the new scenes have been tested. The puzzle and Leo buttons are temporary testing shortcuts; discovery/unlock logic is not implemented yet.  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
@@ -40,6 +40,11 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 
 ## 3. In progress
 
+- [ ] Verify the current data-driven special-lily interaction locally: bloom animation, unique discovery IDs, message display, and duplicate-discovery prevention.
+- [ ] Add a Discovery Journal that records only discovered special lilies and allows their messages to be reopened.
+- [ ] Keep the Muthhila entry capable of an Arabic-first, right-to-left presentation, distinct from ordinary message entries.
+- [ ] Unlock the Puzzle only after all five unique special lilies have been discovered; remove temporary testing shortcuts when the real gates are tested.
+
 - [ ] Replace the temporary Forest path panels with final scene-integrated path hotspots when the forest artwork is ready.
 - [ ] Replace the Beach placeholder with its final coastal scene and discoveries.
 - [ ] Replace the Puzzle testing shortcut with the real puzzle, unlocked only after all five special lilies are found.
@@ -69,13 +74,14 @@ Nothing should be marked complete until it has actually been implemented and tes
 
 **Next development session — November 15, 2026**
 
-### Goal: Begin implementing the five special-lily discoveries
+### Goal: Complete the reusable lily discovery and journal system
 
-1. Add a structured way to represent ordinary lilies and the five special lilies.
-2. Implement click-to-bloom behaviour without making every ordinary flower reveal a message.
-3. Add a subtle discovery counter that tracks progress from 0/5 to 5/5.
-4. Keep each personal message separate and creator-approved; do not invent memories or final wording.
-5. Unlock access to the puzzle only after all five special lilies have been discovered. Remove the temporary testing shortcut once the real unlock flow is working.
+1. Verify the structured message data and unique IDs for special lilies.
+2. Implement/retest click-to-bloom behaviour without making ordinary flowers reveal messages.
+3. Keep the subtle discovery counter accurate from 0/5 to 5/5.
+4. Add a Discovery Journal that stores only unlocked discoveries and lets the visitor reopen their messages.
+5. Preserve a distinct Arabic-first, right-to-left presentation option for the Muthhila discovery.
+6. Unlock access to the puzzle only after all five special lilies have been discovered. Remove the temporary testing shortcut once the real unlock flow is working.
 
 **Definition of done:** The Lily Clearing supports repeatable, reliable flower interactions; exactly five special lilies reveal their messages; the counter updates correctly; and the puzzle becomes accessible only after all five discoveries. Test desktop and mobile input.
 
@@ -150,3 +156,13 @@ Keep this file factual. Distinguish between completed, in-progress, planned, and
 - Tested the scene transitions locally. The Puzzle and Leo entry buttons are temporary testing shortcuts, not final unlock logic.
 - Reviewed the Lily Clearing in the browser. The warm meadow background and flower are integrated; CSS saturation/colour filtering was adjusted to soften the lily and better harmonise it with the background.
 - No final Forest/Beach/Puzzle/Leo artwork, lily-discovery mechanics, puzzle logic, or Leo interaction has been implemented yet.
+
+
+### November 15, 2026 — Lily discovery architecture and journal planning
+
+- Began the Lily Clearing interaction prototype: ordinary versus special lilies, bloom animation, a discovery counter, unique discovery IDs, and a data-driven message registry are the intended structure. The latest data-driven message changes still need to be verified in the browser before being marked complete.
+- Confirmed the Discovery Journal concept: a small journal control in the clearing, entries appear only after their corresponding special lily is discovered, and previously unlocked messages can be reopened.
+- The journal must not reveal undiscovered messages or special-lily locations. It should preserve the 0/5–5/5 progress and support a distinct Arabic-first, right-to-left Muthhila entry.
+- The five flower images and their positions will be selected later, after the clearing artwork and flower placement are finalised. Do not assign final special-lily locations yet.
+- Puzzle access remains gated by all five unique discoveries; current direct-entry controls are temporary testing shortcuts.
+- No final personal message wording or full lyric text has been added to the public repository.
