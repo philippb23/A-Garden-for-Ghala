@@ -8,13 +8,13 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype; lily-clearing assets integrated locally; revising navigation around the forest-first experience.  
-**Project status:** Welcome → Forest → Lily Clearing navigation works locally. The Forgotten Forest is now confirmed as the first location and navigation hub after Welcome. Its two-path layout is the next coding task.  
+**Overall phase:** Foundation prototype; all six scene placeholders and basic navigation are implemented and tested locally.  
+**Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The Lily Clearing also links to a temporary Puzzle screen, which links to Leo's Hidden Clearing. Return paths from the new scenes have been tested. The puzzle and Leo buttons are temporary testing shortcuts; discovery/unlock logic is not implemented yet.  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
 
-The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub. The local Lily Clearing scene uses the background and flower, but the visual integration still needs review from a browser screenshot. The current Forest screen remains a simple placeholder with one Lily Clearing button; the proposed two-path structure has not yet been implemented. Puzzle, Leo interaction, Beach scene, and music-inspired lily interactions remain unimplemented.
+The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub and integrated locally. The browser screenshot has now been reviewed: the meadow background and flower composition are working, and a CSS filter adjustment was made to soften the lily's saturation and warm its colour so it better matches the sunrise scene. The Forest currently has a two-panel path layout. Beach, Puzzle, and Leo's Hidden Clearing exist as navigable placeholder screens; their final artwork and interactions remain unimplemented.
 
 ## 2. Completed
 
@@ -24,6 +24,14 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 - [x] Welcome screen with centered title/subtitle, pre-sunrise gradient, and gentle fade-in animation.
 - [x] Welcome → Forest transition and return navigation tested locally.
 - [x] Forest → Lily Clearing and return navigation tested locally.
+- [x] Forgotten Forest updated with Path of Light and Path of Whispers choices.
+- [x] Forest path panels styled side by side on desktop and stacked on narrow screens.
+- [x] Path of Light → Lily Clearing and return to Forest tested locally.
+- [x] Path of Whispers → Beach placeholder and return to Forest tested locally.
+- [x] Puzzle placeholder added after Lily Clearing, with return navigation.
+- [x] Leo's Hidden Clearing placeholder added after Puzzle, with return navigation to Lily Clearing and Forest.
+- [x] Temporary testing shortcuts added to access Puzzle and Leo's Clearing before unlock mechanics exist.
+- [x] Lily image colour/saturation softened with CSS to better match the warm meadow background.
 - [x] Landscape lily-clearing background uploaded to `assets/backgrounds/lily-clearing-landscape.jpg`.
 - [x] Original clearing photograph uploaded to `assets/backgrounds/lily-clearing-original.jpg`.
 - [x] Lily cutout uploaded to `assets/flowers/lily_only_no_stem.png`.
@@ -32,10 +40,11 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 
 ## 3. In progress
 
-- [ ] Build the Forgotten Forest screen as the opening location after Welcome, with two clearly presented path hotspots/buttons.
-- [ ] Keep Path of Light connected to the existing Lily Clearing scene.
-- [ ] Add Path of Whispers as a placeholder destination until the Beach scene is built.
-- [ ] Review the Lily Clearing screenshot when available; adjust flower scale, position, lighting, and integration based on the actual browser result.
+- [ ] Replace the temporary Forest path panels with final scene-integrated path hotspots when the forest artwork is ready.
+- [ ] Replace the Beach placeholder with its final coastal scene and discoveries.
+- [ ] Replace the Puzzle testing shortcut with the real puzzle, unlocked only after all five special lilies are found.
+- [ ] Replace the Leo testing shortcut with the real puzzle-gated reveal and hidden clearing interactions.
+- [ ] Continue refining the Lily Clearing flower's scale, edges, lighting, and integration during the visual-polish phase.
 - [ ] Verify the source/licence and attribution requirements for the clearing background and lily asset before public deployment.
 
 Nothing should be marked complete until it has actually been implemented and tested.
@@ -58,17 +67,17 @@ Nothing should be marked complete until it has actually been implemented and tes
 
 ## 5. Next task
 
-**Next development session — November 14, 2026**
+**Next development session — November 15, 2026**
 
-### Goal: Build the Forgotten Forest navigation structure
+### Goal: Begin implementing the five special-lily discoveries
 
-1. Update the Forest section in `index.html` to use the title “The Forgotten Forest”, a short atmospheric introduction, and two path controls.
-2. Name the paths “Path of Light” (Lily Clearing) and “Path of Whispers” (future Beach).
-3. Update `css/style.css` to style the paths as subtle scene hotspots/buttons, not generic bright call-to-action buttons.
-4. Update `js/main.js` only as needed. Keep the existing Welcome → Forest → Lily Clearing flow working; the Beach path can remain a non-functional placeholder until its scene exists.
-5. Test entering and leaving the Forest and entering the Lily Clearing.
+1. Add a structured way to represent ordinary lilies and the five special lilies.
+2. Implement click-to-bloom behaviour without making every ordinary flower reveal a message.
+3. Add a subtle discovery counter that tracks progress from 0/5 to 5/5.
+4. Keep each personal message separate and creator-approved; do not invent memories or final wording.
+5. Unlock access to the puzzle only after all five special lilies have been discovered. Remove the temporary testing shortcut once the real unlock flow is working.
 
-**Definition of done:** The Forgotten Forest displays both paths, Path of Light opens the existing Lily Clearing, and returning navigation still works. The second path is visibly planned but is not falsely presented as a working destination.
+**Definition of done:** The Lily Clearing supports repeatable, reliable flower interactions; exactly five special lilies reveal their messages; the counter updates correctly; and the puzzle becomes accessible only after all five discoveries. Test desktop and mobile input.
 
 ## 6. Milestone tracker
 
@@ -129,3 +138,15 @@ Keep this file factual. Distinguish between completed, in-progress, planned, and
 - Confirmed that optional playback may be offered through a discreet play/replay control, but the song must not autoplay and the lyric reveal must work fully without audio.
 - “Ma Tmaneitak” may inspire another lily, but its exact passage and personal message remain undecided.
 - These are design decisions only. No lyric reveal or playback has been implemented or tested. Full lyric text is intentionally not stored in the public project documentation.
+
+
+### November 15, 2026 — Navigation scaffold completed
+
+- Replaced the basic Forest placeholder with a “Forgotten Forest” hub containing two distinct path panels: **Path of Light** leads to the Lily Clearing, and **Path of Whispers** leads to the Beach placeholder.
+- Added responsive styling for the two path panels: side by side on wider screens and stacked on narrow screens.
+- Added a navigable Beach placeholder with a return route to the Forest.
+- Added a Puzzle placeholder after the Lily Clearing and a Leo's Hidden Clearing placeholder after the Puzzle.
+- Added return routes from the Puzzle to the Lily Clearing and from Leo's Clearing to both the Lily Clearing and Forest.
+- Tested the scene transitions locally. The Puzzle and Leo entry buttons are temporary testing shortcuts, not final unlock logic.
+- Reviewed the Lily Clearing in the browser. The warm meadow background and flower are integrated; CSS saturation/colour filtering was adjusted to soften the lily and better harmonise it with the background.
+- No final Forest/Beach/Puzzle/Leo artwork, lily-discovery mechanics, puzzle logic, or Leo interaction has been implemented yet.
