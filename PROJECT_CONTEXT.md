@@ -820,3 +820,30 @@ Begin the five special-lily discovery system in the Lily Clearing:
 6. Remove the temporary Puzzle and Leo testing shortcuts once the real progression gates are in place.
 
 Do not mark planned interactions, final artwork, puzzle logic, or Leo interaction as complete until implemented and tested.
+
+
+---
+
+## 20. Discovery Journal and lily interaction plan — November 15, 2026
+
+The creator approved adding a Discovery Journal to the Lily Clearing. Its purpose is to let Ghala revisit personal discoveries without having to find the corresponding flower again.
+
+### Journal behaviour
+
+- Add a discreet **Discovery Journal** control in the Lily Clearing.
+- Record a special-lily entry only after that lily has been discovered.
+- Show only unlocked/discovered entries; undiscovered entries and their messages must remain hidden to avoid spoilers.
+- Allow previously discovered messages to be reopened from the journal.
+- Keep the discovery counter visible and accurate (0/5 through 5/5).
+- The journal should support different entry presentation types. In particular, the Muthhila entry must preserve Arabic-first text, correct RTL direction/alignment, suitable Arabic typography, and a clear visual distinction between song lyrics and the creator's personal note.
+- Do not assign the five special lilies to final image assets or positions yet. Those choices will be made after the flower imagery and clearing composition have been arranged.
+
+### Interaction architecture and implementation status
+
+- The intended reusable model separates message content from the flower image/markup, using a stable unique ID for each special lily.
+- Ordinary lilies bloom but do not reveal a message or increase the discovery count.
+- Each special lily can be counted only once, even if clicked repeatedly.
+- A discovered message can be reopened through the journal without incrementing the count again.
+- The puzzle remains unavailable until all five unique special lilies have been discovered.
+- A first pass of click-to-bloom, counter, and message code has been drafted in the local prototype. The latest data-driven message-registry refactor and browser behaviour still require verification; do not describe the complete journal or puzzle gate as implemented until tested.
+- Temporary test IDs/content are scaffolding only. Replace them with the five creator-approved entries after the artwork is ready. Do not store full copyrighted lyric text or private personal messages in public project documentation.
