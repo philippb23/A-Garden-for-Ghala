@@ -745,3 +745,100 @@ p {
         opacity 1.5s ease,
         visibility 0s linear;
 }
+
+/* =================================
+   Leo resting on the bench
+================================= */
+
+.leo-bench {
+    position: absolute;
+    right: 20%;
+    bottom: 12%;
+    width: 220px;
+    height: 200px;
+    z-index: 2;
+    pointer-events: auto;
+    cursor: grab;
+    touch-action: none;
+}
+.leo-bench:active {
+    cursor: grabbing;
+}
+
+.leo-bench-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom center;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* =================================
+   Leo Interaction Effects
+================================= */
+
+.leo-bench {
+    transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.leo-bench.leo-reacting {
+    filter: drop-shadow(0 0 12px rgba(255, 220, 160, 0.75));
+}
+
+.leo-bench.leo-purring {
+    filter: drop-shadow(0 0 18px rgba(255, 220, 160, 0.9));
+    transform: scale(1.015);
+}
+
+.leo-cat-response {
+    position: absolute;
+    right: 20%;
+    bottom: calc(12% + 205px);
+    z-index: 6;
+    color: #fff3d9;
+    font-size: 18px;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    pointer-events: none;
+    animation: leoResponse 0.35s ease;
+}
+
+@keyframes leoResponse {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =================================
+   Leo's Gentle Breathing
+================================= */
+
+.leo-bench-image {
+    transform-origin: center 85%;
+    animation: leoBreathing 4s ease-in-out infinite;
+}
+
+@keyframes leoBreathing {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.012);
+    }
+}
+
+/* Pause breathing while Leo is being petted */
+.leo-bench.leo-reacting .leo-bench-image,
+.leo-bench.leo-purring .leo-bench-image {
+    animation-play-state: paused;
+}
