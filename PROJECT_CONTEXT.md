@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 15, 2026 — Discovery Journal test flow verified locally*
+*Last updated: November 16, 2026 — Puzzle world structure and Leo's clearing direction confirmed*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -874,3 +874,57 @@ This is a successful **single test-lily** milestone, not completion of the full 
 7. Arabic-first, RTL Muthhila presentation and any authorised optional audio.
 
 The current HTML/CSS/JavaScript edits remain in local working files and were **not uploaded** to GitHub in this documentation-only update.
+
+------------------------------------------------------------------------
+
+## 22. Puzzle world, hidden stone doorway, and Leo's clearing — November 16, 2026
+
+### The puzzle: world-spanning exploration
+
+The creator wants the puzzle to feel like a challenging puzzle-adventure experience, inspired by the environmental exploration and satisfying self-directed discovery in **Big Walk**. The desired interaction style is a mixture of investigation and physical interaction. Do not reproduce Big Walk's actual puzzles or multiplayer mechanics.
+
+- Clues should be distributed across the existing world: the **Forgotten Forest**, **Lily Clearing**, and **Beach**.
+- Ghala should be free to discover the clues in any order, leave the puzzle area, revisit locations, and return without losing discoveries.
+- The clues should reward observation and experimentation. They should help her infer relationships rather than simply spelling out a button sequence or password.
+- The final clue meanings, relationships, exact physical mechanics, and solution are not yet designed. A three-ring rotating mechanism was discussed as one possible idea, but it remains provisional and must not be treated as a final locked design.
+- The eventual solution should create a satisfying “wait, I understand it now” moment. Avoid punishing incorrect attempts or giving away the solution through obvious instructions.
+
+### Hidden bush and sealed stone doorway
+
+The entrance is part of the **Lily Clearing**, not a large puzzle object placed among the flowers.
+
+- A clickable bush on the right side of the Lily Clearing reveals a concealed entrance.
+- Do not rely on complex animation of moving bushes or vines. Use a second image/state or a transition that reveals the passage behind the bush.
+- The reveal leads to a visible **stone doorway** with stone tablets, carved panels, or other inspectable markings.
+- The doorway can be discovered and inspected before the puzzle is solved, but it remains sealed.
+- Clues gathered across the Forgotten Forest, Lily Clearing, and Beach will eventually let Ghala solve the puzzle.
+- Solving the puzzle opens the stone door and reveals a hidden passage.
+- The passage leads directly to **Leo's Hidden Clearing**.
+- The puzzle's final mechanics and door-opening animation are deferred until the clue system and scene structure are ready.
+
+### Leo's Hidden Clearing — selected background direction
+
+The creator selected the supplied autumn woodland photograph showing a large spreading tree, golden leaves, and an existing wooden bench as the preferred background candidate. The creator is happy to accept its autumn atmosphere rather than continue searching for an image that matches every element of the original green woodland/sunrise concept.
+
+- Preserve the selected photograph as the environmental foundation if its original high-resolution file and licence are suitable.
+- The creator reports that the original source image is 5894 × 3895 pixels. The image preview shared in chat is not itself a repository upload; do not assume the final high-resolution file has been committed.
+- The existing bench can remain part of the background; no separate bench asset is required unless later composition changes make one necessary.
+- Three small picture frames should hang from the tree branches.
+- The creator supplied four real Leo photographs in chat: one photograph of Leo sleeping and three screenshots from a video showing him lying/playing and being petted.
+- Use these actual photographs as the contents of the hanging frames. Do not replace them with generic or fabricated photographs of Leo.
+- Each hanging frame should be clickable/inspectable. Clicking it opens a larger view of the complete photograph so Ghala can examine it, and she can close the view to return to the clearing.
+- The creator has decided not to rush the cutout/image of Leo sitting or sleeping on the bench. Defer adding Leo's actual body to the scene until a suitable photograph is available; the creator may ask for more photos. This does not block building the background, frames, photo-viewer interaction, or other scene functionality.
+- Leo's repeatable petting interaction and gentle purring remain part of the intended clearing experience. They can be developed around a placeholder interaction area and refined once his actual in-scene image is selected.
+- The final scene should feel peaceful and personal, not like a memorial. The real photos and recognizable appearance of Leo are important.
+
+### Immediate build order
+
+1. Create the Leo's Hidden Clearing scene around the selected background candidate (use a temporary local placeholder until the high-resolution file and licence are confirmed).
+2. Build three hanging frame elements and populate them with the four supplied photos as selected by the creator; determine which three photos are used initially later, or allow the frame content to be changed without rewriting the layout.
+3. Make each frame open a larger inspectable photo view with a clear close/return interaction.
+4. Build the Lily Clearing bush hotspot and concealed stone-door reveal as a separate interaction/state.
+5. Add inspectable stone tablets/panels to the sealed doorway.
+6. Continue puzzle design only after the world-spanning clue set can be considered as a complete system; do not prematurely hard-code a solution.
+7. Add Leo's actual cutout, petting animation, and purring when suitable imagery/audio are ready.
+
+These are design and planning decisions only. No new scene code, frame interactions, bush hotspot, door logic, puzzle logic, or Leo petting implementation has been completed or tested in this update.
