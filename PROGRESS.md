@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 15, 2026 — Discovery Journal message display fixed locally*
+*Last updated: November 16, 2026 — Puzzle-world structure and Leo's clearing direction confirmed*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,8 +8,8 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype; all six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing now has a working local test flow for special-lily clicks, message display, discovery counting, and reopening the discovered message from the Discovery Journal. The test entry and single test lily are scaffolding; the five final discoveries and puzzle gate are not implemented.  
-**Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The Lily Clearing also links to a temporary Puzzle screen, which links to Leo's Hidden Clearing. Return paths from the new scenes have been tested. The puzzle and Leo buttons are temporary testing shortcuts; discovery/unlock logic is not implemented yet.  
+**Overall phase:** Foundation prototype and interaction planning. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. The puzzle's world-spanning clue structure and the hidden stone-door reveal are now planned. Leo's autumn-tree clearing background has been selected as a visual candidate, and the three inspectable photo-frame interaction is planned. The five final discoveries, puzzle logic, door transition, and Leo's clearing implementation are not yet complete.  
+**Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The current Puzzle and Leo screens remain placeholders with temporary testing shortcuts. The intended progression is now: discover clues across the Forgotten Forest, Lily Clearing, and Beach; find a clickable bush in the Lily Clearing that reveals a concealed, sealed stone doorway; solve the world-spanning puzzle to open the door; follow the hidden passage to Leo's Hidden Clearing. Return paths have been tested locally, but the final progression gates are not implemented.  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
@@ -73,18 +73,19 @@ Nothing should be marked complete until it has actually been implemented and tes
 
 ## 5. Next task
 
-**Next development session — November 15, 2026**
+**Next development session — November 16, 2026**
 
-### Goal: Extend the working test discovery/journal into the complete five-lily system
+### Goal: Begin the hidden-door and Leo's-clearing scene structure
 
-1. Expand the current one-lily test registry to five unique special-lily entries.
-2. Verify ordinary lilies bloom without revealing messages or incrementing the counter.
-3. Verify each special lily increments the counter once only, even when clicked repeatedly.
-4. Keep the Discovery Journal limited to discovered entries and allow messages to be reopened and closed reliably.
-5. Preserve a distinct Arabic-first, right-to-left presentation option for the Muthhila discovery.
-6. Unlock access to the puzzle only after all five special lilies have been discovered. Remove the temporary testing shortcut once the real unlock flow is working.
+1. Keep the current one-test-lily artwork and interaction as a placeholder; do not create five duplicate flower images while the final lily assets are unavailable.
+2. Plan the Lily Clearing bush hotspot so clicking it reveals a concealed stone doorway without requiring complicated bush/vine animation.
+3. Build the sealed stone-door scene/visual state, including inspectable stone tablets or carved panels. The door must remain closed until the puzzle is solved.
+4. Build the Leo's Hidden Clearing layout around the selected autumn tree-and-bench background candidate.
+5. Add three hanging picture frames using the four Leo photos already supplied as photo content; clicking a frame should open a larger, inspectable view of the complete photograph.
+6. Keep Leo's actual body/cutout on the bench as a later asset task until a suitable, well-lit photograph is available. The petting/purring interaction can be built around a placeholder hit area and refined once his image is ready.
+7. Keep the puzzle's final clue relationships and solution logic undecided until the complete clue set is designed. Clues are intended to be distributed across the Forgotten Forest, Lily Clearing, and Beach.
 
-**Definition of done:** The Lily Clearing supports repeatable, reliable flower interactions; exactly five special lilies reveal their messages; the counter updates correctly; and the puzzle becomes accessible only after all five discoveries. Test desktop and mobile input.
+**Definition of done for this stage:** The new scene structure and frame inspection interactions work with placeholders, while the puzzle solution and Leo's final cutout remain deliberately deferred.
 
 ## 6. Milestone tracker
 
@@ -176,3 +177,19 @@ Keep this file factual. Distinguish between completed, in-progress, planned, and
 - Added a CSS `[hidden]` rule to ensure hidden panels are not accidentally displayed by component styling; journal layering/clickability was checked during debugging.
 - The current implementation is still a one-lily test scaffold. The five real special lilies, final content, flower toggle/closing behaviour, persistent storage, and five-discovery puzzle gate remain future work.
 - The code changes are in the creator's local files; this GitHub update records project status and does not upload `index.html`, `style.css`, or `main.js`.
+
+
+### November 16, 2026 — Puzzle world structure and Leo's clearing direction
+
+- Confirmed that the puzzle should be a world-spanning investigation rather than a single-room puzzle. Clues are intended to be discoverable across the Forgotten Forest, Lily Clearing, and Beach, in any order.
+- The desired difficulty is challenging, with a mixture of investigation and physical interaction. Big Walk is an inspiration for environmental discovery, experimentation, and the satisfaction of connecting clues; do not copy its actual puzzles or multiplayer mechanics.
+- The final clue meanings, exact mechanics, and solution are deliberately undecided. A rotating multi-ring mechanism was discussed as a possible visual/mechanical element, but it is not yet a locked implementation decision.
+- Confirmed the Lily Clearing hidden entrance concept: a clickable bush on the right side reveals a concealed stone doorway. Use a second visual state or scene transition rather than trying to animate the bushes and vines.
+- The stone doorway has tablets/carved elements and remains sealed until the puzzle is solved. Solving it opens the stone door and reveals a hidden passage leading to Leo's Hidden Clearing.
+- The doorway should be discoverable before the puzzle is solved, so Ghala can inspect it, leave, explore the other locations, and return later.
+- Selected the creator's autumn woodland photograph (large spreading tree, golden leaves, and an existing wooden bench) as the visual background candidate for Leo's Hidden Clearing. The creator is comfortable with its autumn atmosphere even though it differs from the original green-sunrise concept. The high-resolution original is reported by the creator as 5894 × 3895; the uploaded chat preview is not the final repository asset.
+- The tree branches will hold three hanging picture frames. The creator supplied four Leo photos (one sleeping photo and three video screenshots); use the supplied real photographs rather than generic cat imagery.
+- Each frame should be clickable/inspectable and open a larger view of the complete photograph so Ghala can look closely at Leo.
+- Defer placing Leo's actual body/cutout on the bench until a suitable photograph is available. The creator may ask for additional photos, but this is not a blocker for building the clearing, frames, inspection interaction, or other functionality.
+- Planned work can proceed with placeholders: build the clearing layout, hanging frames, photo viewer, and later the petting/purring interaction. Replace temporary Leo imagery when better source photos are available.
+- No website code or image assets were uploaded in this update. This commit records design decisions and current project status only.
