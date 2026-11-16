@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 16, 2026 — Leo's bench cutout added locally; interaction design confirmed*
+*Last updated: November 17, 2026 — Leo's petting, sound, and resting ambience implemented locally*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -1058,3 +1058,52 @@ The interaction design is agreed, but the audio files and JavaScript/CSS behavio
 ### Repository synchronization
 
 This November 16 checkpoint updates project documentation only. The creator's local HTML, CSS, JavaScript, Leo images, and any future audio assets have not been uploaded by this documentation change. Keep private photographs and personal content out of the public repository unless the creator explicitly approves publication. Do not mark the new bench image, image restoration, three-frame completion, photo viewer, or sound interactions as fully implemented until each has been tested locally.
+
+
+------------------------------------------------------------------------
+
+## 14. Leo's petting interaction and resting audio — implemented locally (November 17, 2026)
+
+The creator has implemented and browser-tested Leo's core interaction system in the local website. This section records the confirmed implementation and supersedes earlier statements that Leo's interaction and audio were only planned.
+
+### Interaction behaviour
+
+- A short click/tap on Leo plays one of four meow recordings, selected randomly. The system avoids immediately repeating the previous variation where possible.
+- Press-and-hold starts one of three purr recordings, selected randomly and configured to loop. Releasing Leo stops the purr.
+- The hold threshold is 250 ms: a short tap triggers a meow; a longer hold transitions to purring.
+- Leo remains a static image. A restrained warm glow and temporary “Meow!” / “Prrrr...” response provide feedback without attempting full character animation.
+- The cursor uses `grab` on hover and `grabbing` while pressed, reinforcing the idea of petting.
+- Pointer/touch and keyboard (Enter/Space) interaction are supported. The code also cleans up interaction state and purr playback on pointer cancellation, browser-window blur, and when leaving Leo's clearing.
+
+### Audio assets and playback
+
+All recordings are stored locally in `assets/audio/leo/`:
+
+| File | Role |
+|---|---|
+| `meow-1.mp3` – `meow-4.mp3` | Random meow on a short click/tap |
+| `purr-1.mp3` – `purr-3.mp3` | Random purr while Leo is held; configured to loop |
+| `leo-breathing.mp3` | Quiet breathing ambience while Leo rests |
+
+Current volume levels in the local JavaScript:
+
+- Breathing ambience: **8%** (`0.08`)
+- Meows: **65%** (`0.65`)
+- Purrs: **45%** (`0.45`)
+
+The breathing recording starts when the visitor enters Leo's clearing, pauses while Leo is being petted, resumes after the interaction, and stops when the visitor leaves. The creator explicitly chose an awake-and-resting sound rather than heavy sleeping/snoring audio, and requested a very low background level. The creator confirmed the reduced 8% volume works well.
+
+The interaction sounds are user-triggered; the breathing ambience begins as part of entering the clearing through the site's navigation. Browser playback fallback is included if an audio file is unavailable or playback is blocked.
+
+### Verification and remaining checks
+
+- The creator confirmed that the tap/meow, hold/purr, release, breathing, visual response, and cursor behaviour all work locally in Chrome.
+- The purr recordings still need a dedicated listening test for smooth loop points and any audible joins. Do not claim that the purr loops have been confirmed seamless.
+- Check each recording's source, licence, and attribution requirements before public deployment; record them in `ASSET_CREDITS.md`.
+- The three permanent hanging photos and enlarged viewer remain unfinished. The assigned photo files remain `leo-photo-2.png`, `leo-photo-4.png`, and `leo-photo-5.png`. The bench cutout still needs image cleanup/reconstruction after the creator can provide the source image for inspection.
+
+### Project status and synchronization
+
+Leo's core interaction system is complete for the current prototype, while his remaining visual presentation work is still in progress. The next development focus shifts to the five special lily discoveries and the distributed Forest/Lily Clearing/Beach clue-and-puzzle system.
+
+This is a documentation-only update. The creator will update the repository's code files separately. No HTML, CSS, JavaScript, sound files, photographs, or other assets are uploaded by this documentation checkpoint.
