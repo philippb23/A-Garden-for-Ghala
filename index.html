@@ -34,21 +34,266 @@
 
     <!-- First garden location: The forest -->
 
-    <section class="forest-scene screen" id="forest-screen">
 
-        <div class="forest-content">
+<!-- First garden location: The Forgotten Forest -->
 
-            <h1>The Forest</h1>
+<section class="forest-scene screen" id="forest-screen">
 
-            <p>A quiet path awaits you.</p>
+   
+<div class="forest-content">
 
-            <button class="enter-button" id="back-button">
-                Return
+    <h1>The Forgotten Forest</h1>
+
+    <p class="forest-description">
+        Two paths lie ahead. Where will you wander?
+    </p>
+
+    <div class="forest-paths">
+
+        <!-- Path of Light -->
+
+        <div class="forest-path light-path">
+
+            <h2>Path of Light</h2>
+
+            <p>
+                Follow the soft glow through the trees.
+                Something beautiful awaits.
+            </p>
+
+            <button class="enter-button" id="lily-button">
+                Explore
             </button>
 
         </div>
 
+
+        <!-- Path of Whispers -->
+
+        <div class="forest-path whisper-path">
+
+            <h2>Path of Whispers</h2>
+
+            <p>
+                Follow the distant sound of the waves.
+                Let the forest guide you.
+            </p>
+
+            <button class="enter-button" id="beach-button">
+                Explore
+            </button>
+
+        </div>
+
+    </div>
+
+    <button class="enter-button forest-back-button" id="back-button">
+        Return
+    </button>
+
+</div>
+
+</section>
+
+
+
+    <!-- Second garden location: The Lily Clearing -->
+
+    <section class="lily-scene screen" id="lily-screen">
+
+        <div class="lily-content">
+
+            <h1>The Lily Clearing</h1>
+
+            <p>A little meadow filled with flowers.</p>
+
+            
+
+		<button
+    			class="lily-interactive"
+    			data-special="true"
+    			data-lily-id="test-lily"
+    		    	aria-label="Discover this special lily"
+		>
+    		<img
+       			src="assets/flowers/lily_only_no_stem.png"
+        		alt="A pink lily"
+        		class="lily-flower"
+    		>
+		</button>
+
+
+		
+		<button class="enter-button" id="puzzle-button">
+    			Continue to the puzzle (testing)
+		</button>
+
+
+            <button class="enter-button" id="lily-back-button">
+                Return to the forest
+            </button>
+
+        </div>
+	
+	<!-- Special lily discovery progress -->
+
+	<div class="discovery-counter">
+   		 Little discoveries: <span id="discovery-count">0</span>/5
+	</div>
+
+	<button class="enter-button" id="open-journal-button">
+    		Open Discovery Journal
+	</button>
+
+	<!-- Message revealed by special lilies -->
+
+		<div class="lily-message" id="lily-message" hidden>
+
+    		<h2 id="lily-message-title"></h2>
+
+    		<p id="lily-message-text"></p>
+
+   		 <button class="enter-button" id="close-message-button">
+       		 Close
+   		 </button>
+
+		</div>
+
+	
+<!-- Discovery Journal -->
+
+<div class="discovery-journal" id="discovery-journal" hidden>
+
+    <h2>Little Discoveries</h2>
+
+    <p>Memories gathered along the way.</p>
+
+    <div id="journal-entries">
+
+        <!-- Discovered entries will appear here -->
+
+    </div>
+
+    <button class="enter-button" id="close-journal-button">
+        Close Journal
+    </button>
+
+</div>
+
+	
+
+
     </section>
+
+
+<!-- Puzzle location -->
+
+<section class="puzzle-scene screen" id="puzzle-screen">
+
+    <div class="puzzle-content">
+
+        <h1>The Forgotten Puzzle</h1>
+
+        <p>
+            Some things are only revealed to those who look closely.
+        </p>
+
+        <button class="enter-button" id="leo-button">
+            Reveal the hidden clearing (testing)
+        </button>
+
+        <button class="enter-button" id="puzzle-back-button">
+            Return to the Lily Clearing
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- Leo's hidden clearing -->
+
+<section class="leo-scene screen" id="leo-screen">
+
+    <div class="leo-content">
+
+        <h1>Leo's Hidden Clearing</h1>
+
+        <p>
+            A quiet little sanctuary, hidden away from the world.
+        </p>
+
+        <!-- Hanging picture frames -->
+        <div class="leo-photo-frames">
+
+            <button class="leo-photo-frame" data-photo="1"
+                aria-label="Inspect Leo's first photograph">
+                <img src="assets/photos/leo/leo-photo-1.jpg"
+                     alt="Leo resting peacefully">
+            </button>
+
+            <button class="leo-photo-frame" data-photo="2"
+                aria-label="Inspect Leo's second photograph">
+                <img src="assets/photos/leo/leo-photo-2.jpg"
+                     alt="Leo playing">
+            </button>
+
+            <button class="leo-photo-frame" data-photo="3"
+                aria-label="Inspect Leo's third photograph">
+                <img src="assets/photos/leo/leo-photo-3.jpg"
+                     alt="Leo being petted">
+            </button>
+
+        </div>
+
+        <!-- Enlarged photograph viewer -->
+        <div class="leo-photo-viewer" id="leo-photo-viewer" hidden>
+
+            <div class="leo-photo-viewer-content">
+
+                <img id="leo-enlarged-photo" src="" alt="A photograph of Leo">
+
+                <button class="enter-button" id="close-leo-photo">
+                    Close Photograph
+                </button>
+
+            </div>
+
+        </div>
+	
+	<div class="leo-navigation">
+
+        <button class="enter-button" id="leo-lily-back-button">
+            Return to the Lily Clearing
+        </button>
+
+        <button class="enter-button" id="leo-forest-back-button">
+            Return to the Forest
+        </button>
+
+	</div>
+    </div>
+
+</section>
+
+<!-- Third garden location: The Beach -->
+
+<section class="beach-scene screen" id="beach-screen">
+
+    <div class="beach-content">
+
+        <h1>The Beach</h1>
+
+        <p>A quiet shore awaits beyond the forest.</p>
+
+        <button class="enter-button" id="beach-back-button">
+            Return to the forest
+        </button>
+
+    </div>
+
+</section>
 
 
     <script src="js/main.js"></script>
