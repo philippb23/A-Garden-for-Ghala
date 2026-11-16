@@ -1107,3 +1107,20 @@ The interaction sounds are user-triggered; the breathing ambience begins as part
 Leo's core interaction system is complete for the current prototype, while his remaining visual presentation work is still in progress. The next development focus shifts to the five special lily discoveries and the distributed Forest/Lily Clearing/Beach clue-and-puzzle system.
 
 This is a documentation-only update. The creator will update the repository's code files separately. No HTML, CSS, JavaScript, sound files, photographs, or other assets are uploaded by this documentation checkpoint.
+
+
+---
+
+## La Push Beach — selected photograph and updated scene direction (November 17, 2026)
+
+This section supersedes earlier Beach visual notes that describe the final scene as requiring a strong pink/orange sunset photograph.
+
+- The creator selected a real photograph of **La Push Beach, Washington**, for the Beach environment. The selection is personally meaningful because Ghala loves *Twilight*.
+- The photograph has only a subtle orange tone in the sky rather than a dramatic sunset. Preserve the natural photograph and do not force an artificial sunset appearance.
+- The creator integrated the photograph locally and confirmed that it displays correctly in Chrome.
+- The existing `beach-screen` section and `beach-back-button` navigation are retained. Initial local CSS provides full-screen background treatment, a restrained dark overlay, and title/description styling.
+- The background was referenced locally as `assets/backgrounds/beach-lapush.jpg`; confirm the exact filename and extension before uploading the asset.
+- Proposed first discoveries are an inspectable shell near the waterline, investigable driftwood, and a seabird that may react to interaction. These are design proposals only; their positions and behaviours depend on the actual photograph composition.
+- When image attachments are available, inspect a browser screenshot before positioning the discoveries. Do not cover important shoreline, water, or landscape details.
+- The final discovery interface and any Beach puzzle clues remain undecided and unimplemented.
+- Verify the photograph's source/licence and add it to `ASSET_CREDITS.md` before public deployment.
