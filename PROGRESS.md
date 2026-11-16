@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 16, 2026 — Leo's cinematic entrance tested; hanging-photo layout started locally*
+*Last updated: November 16, 2026 — Leo's bench cutout added locally; interaction design agreed*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,13 +8,13 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype, core interaction testing, and early scene integration. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. Leo's autumn tree-and-bench background is integrated locally, and the cinematic entrance is implemented and confirmed working in the browser: the title/subtitle appear and fade, navigation temporarily disappears, then returns. The gold hanging-frame/photo overlay has been started locally for the first frame, but the photo-to-frame sizing is deliberately provisional and will be fine-tuned when the image files can be inspected together. The five final discoveries, puzzle logic, door transition, final frame placement/viewer behaviour, and Leo interaction are not yet complete.  
+**Overall phase:** Foundation prototype, core interaction testing, and early scene integration. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. Leo's autumn tree-and-bench background and cinematic entrance are integrated and browser-tested locally. The first gold hanging-frame/photo overlay has been started, with exact compositing and final sizing deferred until the assets can be inspected together. Leo's separate bench image has now been added locally as a static cutout and its placement looks acceptable for now; the cutout still needs edge cleanup and reconstruction of body parts cropped from the source image. Leo's click/hold sound interactions are designed but not implemented. The five final discoveries, puzzle logic, hidden-door transition, remaining frames, photo-viewer behaviour, and Leo interaction remain unfinished.  
 **Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The current Puzzle and Leo screens remain placeholders with temporary testing shortcuts. The intended progression is now: discover clues across the Forgotten Forest, Lily Clearing, and Beach; find a clickable bush in the Lily Clearing that reveals a concealed, sealed stone doorway; solve the world-spanning puzzle to open the door; follow the hidden passage to Leo's Hidden Clearing. Return paths have been tested locally, but the final progression gates are not implemented.  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
 
-The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub and integrated locally. The selected autumn tree-and-bench photograph is integrated locally as the Leo clearing background; the background, cleaned gold frame asset, and Leo photographs have not yet been uploaded to GitHub. The browser screenshot has been reviewed and the full-screen background works. The Lily Clearing flower CSS filter remains softened to better match the sunrise scene. The Forest currently has a two-panel path layout. Beach, Puzzle, and Leo's Hidden Clearing exist as navigable placeholder screens; their final artwork and interactions remain unimplemented.
+The landscape lily-clearing background and assets/flowers/lily_only_no_stem.png have been uploaded to GitHub and integrated locally. The selected autumn tree-and-bench photograph is integrated locally as the Leo clearing background; the background, cleaned gold frame asset, and Leo photographs have not yet been uploaded to GitHub. The local Leo bench model now uses assets/photos/Leo/leo-photo-actual.png in a static image container positioned over the existing bench; the creator reports that it looks acceptable for now pending visual review. The image is a cutout, but some background residue remains around its edges and parts of Leo's body are cropped by the source framing. After the attachment limit resets, the source image will be supplied for careful cleanup and reconstruction, preserving Leo's actual appearance. The first hanging frame is present in the current local HTML; the other two frame elements and final compositing still need to be completed. The photo-viewer markup exists, but its click/close JavaScript has not been confirmed. The Forest currently has a two-panel path layout. Beach and Puzzle remain placeholder scenes; final artwork and progression gates remain unimplemented.
 
 ## 2. Completed
 
@@ -40,6 +40,7 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 - [x] Selected autumn woodland photograph integrated locally as the full-screen Leo's Hidden Clearing background (`assets/backgrounds/leo-clearing.jpg`); the creator confirmed that it displays correctly and existing navigation still works.
 - [x] Added initial local CSS placeholders for the three Leo photo frames and enlarged-photo viewer layout.
 - [x] Selected a reusable gold hanging-frame design with a leather strap; the creator saved the cleaned frame asset locally. Final positioning and photo compositing remain to be done.
+- [x] Added Leo's separate static cutout image to the local Leo clearing layout using assets/photos/Leo/leo-photo-actual.png; the creator reports that its current placement looks acceptable as a first pass.
 
 ## 3. In progress
 
@@ -54,6 +55,8 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 - [ ] Replace the Beach placeholder with its final coastal scene and discoveries.
 - [ ] Replace the Puzzle testing shortcut with the real puzzle, unlocked only after all five special lilies are found.
 - [ ] Replace the Leo testing shortcut with the real puzzle-gated reveal and hidden clearing interactions.
+- [ ] Clean the residual background around Leo's cutout and reconstruct the body areas cropped from the source image after the creator can upload it for editing.
+- [ ] Build Leo's interaction system: a single click selects a varied meow; press-and-hold plays a varied looping purr; releasing stops the purr. Add subtle visual feedback, pointer/touch support, sensible cooldowns, and a silent fallback.
 - [ ] Continue refining the Lily Clearing flower's scale, edges, lighting, and integration during the visual-polish phase.
 - [ ] Verify the source/licence and attribution requirements for the clearing background and lily asset before public deployment.
 
@@ -67,7 +70,7 @@ Nothing should be marked complete until it has actually been implemented and tes
 - [ ] Five hidden special lilies and creator-written personal message reveals, including an Arabic-first “Muthhila” lyric reveal and a possible “Ma Tmaneitak”-inspired discovery.
 - [ ] Subtle discovery counter (e.g. “Little discoveries 0/5”).
 - [ ] Garden puzzle, unlocked after all five special lilies are found.
-- [ ] Leo's hidden clearing, unlocked by the puzzle, with repeatable petting and gentle purring.
+- [ ] Complete Leo's hidden clearing: three permanent hanging photos with individual enlarged viewers, a refined bench cutout, and repeatable click/hold petting interactions with varied meows and purrs.
 - [ ] Connected point-and-click navigation and revisit paths between discovered locations.
 - [ ] Piano/rain ambience and audio controls.
 - [ ] Optional, user-initiated playback of the relevant “Muthhila” recording passage from an authorised embed/licensed source; lyrics remain the primary reveal and playback must not autoplay.
@@ -77,33 +80,32 @@ Nothing should be marked complete until it has actually been implemented and tes
 
 ## 5. Next task
 
-**Next development session — November 16, 2026**
+**Current development focus — November 16, 2026**
 
-### Goal: Begin the hidden-door and Leo's-clearing scene structure
+### Goal: Complete Leo's presence and interaction foundation
 
-1. Keep the current one-test-lily artwork and interaction as a placeholder; do not create five duplicate flower images while the final lily assets are unavailable.
-2. Plan the Lily Clearing bush hotspot so clicking it reveals a concealed stone doorway without requiring complicated bush/vine animation.
-3. Build the sealed stone-door scene/visual state, including inspectable stone tablets or carved panels. The door must remain closed until the puzzle is solved.
-4. The autumn tree-and-bench background is integrated locally. Refine its crop/position and place the three hanging frames naturally among the branches using the selected gold hanging-frame asset.
-5. Implement and test the cinematic entrance so the title/subtitle and return buttons fade away after entry; allow Escape to reveal the return controls.
-6. Populate the frames with three supplied Leo photos and implement the enlarged photo viewer.
-6. Keep Leo's actual body/cutout on the bench as a later asset task until a suitable, well-lit photograph is available. The petting/purring interaction can be built around a placeholder hit area and refined once his image is ready.
-7. Keep the puzzle's final clue relationships and solution logic undecided until the complete clue set is designed. Clues are intended to be distributed across the Forgotten Forest, Lily Clearing, and Beach.
+1. Keep the Leo bench image static. Its current local placement is acceptable as a first pass; do not attempt to invent animation from a still photograph.
+2. When image attachments are available again, inspect the Leo bench source image, clean the leftover background around the cutout, and reconstruct the portions of Leo's body cropped by the source framing while preserving his recognizable appearance.
+3. Finish the three permanent hanging-photo elements using the agreed assignments: leo-photo-2.png, leo-photo-4.png, and leo-photo-5.png. Keep leo-photo-actual.png reserved for the bench model. Do not turn the frames into an album.
+4. Implement the enlarged viewer so each frame opens its own assigned image and can be closed to return to the clearing.
+5. Build Leo's interaction logic around the static image: single click triggers one of several meows; press-and-hold plays one of several purr recordings in a seamless loop; release stops the purr. Add subtle visual feedback, avoid repeating the same sound consecutively where possible, support mouse and touch, and include a silent fallback.
+6. Add sourced/licensed cat recordings to assets/audio/leo/ only after suitable files are selected. Do not autoplay sounds.
+7. After the Leo interaction foundation, return to the larger world progression: five unique special lilies, the distributed clue system, hidden bush/stone doorway, puzzle gate, and Beach/Forest scene completion.
 
-**Definition of done for this stage:** The new scene structure and frame inspection interactions work with placeholders, while the puzzle solution and Leo's final cutout remain deliberately deferred.
+**Definition of done for the Leo interaction stage:** Leo's cleaned static cutout sits convincingly on the bench; all three permanent photographs open and close correctly; click/hold/release behaviour works on desktop and touch devices with varied, optional sounds. The sound and interaction features must be browser-tested before being marked complete.
 
 ## 6. Milestone tracker
 
 | Target dates | Milestone | Status |
 |---|---|---|
-| Nov 11–17 | Foundation, lily-clearing prototype, forest navigation structure | In progress |
-| Nov 18–24 | Five lily messages and garden puzzle | Not started |
-| Nov 25–Dec 1 | Leo's hidden clearing and beach environment | Not started |
-| Dec 2–8 | Atmosphere, optional details, testing, first release | Not started |
-| Dec 9–13 | Original buffer and contingency | Not started |
-| Dec 14–20 | Final contingency/refinements if needed | Not started |
+| Nov 11–17 | Foundation, forest navigation, Lily Clearing test flow, Leo clearing background/entrance and initial bench integration | In progress — core navigation, one-lily test, Leo background/entrance, and first bench-image placement work locally |
+| Nov 18–24 | Complete Leo's three frames/viewer and click/hold sound interactions; expand to five lilies; design the distributed puzzle and hidden-door states | Planned — current immediate focus is Leo; scope may be sequenced in small verified steps |
+| Nov 25–Dec 1 | Build the full Forgotten Forest and Beach environments; implement clue discovery, puzzle gating, and the sealed-door reveal/opening | Not started |
+| Dec 2–8 | Complete personal lily content, atmosphere/audio, responsive behaviour, asset credits, and end-to-end testing | Not started |
+| Dec 9–13 | Feature freeze, bug fixes, final polish, and first complete release | Not started |
+| Dec 14–20 | Contingency and final refinements only; preserve the December 13 completion target | Not started |
 
-The forest is no longer an optional stretch goal: it is the opening scene and initial navigation hub. Prioritize the core forest-to-lily journey, puzzle, Leo reveal, and beach. If time becomes tight, simplify optional effects rather than leaving core interactions unfinished.
+The project structure has shifted substantially: the Forgotten Forest is the opening navigation hub; the Lily Clearing contains five message discoveries and a hidden entrance; clues span the Forest, Lily Clearing, and Beach; solving the puzzle opens the passage to Leo's clearing. Leo's clearing is now being developed as a meaningful destination with a static, recognizable bench image and direct interactions rather than relying on character animation. Prioritize the complete working journey over optional effects, and keep the December 13 completion target.
 
 ## 7. Confirmed visual and interaction decisions
 
@@ -220,3 +222,15 @@ Keep this file factual. Distinguish between completed, in-progress, planned, and
 - Each frame should contain one particular photograph. Do not create an album or imply that the photos rotate through the frames. Each frame will be individually clickable and should open its own photograph in a larger view once that interaction is implemented.
 - Leo's bench model, petting/purring interaction, enlarged photo viewer, and final frame sizing/placement are not yet complete.
 - These are local changes and progress notes only. The local `index.html`, `css/style.css`, `js/main.js`, and image assets have not been synchronized to GitHub in this update.
+
+
+### November 16, 2026 — Leo bench image and interaction design update
+
+- Added a separate leo-bench container and leo-bench-image element to the local Leo scene, using assets/photos/Leo/leo-photo-actual.png. The creator reports that Leo's current static placement on the existing bench looks acceptable for now.
+- The image is a cutout, but some remnants of the original background remain around the silhouette, and portions of Leo's body are cropped by the source image. The creator plans to upload the image when attachments are available again so the cutout can be cleaned and the missing body areas reconstructed to match Leo's existing appearance.
+- Confirmed that Leo will remain a static image; no full-body animation is expected from the current source. Interaction feedback will be created with audio and subtle visual effects instead.
+- Agreed interaction design: a single click plays one of several meow variations; pressing and holding Leo plays one of several purr variations; releasing stops the purr. Avoid immediate repetition where possible, keep volume gentle, support touch as well as mouse, and do not autoplay audio.
+- Planned a few distinct purr recordings and meows rather than a single repeated sound. A short cooldown and subtle text/visual response may be used to make interactions feel natural.
+- The interaction design is approved, but no Leo sound files or interaction JavaScript/CSS have been implemented or tested yet.
+- The three hanging photographs remain permanent individual images, not an album: leo-photo-2.png, leo-photo-4.png, and leo-photo-5.png. leo-photo-actual.png remains reserved for the bench model; leo-photo-6.png remains spare.
+- The creator's local HTML/CSS/image changes have not been uploaded to GitHub. This checkpoint updates documentation only; private Leo photographs and source assets remain local unless publication is explicitly approved.
