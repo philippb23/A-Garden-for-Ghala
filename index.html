@@ -213,56 +213,49 @@
 
 
 <!-- Leo's hidden clearing -->
-
 <section class="leo-scene screen" id="leo-screen">
 
-    <div class="leo-content">
-
+    <!-- Cinematic introduction -->
+    <div class="leo-intro">
         <h1>Leo's Hidden Clearing</h1>
+        <p>A quiet little sanctuary, hidden away from the world.</p>
+    </div>
 
-        <p>
-            A quiet little sanctuary, hidden away from the world.
-        </p>
+    <!-- Hanging photographs -->
+    <div class="leo-photo-frames">
 
-        <!-- Hanging picture frames -->
-        <div class="leo-photo-frames">
+        <button class="leo-photo-frame frame-one"
+        data-photo="1"
+        aria-label="Inspect Leo's first photograph">
 
-            <button class="leo-photo-frame" data-photo="1"
-                aria-label="Inspect Leo's first photograph">
-                <img src="assets/photos/leo/leo-photo-1.jpg"
-                     alt="Leo resting peacefully">
+    <!-- The actual photograph -->
+    <img class="leo-photo-image"
+         src="assets/photos/Leo/leo-photo-2.png"
+         alt="Leo">
+
+    <!-- Ornate gold frame overlay -->
+    <img class="leo-frame-overlay"
+         src="assets/photos/Ornate Gold Frame with Fabric Hanger.png"
+         alt="">
+
+</button>
+
+    </div>
+
+    <!-- Enlarged photograph viewer -->
+    <div class="leo-photo-viewer" id="leo-photo-viewer" hidden>
+        <div class="leo-photo-viewer-content">
+            <img id="leo-enlarged-photo" src=""
+                 alt="A photograph of Leo">
+
+            <button class="enter-button" id="close-leo-photo">
+                Close Photograph
             </button>
-
-            <button class="leo-photo-frame" data-photo="2"
-                aria-label="Inspect Leo's second photograph">
-                <img src="assets/photos/leo/leo-photo-2.jpg"
-                     alt="Leo playing">
-            </button>
-
-            <button class="leo-photo-frame" data-photo="3"
-                aria-label="Inspect Leo's third photograph">
-                <img src="assets/photos/leo/leo-photo-3.jpg"
-                     alt="Leo being petted">
-            </button>
-
         </div>
+    </div>
 
-        <!-- Enlarged photograph viewer -->
-        <div class="leo-photo-viewer" id="leo-photo-viewer" hidden>
-
-            <div class="leo-photo-viewer-content">
-
-                <img id="leo-enlarged-photo" src="" alt="A photograph of Leo">
-
-                <button class="enter-button" id="close-leo-photo">
-                    Close Photograph
-                </button>
-
-            </div>
-
-        </div>
-	
-	<div class="leo-navigation">
+    <!-- Navigation -->
+    <div class="leo-navigation">
 
         <button class="enter-button" id="leo-lily-back-button">
             Return to the Lily Clearing
@@ -272,7 +265,6 @@
             Return to the Forest
         </button>
 
-	</div>
     </div>
 
 </section>
