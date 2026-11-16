@@ -101,6 +101,7 @@ leoButton.addEventListener("click", function () {
 
     puzzleScreen.classList.remove("active");
     leoScreen.classList.add("active");
+    startLeoBreathing();
 
     // Reset the cinematic entrance
     leoScreen.classList.remove(
@@ -131,6 +132,9 @@ leoLilyBackButton.addEventListener("click", function () {
     leoScreen.classList.remove("active");
     leoScreen.classList.remove("leo-intro-playing", "leo-controls-hidden");
     lilyScreen.classList.add("active");
+    
+    stopLeoBreathing();
+    stopLeoPurr();
 
 });
 
@@ -141,6 +145,9 @@ leoForestBackButton.addEventListener("click", function () {
     leoScreen.classList.remove("active");
     leoScreen.classList.remove("leo-intro-playing", "leo-controls-hidden");
     forestScreen.classList.add("active");
+    
+    stopLeoBreathing();
+    stopLeoPurr();
 
 });
 
@@ -371,6 +378,327 @@ closeMessageButton.addEventListener("click", function () {
     returnToJournal = false;
 
 });
+
+
+/* =================================
+   Leo Interaction System
+================================= */
+
+// Leo's interaction elements
+const leoBench = document.getElementById("leo-bench");
+const leoResponse = document.getElementById("leo-cat-response");
+
+// Sound files (we will add the actual recordings later)
+const leoMeowSounds = [
+    "assets/audio/leo/meow-1.mp3",
+    "assets/audio/leo/meow-2.mp3",
+    "assets/audio/leo/meow-3.mp3",
+    "assets/audio/leo/meow-4.mp3"
+];
+
+const leoPurrSounds = [
+    "assets/audio/leo/purr-1.mp3",
+    "assets/audio/leo/purr-2.mp3",
+    "assets/audio/leo/purr-3.mp3"
+];
+
+// Leo's quiet background breathing
+const leoBreathingSound = new Audio(
+    "assets/audio/leo/leo-breathing.mp3"
+);
+
+leoBreathingSound.volume = 0.08;
+leoBreathingSound.loop = true;
+
+// Start Leo's breathing
+function startLeoBreathing() {
+
+    if (leoBreathingSound.paused) {
+
+        leoBreathingSound.play().catch(function () {
+            console.log("Leo's breathing audio could not start.");
+        });
+
+    }
+
+}
+
+
+// Pause breathing during interaction
+function pauseLeoBreathing() {
+
+    leoBreathingSound.pause();
+
+}
+
+
+// Stop breathing when leaving the clearing
+function stopLeoBreathing() {
+
+    leoBreathingSound.pause();
+    leoBreathingSound.currentTime = 0;
+
+}
+
+// Interaction settings
+const holdDuration = 250;
+
+let holdTimer = null;
+let isHolding = false;
+let activePurr = null;
+let responseTimer = null;
+let currentMeow = -1;
+let currentPurr = -1;
+let interactionActive = false;
+
+
+// Choose a random sound without immediately repeating the previous one
+function chooseSound(sounds, previousIndex) {
+
+    if (sounds.length === 1) {
+        return 0;
+    }
+
+    let nextIndex;
+
+    do {
+        nextIndex = Math.floor(Math.random() * sounds.length);
+    } while (nextIndex === previousIndex);
+
+    return nextIndex;
+}
+
+
+// Display Leo's response
+function showLeoResponse(message) {
+
+    clearTimeout(responseTimer);
+
+    leoResponse.textContent = message;
+    leoResponse.hidden = false;
+
+}
+
+
+// Hide Leo's response
+function hideLeoResponse() {
+
+    clearTimeout(responseTimer);
+
+    responseTimer = setTimeout(function () {
+        leoResponse.hidden = true;
+    }, 1000);
+
+}
+
+
+// Play a random meow
+function playLeoMeow() {
+
+    currentMeow = chooseSound(leoMeowSounds, currentMeow);
+
+    const meow = new Audio(leoMeowSounds[currentMeow]);
+
+    meow.volume = 0.65;
+
+    meow.play().catch(function () {
+        console.log("Leo's meow recording is not available yet.");
+    });
+
+}
+
+
+// Start a random looping purr
+function startLeoPurr() {
+
+    currentPurr = chooseSound(leoPurrSounds, currentPurr);
+
+    activePurr = new Audio(leoPurrSounds[currentPurr]);
+
+    activePurr.volume = 0.45;
+    activePurr.loop = true;
+
+    activePurr.play().catch(function () {
+        console.log("Leo's purr recording is not available yet.");
+    });
+
+}
+
+
+// Stop the purring immediately
+function stopLeoPurr() {
+
+    if (activePurr) {
+        activePurr.pause();
+        activePurr.currentTime = 0;
+        activePurr = null;
+    }
+
+}
+
+
+// Begin interaction
+function beginLeoInteraction() {
+
+    if (interactionActive) {
+        return;
+    }
+
+    interactionActive = true;
+    pauseLeoBreathing();
+    
+    isHolding = false;
+
+    leoBench.classList.add("leo-reacting");
+
+    holdTimer = setTimeout(function () {
+
+        isHolding = true;
+
+        leoBench.classList.remove("leo-reacting");
+        leoBench.classList.add("leo-purring");
+
+        showLeoResponse("Prrrr...");
+
+        startLeoPurr();
+
+    }, holdDuration);
+
+}
+
+
+// End interaction
+function endLeoInteraction() {
+
+    if (!interactionActive) {
+        return;
+    }
+
+    interactionActive = false;
+
+    clearTimeout(holdTimer);
+
+    leoBench.classList.remove(
+        "leo-reacting",
+        "leo-purring"
+    );
+
+    if (isHolding) {
+
+        // Stop purring when Leo is released
+        stopLeoPurr();
+
+    } else {
+
+        // A short tap produces a meow
+        showLeoResponse("Meow!");
+
+        playLeoMeow();
+
+    }
+
+    isHolding = false;
+
+    hideLeoResponse();
+    
+    startLeoBreathing();
+
+}
+
+
+// Mouse and touchscreen interaction
+leoBench.addEventListener("pointerdown", function (event) {
+
+    if (event.button !== 0 && event.pointerType === "mouse") {
+        return;
+    }
+
+    event.preventDefault();
+
+    leoBench.setPointerCapture(event.pointerId);
+
+    beginLeoInteraction();
+
+});
+
+
+leoBench.addEventListener("pointerup", function () {
+
+    endLeoInteraction();
+
+});
+
+
+leoBench.addEventListener("pointercancel", function () {
+    
+    startLeoBreathing();
+
+    if (isHolding) {
+        stopLeoPurr();
+    }
+
+    clearTimeout(holdTimer);
+
+    interactionActive = false;
+    isHolding = false;
+
+    leoBench.classList.remove(
+        "leo-reacting",
+        "leo-purring"
+    );
+
+    hideLeoResponse();
+
+});
+
+
+// Keyboard support: Enter or Space
+leoBench.addEventListener("keydown", function (event) {
+
+    if (event.key !== "Enter" && event.key !== " ") {
+        return;
+    }
+
+    event.preventDefault();
+
+    if (event.repeat) {
+        return;
+    }
+
+    beginLeoInteraction();
+
+});
+
+
+leoBench.addEventListener("keyup", function (event) {
+
+    if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        endLeoInteraction();
+    }
+
+});
+
+
+// Stop purring if the browser window loses focus
+window.addEventListener("blur", function () {
+
+    clearTimeout(holdTimer);
+
+    stopLeoPurr();
+
+    interactionActive = false;
+    isHolding = false;
+
+    leoBench.classList.remove(
+        "leo-reacting",
+        "leo-purring"
+    );
+
+    hideLeoResponse();
+
+});
+
 
 
 
