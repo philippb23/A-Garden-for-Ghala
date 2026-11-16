@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 16, 2026 — Leo's autumn clearing background integrated locally*
+*Last updated: November 16, 2026 — Leo's bench cutout added locally; interaction design confirmed*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -1010,3 +1010,51 @@ There will be three permanent hanging photographs, each with its own particular 
 ### GitHub synchronization note
 
 This is a documentation update only. The creator's latest local HTML, CSS, JavaScript, and image assets have not been uploaded as part of this checkpoint. Do not imply that the live GitHub website code matches the latest local working copy. Continue to make small, testable local changes and keep the private Leo photographs and personal material out of the public repository unless publication is explicitly approved.
+
+
+------------------------------------------------------------------------
+
+## 25. Leo's bench model and interaction plan — November 16, 2026
+
+### Bench model — current local state
+
+- The creator has added a separate static image container to the Leo clearing, using assets/photos/Leo/leo-photo-actual.png as Leo's in-scene bench model.
+- The image is positioned over the existing wooden bench in the selected autumn clearing background. The creator reports that the placement looks acceptable as a temporary first pass.
+- The source is a cutout, but some remnants of the original background remain around Leo's outline, and portions of his body are cropped by the source image.
+- When image attachments are available again, the creator will provide the source image for editing. The intended edit is to remove residual background artefacts and reconstruct the missing/cropped body areas in a way that matches Leo's existing fur, markings, proportions, and appearance. Do not invent a different-looking cat or replace the source with a generic cat image.
+- Leo is intended to remain a static image. Full character animation is not expected from this photograph; the sense of life will come from interaction sounds and restrained visual feedback.
+
+### Confirmed Leo interaction behaviour
+
+The creator approved the following interaction concept:
+
+1. **Single click/tap:** play one meow selected from a small collection of variations. Where practical, avoid playing the same variation twice consecutively.
+2. **Press and hold:** play a selected purr recording, loop it smoothly for as long as the interaction is held, and stop it cleanly when released.
+3. **Release:** stop the purr and return the visual treatment to its resting state.
+4. **Visual feedback:** use restrained effects such as a brief warm highlight, tiny speech response, or subtle text such as “Meow!” / “Prrrr...”; keep the original photo static.
+5. **Device support:** implement pointer/touch behaviour as well as mouse input, prevent long-press interactions from accidentally triggering the click-meow on release, and provide a silent fallback if audio is unavailable or disabled.
+6. **Audio design:** use several genuine cat meow and purr recordings, selected from suitable sources with appropriate permission/licensing. Keep playback user-initiated; no autoplay. Use gentle volume and a short cooldown where useful.
+
+The interaction design is agreed, but the audio files and JavaScript/CSS behaviour have **not** yet been implemented or browser-tested.
+
+### Hanging photographs — unchanged assignments
+
+- Three permanent frames are planned, each with its own fixed photograph; this is not an album or rotating-photo display.
+- assets/photos/Leo/leo-photo-2.png, leo-photo-4.png, and leo-photo-5.png are the three assigned frame photographs.
+- assets/photos/Leo/leo-photo-actual.png is reserved for the bench model and must not be substituted into the hanging frames.
+- assets/photos/Leo/leo-photo-6.png remains a spare/alternative.
+- The ornate gold hanging frame at assets/photos/Ornate Gold Frame with Fabric Hanger.png is intended to be reused for all three frames.
+- The first frame structure and its image/frame overlay have been started locally. The current HTML snapshot has one frame element; add the other two using the established layout and agreed positions. The photo viewer markup exists, but its open/close behaviour still needs implementation and browser testing.
+- Exact frame/photo alignment remains deferred until the actual image assets can be inspected together.
+
+### Updated immediate work order
+
+1. Inspect and clean Leo's bench cutout when the creator can upload the source image; reconstruct cropped areas while preserving his actual appearance.
+2. Complete all three fixed hanging frames with their assigned photographs and gold overlays.
+3. Implement and test the enlarged viewer for each individual frame.
+4. Implement click-to-meow and press-and-hold-to-purr behaviour with varied recordings, clean release, subtle feedback, and mouse/touch support.
+5. Continue the wider progression work: five unique special lilies, clue discoveries distributed across the Forgotten Forest/Lily Clearing/Beach, hidden bush and sealed stone doorway, puzzle gate, and hidden passage to Leo's clearing.
+
+### Repository synchronization
+
+This November 16 checkpoint updates project documentation only. The creator's local HTML, CSS, JavaScript, Leo images, and any future audio assets have not been uploaded by this documentation change. Keep private photographs and personal content out of the public repository unless the creator explicitly approves publication. Do not mark the new bench image, image restoration, three-frame completion, photo viewer, or sound interactions as fully implemented until each has been tested locally.
