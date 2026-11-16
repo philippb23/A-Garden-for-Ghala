@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 16, 2026 — Puzzle world structure and Leo's clearing direction confirmed*
+*Last updated: November 16, 2026 — Leo's autumn clearing background integrated locally*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -928,3 +928,42 @@ The creator selected the supplied autumn woodland photograph showing a large spr
 7. Add Leo's actual cutout, petting animation, and purring when suitable imagery/audio are ready.
 
 These are design and planning decisions only. No new scene code, frame interactions, bush hotspot, door logic, puzzle logic, or Leo petting implementation has been completed or tested in this update.
+
+
+## 23. Leo's clearing — background integration and cinematic entrance (November 16, 2026)
+
+### Background selected and integrated locally
+
+- The creator selected the autumn woodland photograph showing a very large spreading tree, golden autumn foliage, a leaf-covered clearing, and an existing wooden bench.
+- The photograph is integrated locally as the full-screen background at `assets/backgrounds/leo-clearing.jpg`. The `.leo-scene` CSS uses `background-size: cover`, centered positioning, and a subtle dark overlay. The creator confirmed that it displays correctly and that existing scene navigation still works.
+- The background has not been uploaded to GitHub as part of this update. Confirm the original image source and licence before public deployment, and record it in `ASSET_CREDITS.md`.
+
+### Hanging frame design
+
+- The creator selected a gold-toned rectangular hanging frame with a leather strap. A cleaned version with the wall and original artwork removed was saved locally by the creator.
+- Reuse the same frame design for all three Leo photographs. Place each photograph behind the frame so the gold border and hanging strap remain visible.
+- Position the frames naturally among the tree branches after testing their scale and placement against the actual clearing background.
+- The cleaned frame asset has not yet been added to the repository. Existing CSS frames are temporary placeholders and should be replaced when the asset is integrated.
+
+### Cinematic entrance — approved, implementation awaiting browser test
+
+The creator approved this entrance behaviour:
+
+1. The clearing background fades into view through the existing screen transition.
+2. The title and subtitle appear briefly, then fade away.
+3. The return buttons fade away and become non-interactive, leaving the environment visually unobstructed.
+4. Pressing Escape reveals the return buttons again.
+5. Leaving and re-entering the scene should replay the introduction.
+6. The photographs and, later, Leo remain the scene's meaningful interactive elements.
+
+The local implementation instructions use a separate entrance state and timer, preserving the existing scene navigation and Lily Discovery code. The creator still needs to apply and test the HTML/CSS/JavaScript changes locally; do not describe the cinematic entrance as complete until browser behaviour is confirmed.
+
+### Current next steps
+
+1. Apply and test the cinematic entrance and Escape-to-reveal navigation controls.
+2. Replace the temporary CSS frame placeholders with the saved gold hanging-frame asset.
+3. Position three frames naturally among the tree branches and place the selected Leo photographs behind them.
+4. Implement and test the enlarged photo viewer.
+5. Add Leo's in-scene image and repeatable petting/purring interaction when a suitable photo is selected.
+
+The creator wants to proceed in small, testable steps. Do not claim the cinematic entrance, final frame placement, or photo-viewer interaction is complete until it has been implemented and tested locally.
