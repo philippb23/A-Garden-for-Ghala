@@ -967,3 +967,46 @@ The local implementation instructions use a separate entrance state and timer, p
 5. Add Leo's in-scene image and repeatable petting/purring interaction when a suitable photo is selected.
 
 The creator wants to proceed in small, testable steps. Do not claim the cinematic entrance, final frame placement, or photo-viewer interaction is complete until it has been implemented and tested locally.
+
+
+---
+
+## 24. Leo's clearing — cinematic entrance tested and photo assignments confirmed (November 16, 2026)
+
+This section is the latest implementation-status record and supersedes earlier statements in sections 22–23 that say the cinematic entrance is awaiting implementation or testing.
+
+### Confirmed working locally
+
+- The autumn woodland tree-and-bench background fills the Leo scene correctly.
+- Existing navigation into and out of Leo's Hidden Clearing remains functional.
+- The cinematic entrance has been implemented and tested in the browser. The title and subtitle animate into view and fade away. The navigation controls are hidden during the introduction, then return after approximately nine seconds. The creator confirmed that the sequence works.
+- The entrance is replayed when entering the clearing again. The current implementation uses a timed return of the navigation controls; an Escape-key shortcut has not been implemented.
+
+### Hanging photographs — exact content plan
+
+There will be three permanent hanging photographs, each with its own particular image. This is **not** an album or rotating-photo arrangement.
+
+- `assets/photos/Leo/leo-photo-actual.png` is reserved for the separate in-scene model/cutout of Leo sitting or resting on the existing bench. It is not one of the three hanging photographs.
+- `assets/photos/Leo/leo-photo-2.png` is assigned to one hanging frame.
+- `assets/photos/Leo/leo-photo-4.png` is assigned to a second hanging frame.
+- `assets/photos/Leo/leo-photo-5.png` is assigned to a third hanging frame.
+- `assets/photos/Leo/leo-photo-6.png` is an extra/alternative image and is not currently assigned to a frame.
+- The selected ornate gold hanging-frame asset is `assets/photos/Ornate Gold Frame with Fabric Hanger.png`. The same frame design should be reused for all three photographs.
+- Each frame should be clickable and open its own assigned photograph in a larger inspection view. The viewer interaction still needs to be implemented and tested.
+
+### Frame integration status and sizing decision
+
+- Local HTML/CSS work has begun to layer the photograph and gold frame asset together for the first frame.
+- The photo currently appears larger than the frame opening. The creator has chosen to defer exact sizing until the actual PNG assets can be inspected together.
+- Keep the current proportions as a temporary working state; do not make further speculative sizing changes. Once the creator can upload the frame and photo assets for inspection, tune the image's inset, width, and height to the actual transparent opening.
+- Once the first frame is correctly composed, repeat the same structure for the other two assigned photographs and arrange all three naturally among the tree branches.
+
+### Leo model and interaction
+
+- The separate `leo-photo-actual.png` asset is intended as the visual reference for preparing Leo's bench model/cutout.
+- The bench model is not yet integrated.
+- The repeatable petting interaction and gentle purring are still planned, not implemented.
+
+### GitHub synchronization note
+
+This is a documentation update only. The creator's latest local HTML, CSS, JavaScript, and image assets have not been uploaded as part of this checkpoint. Do not imply that the live GitHub website code matches the latest local working copy. Continue to make small, testable local changes and keep the private Leo photographs and personal material out of the public repository unless publication is explicitly approved.
