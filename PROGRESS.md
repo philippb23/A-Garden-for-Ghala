@@ -57,7 +57,7 @@ The landscape lily-clearing background and assets/flowers/lily_only_no_stem.png 
 
 - [x] Implement and browser-test the cinematic Leo-clearing entrance: title/subtitle appear and fade away; navigation controls are hidden during the introduction and return after approximately nine seconds. Escape-key reveal is not implemented.
 - [ ] Replace the temporary Forest path panels with final scene-integrated path hotspots when the forest artwork is ready.
-- [ ] Replace the Beach placeholder with its final coastal scene and discoveries.
+- [ ] Complete the La Push Beach scene, including interactive discoveries and a discovery interface. The photograph and initial styling are integrated locally; interactions remain unfinished.
 - [ ] Replace the Puzzle testing shortcut with the real puzzle, unlocked only after all five special lilies are found.
 - [ ] Replace the Leo testing shortcut with the real puzzle-gated reveal and hidden clearing interactions.
 - [ ] Clean the residual background around Leo's cutout and reconstruct the body areas cropped from the source image after the creator can upload it for editing.
@@ -284,3 +284,38 @@ Return to the larger world progression: expand the Lily Clearing from one test l
 ### GitHub synchronization
 
 This checkpoint updates project documentation only. The creator said they will update the code files in the repository separately. No HTML, CSS, JavaScript, audio, Leo photographs, or other local assets are included in this documentation commit. Do not imply that the GitHub source code or assets now match the latest local working copy.
+
+
+---
+
+## 27. Beach scene — La Push photograph selected and integrated locally (November 17, 2026)
+
+### Visual direction and current implementation
+
+- The creator selected a real photograph of **La Push Beach, Washington**, for the Beach scene.
+- The choice is intentional: La Push has a connection to *Twilight*, which Ghala loves. The real location is more meaningful to the project than an artificially perfect sunset image.
+- The photograph has a subtle orange tone in the sky rather than an intense sunset. This natural appearance is accepted as the visual direction; do not replace it merely to force a brighter sunset palette.
+- The creator integrated the photograph locally and confirmed that it displays correctly in Chrome.
+- The existing `beach-screen` HTML section and `beach-back-button` navigation are retained.
+- Initial Beach CSS has been added locally, including full-screen background positioning, a restrained dark overlay, and title/description styling.
+- The background was referenced in the local CSS as `assets/backgrounds/beach-lapush.jpg`. Confirm the exact local filename and extension before any asset upload.
+
+### Proposed discoveries (not yet implemented)
+
+1. A shell near the waterline that Ghala can inspect.
+2. A piece of driftwood that can be investigated.
+3. A seabird near the shoreline that may react to interaction.
+
+These are initial design proposals, not implemented features or finalized puzzle clues. The Beach should eventually contribute discoveries to the wider clue system spanning the Forgotten Forest, Lily Clearing, and Beach.
+
+### Next steps
+
+1. Review the actual Beach composition using a browser screenshot when image attachments are available.
+2. Decide object placement based on the shoreline, waterline, and available open space.
+3. Source suitable natural-looking visual assets.
+4. Implement the first interactions and a Beach discovery interface.
+5. Decide later which discoveries contribute to the hidden-door puzzle.
+
+### Status and asset note
+
+The La Push photograph and initial Beach styling work locally. The three proposed discoveries, discovery counter, and puzzle-related interactions have not yet been implemented or tested. Verify the photograph's source and licence and record them in `ASSET_CREDITS.md` before public deployment. Do not assume the local image has been uploaded to GitHub.
