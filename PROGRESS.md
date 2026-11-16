@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 16, 2026 — Leo's autumn clearing background integrated locally*
+*Last updated: November 16, 2026 — Leo's cinematic entrance tested; hanging-photo layout started locally*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,13 +8,13 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype, core interaction testing, and early scene integration. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. Leo's selected autumn tree-and-bench photograph is integrated locally as the clearing background, and initial CSS photo-frame placeholders are in place. A cinematic entrance has been designed and its local implementation is now being prepared. The five final discoveries, puzzle logic, door transition, final frame placement, photo inspection behaviour, and Leo interaction are not yet complete.  
+**Overall phase:** Foundation prototype, core interaction testing, and early scene integration. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. Leo's autumn tree-and-bench background is integrated locally, and the cinematic entrance is implemented and confirmed working in the browser: the title/subtitle appear and fade, navigation temporarily disappears, then returns. The gold hanging-frame/photo overlay has been started locally for the first frame, but the photo-to-frame sizing is deliberately provisional and will be fine-tuned when the image files can be inspected together. The five final discoveries, puzzle logic, door transition, final frame placement/viewer behaviour, and Leo interaction are not yet complete.  
 **Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The current Puzzle and Leo screens remain placeholders with temporary testing shortcuts. The intended progression is now: discover clues across the Forgotten Forest, Lily Clearing, and Beach; find a clickable bush in the Lily Clearing that reveals a concealed, sealed stone doorway; solve the world-spanning puzzle to open the door; follow the hidden passage to Leo's Hidden Clearing. Return paths have been tested locally, but the final progression gates are not implemented.  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
 
-The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub and integrated locally. The selected autumn tree-and-bench photograph is integrated locally at `assets/backgrounds/leo-clearing.jpg`; the background and cleaned Leo frame asset have not yet been uploaded to GitHub. The browser screenshot has now been reviewed: the meadow background and flower composition are working, and a CSS filter adjustment was made to soften the lily's saturation and warm its colour so it better matches the sunrise scene. The Forest currently has a two-panel path layout. Beach, Puzzle, and Leo's Hidden Clearing exist as navigable placeholder screens; their final artwork and interactions remain unimplemented.
+The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub and integrated locally. The selected autumn tree-and-bench photograph is integrated locally as the Leo clearing background; the background, cleaned gold frame asset, and Leo photographs have not yet been uploaded to GitHub. The browser screenshot has been reviewed and the full-screen background works. The Lily Clearing flower CSS filter remains softened to better match the sunrise scene. The Forest currently has a two-panel path layout. Beach, Puzzle, and Leo's Hidden Clearing exist as navigable placeholder screens; their final artwork and interactions remain unimplemented.
 
 ## 2. Completed
 
@@ -49,7 +49,7 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 - [ ] Keep the Muthhila entry capable of an Arabic-first, right-to-left presentation, distinct from ordinary message entries.
 - [ ] Unlock the Puzzle only after all five unique special lilies have been discovered; remove temporary testing shortcuts when the real gates are tested.
 
-- [ ] Implement and test the cinematic Leo-clearing entrance: title/subtitle fade-in and fade-out, return-button fade-away, and Escape-key reveal of navigation.
+- [x] Implement and browser-test the cinematic Leo-clearing entrance: title/subtitle appear and fade away; navigation controls are hidden during the introduction and return after approximately nine seconds. Escape-key reveal is not implemented.
 - [ ] Replace the temporary Forest path panels with final scene-integrated path hotspots when the forest artwork is ready.
 - [ ] Replace the Beach placeholder with its final coastal scene and discoveries.
 - [ ] Replace the Puzzle testing shortcut with the real puzzle, unlocked only after all five special lilies are found.
@@ -208,3 +208,15 @@ Keep this file factual. Distinguish between completed, in-progress, planned, and
 - The frame asset has not yet been added to the repository, and the frames have not yet been positioned on the tree or composited with Leo's photographs.
 - Approved a cinematic entrance: the title and subtitle appear briefly and fade away; the return buttons fade away and become non-interactive; pressing Escape reveals the return controls again. The implementation instructions have been prepared for local testing; do not mark this feature complete until the creator confirms it works in the browser.
 - The local background integration is complete. Final frame placement, photo-viewer functionality, cinematic entrance testing, and Leo's on-bench image/interaction remain in progress or planned.
+
+
+### November 16, 2026 — Leo cinematic entrance and hanging-photo setup (local progress)
+
+- Implemented and tested the Leo clearing's cinematic introduction locally. On entry, the title and subtitle animate in and fade away; the navigation controls are hidden during the introduction and return after the timed sequence. The creator confirmed that this works.
+- The existing Leo clearing background fills the screen correctly, and the return navigation remains functional.
+- Started integrating the selected ornate gold hanging-frame PNG as an overlay above an individual photograph. The first frame is being tested before repeating the setup for the other two.
+- The photo/frame proportions did not yet align. The creator chose to restore the earlier photo sizing and defer precise sizing until the actual image assets can be inspected together. Do not treat the frame composition as finished.
+- Confirmed the intended photo assignment: `leo-photo-actual.png` is reserved as the source/reference for Leo's separate bench model; `leo-photo-2.png`, `leo-photo-4.png`, and `leo-photo-5.png` are intended for the three hanging frames; `leo-photo-6.png` is a spare/alternative.
+- Each frame should contain one particular photograph. Do not create an album or imply that the photos rotate through the frames. Each frame will be individually clickable and should open its own photograph in a larger view once that interaction is implemented.
+- Leo's bench model, petting/purring interaction, enlarged photo viewer, and final frame sizing/placement are not yet complete.
+- These are local changes and progress notes only. The local `index.html`, `css/style.css`, `js/main.js`, and image assets have not been synchronized to GitHub in this update.
