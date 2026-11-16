@@ -566,189 +566,182 @@ p {
    Leo's Hidden Clearing - Photo Frames
 ================================= */
 
-.leo-photo-frames {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: clamp(25px, 5vw, 65px);
-    margin: 45px auto;
-    position: relative;
-    z-index: 2;
-}
-
-.leo-photo-frame {
-    position: relative;
-    width: clamp(130px, 17vw, 210px);
-    padding: 10px 10px 24px;
-    border: 5px solid #795b3c;
-    border-radius: 3px;
-    background: #d8c4a3;
-    box-shadow:
-        0 8px 18px rgba(0, 0, 0, 0.35),
-        inset 0 0 5px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Hanging string above each frame */
-.leo-photo-frame::before {
-    content: "";
-    position: absolute;
-    width: 2px;
-    height: 42px;
-    background: #59452f;
-    top: -47px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.leo-photo-frame img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border: 2px solid #eee0c9;
-}
-
-.leo-photo-frame:hover {
-    transform: translateY(-5px) rotate(-1deg);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-}
-
-/* =================================
-   Enlarged Photo Viewer
-================================= */
-
-.leo-photo-viewer {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background: rgba(12, 18, 15, 0.88);
-}
-
-.leo-photo-viewer[hidden] {
-    display: none !important;
-}
-
-.leo-photo-viewer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    max-width: 90vw;
-    max-height: 90vh;
-}
-
-#leo-enlarged-photo {
-    display: block;
-    max-width: 85vw;
-    max-height: 72vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border: 8px solid #d8c4a3;
-    border-radius: 3px;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-}
-
-
 /* =================================
    Leo's Hidden Clearing - Background
 ================================= */
 
 .leo-scene {
-    background-image:
+    position: fixed;
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background:
         linear-gradient(
             rgba(10, 15, 10, 0.10),
             rgba(10, 15, 10, 0.15)
         ),
-        url("../assets/backgrounds/leo-clearing.jpg");
+        url("../assets/backgrounds/Leo-clearing.jpg");
 
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 
-    color: #fff5f5;
+    color: #fff5e8;
     text-align: center;
+    overflow: hidden;
+}
+
+/* Leo's hanging photographs */
+
+
+/* =================================
+   Leo's Ornate Hanging Photograph
+================================= */
+
+.leo-photo-frames {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.leo-photo-frame {
+    position: absolute;
+
+    width: 125px;
+    height: 165px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    transition: transform 0.3s ease;
+}
+
+/* Photograph inside the frame */
+
+.leo-photo-image {
+    position: absolute;
+
+    top: 22%;
+    left: 22%;
+
+    width: 56%;
+    height: 52%;
+
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Gold frame overlay */
+
+.leo-frame-overlay {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: fill;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* First frame position */
+
+.frame-one {
+    top: 20%;
+    left: 9%;
+    transform: rotate(-8deg);
+}
+
+.frame-one:hover {
+    transform: rotate(-8deg) scale(1.08);
 }
 
 
 /* =================================
-   Leo's Clearing - Cinematic Entrance
+   Leo's Cinematic Entrance
 ================================= */
 
-/* Keep the introduction above the scene */
+/* Introduction positioning */
+
 .leo-intro {
-    opacity: 0;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
     text-align: center;
-    position: relative;
+
+    opacity: 0;
     z-index: 5;
+    pointer-events: none;
 }
 
-.leo-intro h1,
-.leo-intro p {
-    animation: none;
-    opacity: 1;
-}
+/* Cinematic text animation */
 
-/* Play the introduction only when entering Leo's scene */
 .leo-scene.leo-intro-playing .leo-intro {
     animation: leoIntroSequence 7s ease forwards;
     animation-delay: 1s;
 }
 
 @keyframes leoIntroSequence {
+
     0% {
         opacity: 0;
-        transform: translateY(15px);
+        transform: translate(-50%, 15px);
     }
 
     15% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, 0);
     }
 
     70% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translate(-50%, 0);
     }
 
     100% {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translate(-50%, -10px);
     }
 }
 
-/* Return controls */
-.leo-navigation {
-    opacity: 1;
-    visibility: visible;
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
-}
+/* Hide navigation during the introduction */
 
-/* Hide controls after the introduction */
 .leo-scene.leo-controls-hidden .leo-navigation {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-/* Respect reduced-motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    .leo-scene.leo-intro-playing .leo-intro {
-        animation: none;
-        opacity: 0;
-    }
+/* Navigation returns smoothly */
 
-    .leo-navigation {
-        transition: none;
-    }
+.leo-navigation {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 1.5s ease,
+        visibility 0s linear;
 }
-
