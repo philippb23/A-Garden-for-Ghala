@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 16, 2026 — Puzzle-world structure and Leo's clearing direction confirmed*
+*Last updated: November 16, 2026 — Leo's autumn clearing background integrated locally*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,13 +8,13 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype and interaction planning. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. The puzzle's world-spanning clue structure and the hidden stone-door reveal are now planned. Leo's autumn-tree clearing background has been selected as a visual candidate, and the three inspectable photo-frame interaction is planned. The five final discoveries, puzzle logic, door transition, and Leo's clearing implementation are not yet complete.  
+**Overall phase:** Foundation prototype, core interaction testing, and early scene integration. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. Leo's selected autumn tree-and-bench photograph is integrated locally as the clearing background, and initial CSS photo-frame placeholders are in place. A cinematic entrance has been designed and its local implementation is now being prepared. The five final discoveries, puzzle logic, door transition, final frame placement, photo inspection behaviour, and Leo interaction are not yet complete.  
 **Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The current Puzzle and Leo screens remain placeholders with temporary testing shortcuts. The intended progression is now: discover clues across the Forgotten Forest, Lily Clearing, and Beach; find a clickable bush in the Lily Clearing that reveals a concealed, sealed stone doorway; solve the world-spanning puzzle to open the door; follow the hidden passage to Leo's Hidden Clearing. Return paths have been tested locally, but the final progression gates are not implemented.  
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
 
-The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub and integrated locally. The browser screenshot has now been reviewed: the meadow background and flower composition are working, and a CSS filter adjustment was made to soften the lily's saturation and warm its colour so it better matches the sunrise scene. The Forest currently has a two-panel path layout. Beach, Puzzle, and Leo's Hidden Clearing exist as navigable placeholder screens; their final artwork and interactions remain unimplemented.
+The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png` have been uploaded to GitHub and integrated locally. The selected autumn tree-and-bench photograph is integrated locally at `assets/backgrounds/leo-clearing.jpg`; the background and cleaned Leo frame asset have not yet been uploaded to GitHub. The browser screenshot has now been reviewed: the meadow background and flower composition are working, and a CSS filter adjustment was made to soften the lily's saturation and warm its colour so it better matches the sunrise scene. The Forest currently has a two-panel path layout. Beach, Puzzle, and Leo's Hidden Clearing exist as navigable placeholder screens; their final artwork and interactions remain unimplemented.
 
 ## 2. Completed
 
@@ -37,6 +37,9 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 - [x] Lily cutout uploaded to `assets/flowers/lily_only_no_stem.png`.
 - [x] Local Lily Clearing scene displays the uploaded background and lily image.
 - [x] November 14 forest-first navigation and storytelling update documented in `PROJECT_UPDATE_2026-11-14.md`.
+- [x] Selected autumn woodland photograph integrated locally as the full-screen Leo's Hidden Clearing background (`assets/backgrounds/leo-clearing.jpg`); the creator confirmed that it displays correctly and existing navigation still works.
+- [x] Added initial local CSS placeholders for the three Leo photo frames and enlarged-photo viewer layout.
+- [x] Selected a reusable gold hanging-frame design with a leather strap; the creator saved the cleaned frame asset locally. Final positioning and photo compositing remain to be done.
 
 ## 3. In progress
 
@@ -46,6 +49,7 @@ The landscape lily-clearing background and `assets/flowers/lily_only_no_stem.png
 - [ ] Keep the Muthhila entry capable of an Arabic-first, right-to-left presentation, distinct from ordinary message entries.
 - [ ] Unlock the Puzzle only after all five unique special lilies have been discovered; remove temporary testing shortcuts when the real gates are tested.
 
+- [ ] Implement and test the cinematic Leo-clearing entrance: title/subtitle fade-in and fade-out, return-button fade-away, and Escape-key reveal of navigation.
 - [ ] Replace the temporary Forest path panels with final scene-integrated path hotspots when the forest artwork is ready.
 - [ ] Replace the Beach placeholder with its final coastal scene and discoveries.
 - [ ] Replace the Puzzle testing shortcut with the real puzzle, unlocked only after all five special lilies are found.
@@ -80,8 +84,9 @@ Nothing should be marked complete until it has actually been implemented and tes
 1. Keep the current one-test-lily artwork and interaction as a placeholder; do not create five duplicate flower images while the final lily assets are unavailable.
 2. Plan the Lily Clearing bush hotspot so clicking it reveals a concealed stone doorway without requiring complicated bush/vine animation.
 3. Build the sealed stone-door scene/visual state, including inspectable stone tablets or carved panels. The door must remain closed until the puzzle is solved.
-4. Build the Leo's Hidden Clearing layout around the selected autumn tree-and-bench background candidate.
-5. Add three hanging picture frames using the four Leo photos already supplied as photo content; clicking a frame should open a larger, inspectable view of the complete photograph.
+4. The autumn tree-and-bench background is integrated locally. Refine its crop/position and place the three hanging frames naturally among the branches using the selected gold hanging-frame asset.
+5. Implement and test the cinematic entrance so the title/subtitle and return buttons fade away after entry; allow Escape to reveal the return controls.
+6. Populate the frames with three supplied Leo photos and implement the enlarged photo viewer.
 6. Keep Leo's actual body/cutout on the bench as a later asset task until a suitable, well-lit photograph is available. The petting/purring interaction can be built around a placeholder hit area and refined once his image is ready.
 7. Keep the puzzle's final clue relationships and solution logic undecided until the complete clue set is designed. Clues are intended to be distributed across the Forgotten Forest, Lily Clearing, and Beach.
 
@@ -193,3 +198,13 @@ Keep this file factual. Distinguish between completed, in-progress, planned, and
 - Defer placing Leo's actual body/cutout on the bench until a suitable photograph is available. The creator may ask for additional photos, but this is not a blocker for building the clearing, frames, inspection interaction, or other functionality.
 - Planned work can proceed with placeholders: build the clearing layout, hanging frames, photo viewer, and later the petting/purring interaction. Replace temporary Leo imagery when better source photos are available.
 - No website code or image assets were uploaded in this update. This commit records design decisions and current project status only.
+
+
+### November 16, 2026 — Leo's autumn clearing background and cinematic entrance direction
+
+- Integrated the selected autumn woodland photograph showing the large spreading tree, golden foliage, leaf-covered ground, and existing wooden bench as the full-screen local background for Leo's Hidden Clearing.
+- Added a `.leo-scene` background rule in the local stylesheet using `assets/backgrounds/leo-clearing.jpg`, with cover scaling and a subtle dark overlay. The creator confirmed that the background displays correctly and the existing navigation still works.
+- Added initial CSS placeholders for the three photo frames and enlarged-photo viewer. The creator selected a gold hanging frame with a leather strap as the preferred design and saved the cleaned frame asset locally.
+- The frame asset has not yet been added to the repository, and the frames have not yet been positioned on the tree or composited with Leo's photographs.
+- Approved a cinematic entrance: the title and subtitle appear briefly and fade away; the return buttons fade away and become non-interactive; pressing Escape reveals the return controls again. The implementation instructions have been prepared for local testing; do not mark this feature complete until the creator confirms it works in the browser.
+- The local background integration is complete. Final frame placement, photo-viewer functionality, cinematic entrance testing, and Leo's on-bench image/interaction remain in progress or planned.
