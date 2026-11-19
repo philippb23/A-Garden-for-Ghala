@@ -637,6 +637,11 @@ p {
     object-fit: cover;
     z-index: 1;
 }
+/* Preserve full photographs in frames 2 and 3 */
+.photo-fit {
+    object-fit: contain;
+    background: rgba(44, 31, 20, 0.35);
+}
 
 /* Gold frame overlay */
 
@@ -653,16 +658,37 @@ p {
     pointer-events: none;
 }
 
-/* First frame position */
-
+/* First photograph - upper left */
 .frame-one {
-    top: 20%;
-    left: 9%;
+    top: 30%;
+    left: 7%;
     transform: rotate(-8deg);
 }
 
 .frame-one:hover {
     transform: rotate(-8deg) scale(1.08);
+}
+
+/* Second photograph - middle */
+.frame-two {
+    top: 43%;
+    left: 20%;
+    transform: rotate(5deg);
+}
+
+.frame-two:hover {
+    transform: rotate(5deg) scale(1.08);
+}
+
+/* Third photograph - lower left */
+.frame-three {
+    top: 57%;
+    left: 7%;
+    transform: rotate(-5deg);
+}
+
+.frame-three:hover {
+    transform: rotate(-5deg) scale(1.08);
 }
 
 
@@ -749,18 +775,23 @@ p {
 /* =================================
    Leo resting on the bench
 ================================= */
+/* =================================
+   Leo resting on the bench
+================================= */
+
 
 .leo-bench {
     position: absolute;
-    right: 20%;
-    bottom: 12%;
-    width: 220px;
-    height: 200px;
-    z-index: 2;
+    right: 34%;
+    bottom: 22%;
+    width: 190px;
+    height: 165px;
+    z-index: 20;
     pointer-events: auto;
     cursor: grab;
     touch-action: none;
 }
+
 .leo-bench:active {
     cursor: grabbing;
 }
@@ -773,8 +804,10 @@ p {
     object-position: bottom center;
     pointer-events: none;
     user-select: none;
-}
 
+    transform-origin: center 85%;
+    animation: leoBreathing 4s ease-in-out infinite;
+}
 /* =================================
    Leo Interaction Effects
 ================================= */
@@ -841,4 +874,176 @@ p {
 .leo-bench.leo-reacting .leo-bench-image,
 .leo-bench.leo-purring .leo-bench-image {
     animation-play-state: paused;
+}
+
+
+/* =========================================
+   THE BEACH
+   ========================================= */
+
+.beach-scene {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(20, 25, 40, 0.12),
+            rgba(25, 28, 38, 0.12) 45%,
+            rgba(15, 22, 30, 0.42)
+        ),
+        url("../assets/backgrounds/beach-lapush.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    color: #fff4e8;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Beach title and description */
+
+.beach-content {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 700px;
+
+    z-index: 2;
+    text-align: center;
+
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.45),
+        0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.beach-content h1 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.beach-content p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+/* Beach navigation */
+
+.beach-content .enter-button {
+    margin-top: 10px;
+}
+
+/* Smaller screens */
+
+@media (max-width: 600px) {
+    .beach-content {
+        top: 10%;
+    }
+
+    .beach-content h1 {
+        letter-spacing: 2px;
+    }
+}
+
+/* =================================
+   Leo's Enlarged Photograph Viewer
+================================= */
+
+.leo-photo-viewer {
+    position: absolute;
+    inset: 0;
+    z-index: 30;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+    background: rgba(12, 12, 10, 0.82);
+    backdrop-filter: blur(6px);
+}
+
+.leo-photo-viewer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    max-width: min(90vw, 650px);
+    max-height: 90vh;
+
+    padding: 24px;
+    border: 1px solid rgba(230, 202, 150, 0.55);
+    border-radius: 14px;
+
+    background: rgba(38, 32, 25, 0.96);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.55);
+}
+
+#leo-enlarged-photo {
+    display: block;
+
+    max-width: 100%;
+    max-height: 68vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 5px;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+}
+
+.leo-photo-viewer .enter-button {
+    margin-top: 0;
+}
+
+/* =================================
+   Beach Shell Objects
+================================= */
+
+.beach-objects {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.beach-shell {
+    position: absolute;
+    height: auto;
+    object-fit: contain;
+    pointer-events: auto;
+    user-select: none;
+}
+
+/* First shell */
+
+.beach-shell-one {
+    width: clamp(35px, 4.5vw, 65px);
+    left: 32%;
+    bottom: 18%;
+    transform: rotate(-12deg);
+
+    filter: brightness(0.82) saturate(0.75);
+    opacity: 0.9;
+}
+
+.beach-shell-two {
+    width: clamp(30px, 4vw, 55px);
+    left: 65%;
+    bottom: 13%;
+    transform: rotate(18deg);
 }
