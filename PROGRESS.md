@@ -319,3 +319,30 @@ These are initial design proposals, not implemented features or finalized puzzle
 ### Status and asset note
 
 The La Push photograph and initial Beach styling work locally. The three proposed discoveries, discovery counter, and puzzle-related interactions have not yet been implemented or tested. Verify the photograph's source and licence and record them in `ASSET_CREDITS.md` before public deployment. Do not assume the local image has been uploaded to GitHub.
+
+
+---
+
+## 26. Leo's bench and hanging photographs — local progress (November 19, 2026)
+
+### Bench positioning
+- The creator reduced Leo's displayed bench-model container from the earlier oversized dimensions to approximately 190 × 165 CSS pixels and adjusted its horizontal/vertical placement.
+- The creator's latest local placement uses `right: 34%` and `bottom: 22%`. It looks nearly right to the creator, although the cat's relationship to the bench seat may be refined later.
+- The local bench CSS was previously repaired after a missing closing brace in the `.leo-bench:active` rule caused subsequent CSS parsing problems. Leo became visible again after that correction.
+- Preserve the existing breathing animation and petting interaction code while refining position.
+
+### Three hanging frames
+- The local HTML now contains the original first frame plus two additional frame elements, intended to display `leo-photo-4.png` and `leo-photo-6.png` alongside the existing `leo-photo-2.png`.
+- The creator supplied photo 4 (close-up portrait) and photo 6 (overhead curled-up photograph) in the current work session. This is the current working selection; it supersedes the earlier tentative assignment of photo 5 to the third frame.
+- The additional frame positions and photo fit are provisional and will be adjusted against a fresh browser screenshot when image uploads are available again.
+- The current local HTML reuses the same ornate gold hanging-frame overlay for all three frames.
+
+### Photo viewer
+- The existing photo-viewer markup was present, but no JavaScript click/open/close behaviour was found in the supplied `js/main.js`.
+- A new viewer handler was added locally at the end of `js/main.js`. It finds all `.leo-photo-frame` elements, opens the selected frame's image in `#leo-enlarged-photo`, and closes via the close button, clicking the viewer backdrop, or Escape.
+- This JavaScript addition has been made locally but has **not yet been browser-tested**. Viewer CSS styling and verification remain outstanding.
+
+### Synchronization
+- This checkpoint documents local work only. The latest local HTML, CSS, JavaScript, and image assets have not been uploaded to GitHub by this documentation update.
+- Do not overwrite the creator's newer local bench values with older values from the repository. Keep private Leo photographs and personal assets out of the public repository unless publication is explicitly approved.
+- Next: style the enlarged viewer, test all three frame clicks and close paths, then tune frame positions/sizes/angles using the actual scene screenshot.
