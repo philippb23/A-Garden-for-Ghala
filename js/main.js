@@ -700,5 +700,73 @@ window.addEventListener("blur", function () {
 });
 
 
+/* =================================
+   Leo's Photograph Viewer
+================================= */
+
+// Find the photograph viewer elements
+const leoPhotoFrames = document.querySelectorAll(".leo-photo-frame");
+const leoPhotoViewer = document.getElementById("leo-photo-viewer");
+const leoEnlargedPhoto = document.getElementById("leo-enlarged-photo");
+const closeLeoPhotoButton = document.getElementById("close-leo-photo");
+
+// Open a photograph when its frame is clicked
+leoPhotoFrames.forEach(function (frame) {
+
+    frame.addEventListener("click", function () {
+
+        const photo = frame.querySelector(".leo-photo-image");
+
+        if (!photo) {
+            return;
+        }
+
+        // Display the selected photograph
+        leoEnlargedPhoto.src = photo.src;
+        leoEnlargedPhoto.alt = photo.alt;
+
+        leoPhotoViewer.hidden = false;
+
+    });
+
+});
+
+// Close the photograph viewer
+function closeLeoPhotoViewer() {
+
+    leoPhotoViewer.hidden = true;
+
+    // Clear the previous photograph
+    leoEnlargedPhoto.src = "";
+
+}
+
+// Close button
+closeLeoPhotoButton.addEventListener("click", function () {
+
+    closeLeoPhotoViewer();
+
+});
+
+// Clicking outside the photograph also closes it
+leoPhotoViewer.addEventListener("click", function (event) {
+
+    if (event.target === leoPhotoViewer) {
+        closeLeoPhotoViewer();
+    }
+
+});
+
+// Escape key closes the viewer
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape" && !leoPhotoViewer.hidden) {
+        closeLeoPhotoViewer();
+    }
+
+});
+
+
+
 
 
