@@ -1124,3 +1124,19 @@ This section supersedes earlier Beach visual notes that describe the final scene
 - When image attachments are available, inspect a browser screenshot before positioning the discoveries. Do not cover important shoreline, water, or landscape details.
 - The final discovery interface and any Beach puzzle clues remain undecided and unimplemented.
 - Verify the photograph's source/licence and add it to `ASSET_CREDITS.md` before public deployment.
+
+
+---
+
+## Local development checkpoint — November 19, 2026
+
+Leo's clearing has progressed locally beyond the November 17 documentation snapshot:
+
+- Leo's bench image is now substantially smaller than the earlier oversized first pass. The creator's current local CSS uses `right: 34%` and `bottom: 22%`; the position is acceptable for now and can be fine-tuned later. Do not restore older repository values over the local changes.
+- The three-frame HTML structure is being assembled using the existing gold hanging-frame overlay. Current working photo assignments are `leo-photo-2.png`, `leo-photo-4.png`, and `leo-photo-6.png`. Photo 6 is currently being used instead of the previously proposed photo 5; photo 5 is no longer the current third-frame choice.
+- The creator added JavaScript locally so clicking any `.leo-photo-frame` opens that frame's own image in the enlarged viewer. The viewer can be closed with its close button, by clicking the backdrop, or with Escape.
+- The viewer behaviour has not yet been tested in Chrome, and the viewer's visual styling and precise frame placement remain unfinished.
+- Preserve Leo's existing petting, meow, purr, breathing, and cinematic entrance behaviour. The latest JavaScript addition is appended separately and should not replace those systems.
+- These are local changes only. GitHub code and image assets have not been synchronized as part of this documentation checkpoint.
+
+Immediate sequence: finish viewer CSS, test all three photographs and all close methods, then refine the hanging frames against a fresh screenshot when uploads are available.
