@@ -772,7 +772,7 @@ p {
 .leo-bench {
     position: absolute;
     right: 34%;
-    bottom: 22%;
+    bottom: 10%;
     width: 190px;
     height: 165px;
     z-index: 20;
@@ -780,7 +780,6 @@ p {
     cursor: grab;
     touch-action: none;
 }
-
 .leo-bench:active {
     cursor: grabbing;
 }
