@@ -4,7 +4,7 @@ A personal interactive birthday-gift experience built with HTML, CSS, and JavaSc
 
 ## Overall project completion
 
-<progress value="40" max="100">40%</progress>
+`████░░░░░░` **40%**
 
 **40% complete** — approximate milestone-based estimate, updated November 24, 2026.
 
