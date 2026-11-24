@@ -1,6 +1,6 @@
 # A Garden for Ghala --- Project Context
 
-*Last updated: November 17, 2026 — Leo's petting, sound, and resting ambience implemented locally*
+*Last updated: November 25, 2026 — Beach shell discoveries and calm coastal ambience added; current implementation snapshot refreshed*
 
 This document is the canonical handover for the **A Garden for Ghala**
 project. Keep it in the root of the project repository and update it
@@ -9,6 +9,56 @@ When continuing work in a new ChatGPT conversation, provide this file
 together with `PROGRESS.md` and any relevant code or assets.
 
 ------------------------------------------------------------------------
+
+## Current implementation snapshot — November 25, 2026
+
+This section is the authoritative summary of the current working state. Where older planning notes below conflict with it, follow this newer snapshot unless the creator gives a newer instruction.
+
+### Progress and schedule
+
+- Approximate overall completion: **42%** (milestone-based estimate).
+- Target completion: **December 13, 2026**.
+- Backup/refinement deadline: **December 20, 2026**.
+- Birthday: **December 28, 2026**.
+- Prioritize a complete, tested journey over optional effects or expanding scope late in the schedule.
+
+### Current local website state
+
+The following features have been implemented and tested locally in Chrome:
+
+- Welcome screen and Forgotten Forest hub with Path of Light to the Lily Clearing and Path of Whispers to the Beach.
+- Lily Clearing with one special test lily, discovery counter, message reveal, Discovery Journal, and saved discovery persistence. The final five special lilies and puzzle gate are not complete.
+- Leo's Hidden Clearing with the autumn tree-and-bench background, cinematic introduction, static bench cutout, three hanging photographs, and enlarged photo viewer. The viewer can close through its button, backdrop, or Escape.
+- Leo's interaction system: short tap/click plays a varied meow; press-and-hold plays a purr until release; quiet breathing ambience plays while he rests and pauses during interaction.
+- Beach scene using the selected La Push Beach photograph, two interactive shell discoveries with individual messages, and saved discovery state.
+- Beach ambience: looping ocean waves fade in over approximately 3 seconds and fade out over approximately 1 second; randomized seagull calls occur approximately every 5–10 seconds while the Beach is active. Audio stops when returning to the Forest.
+
+### Confirmed current decisions
+
+- The Beach should feel calm and natural. Use ocean waves and occasional seagulls; **do not add wind ambience**.
+- Preserve the selected La Push Beach photograph's natural appearance; do not force a dramatic artificial sunset treatment.
+- Current Leo hanging-photo assignments are `leo-photo-2.png`, `leo-photo-4.png`, and `leo-photo-6.png`. Reserve `leo-photo-actual.png` for the bench cutout. Do not revert to the earlier photo-5 proposal.
+- Keep Leo as a static, recognizable photograph/cutout. Use the genuine interaction audio and restrained visual feedback rather than inventing full character animation.
+- Personal messages must be written or approved by the creator. Do not invent shared memories or presume the recipient's feelings.
+- Keep personal photographs and private message content out of the public repository unless publication is explicitly approved.
+
+### Remaining core work
+
+1. Expand the Lily Clearing from one test lily to five unique special lilies with their own creator-approved messages.
+2. Complete the Discovery Journal behaviour for all five discoveries.
+3. Build the distributed clue system across the Forest, Lily Clearing, and Beach.
+4. Implement the hidden bush, sealed stone doorway, puzzle logic, unlock conditions, and passage to Leo's clearing.
+5. Complete remaining Forest and Beach environment details.
+6. Perform responsive, accessibility, audio, asset-licensing, and end-to-end testing.
+
+### Working environment and collaboration
+
+- The creator works on Windows using Notepad and Chrome, opening `index.html` directly through a `file://` URL; do not assume a local server is being used.
+- Keep coding help incremental: explain one manageable change at a time, prioritize functionality, then atmosphere, then polish.
+- The creator maintains local HTML, CSS, JavaScript, and asset changes and may ask for documentation-only GitHub updates. When asked to update documentation only, leave coding files and assets untouched.
+- This summary describes the latest local working state; do not imply that every local code file or private asset is already synchronized to GitHub.
+
+---
 
 ## 1. Project overview
 

@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 17, 2026 — Leo's petting, sound, and resting ambience implemented and browser-tested locally*
+*Last updated: November 25, 2026 — Beach shell discoveries and calm coastal ambience implemented and browser-tested locally; Leo's photo viewer and core interactions also working locally*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,13 +8,17 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Foundation prototype, core interaction testing, and early scene integration. All six scene placeholders and basic navigation are implemented and tested locally. The Lily Clearing has a working one-test-lily flow for message display, discovery counting, and reopening the discovered message from the Discovery Journal. Leo's autumn tree-and-bench background, cinematic entrance, static bench cutout, and complete first-pass petting/sound interaction system are integrated and browser-tested locally. Leo responds to taps with one of four meows and to press-and-hold with one of three purr recordings; quiet breathing ambience plays while he rests and pauses during interaction. The interaction visuals, hand/grab cursor, keyboard/pointer support, and scene-exit audio cleanup are working. Purr loop smoothness still needs a dedicated listening test. The three hanging frames/photo viewer and bench-cutout cleanup remain unfinished, alongside the five final lily discoveries, puzzle logic, hidden-door transition, and final Forest/Beach scenes.  
-**Project status:** Welcome → Forgotten Forest navigation works. The Forest has Path of Light → Lily Clearing and Path of Whispers → Beach. The current Puzzle and Leo screens remain placeholders with temporary testing shortcuts. The intended progression is now: discover clues across the Forgotten Forest, Lily Clearing, and Beach; find a clickable bush in the Lily Clearing that reveals a concealed, sealed stone doorway; solve the world-spanning puzzle to open the door; follow the hidden passage to Leo's Hidden Clearing. Return paths have been tested locally, but the final progression gates are not implemented.  
+**Overall phase:** Core scene foundations and interaction prototypes are working locally; the project is moving into world-spanning clues, puzzle progression, and final scene integration. Current approximate completion: **42%**. This is a milestone-based planning estimate, not an automated code metric.
+
+**Working locally in Chrome:** Welcome and Forgotten Forest navigation; Path of Light to the Lily Clearing; Path of Whispers to the Beach; one test lily with saved discovery state and a Discovery Journal; Leo's Hidden Clearing with cinematic entrance, three hanging photographs and an enlarged viewer, meow/purr interaction, and quiet breathing ambience; and the Beach with two interactive shell discoveries plus calm ocean/seagull ambience. The Beach waves fade in and out smoothly, while randomized seagull calls play during the Beach visit and stop when leaving.
+
+**Still incomplete:** Expand the Lily Clearing to five unique special lilies; build the distributed clues and puzzle; implement the concealed bush/stone doorway and puzzle-gated passage; complete remaining Forest/Beach details; finish final responsive, accessibility, licensing, and end-to-end testing. Do not treat the temporary Puzzle/Leo testing shortcuts as final progression.
+
+**Repository synchronization:** This documentation checkpoint updates only `PROGRESS.md` and `PROJECT_CONTEXT.md` (alongside the README update). The creator maintains the HTML, CSS, JavaScript, and asset changes locally and will synchronize coding files separately. Do not assume the public repository's code/assets fully match the latest local working copy.
+
 **Target completion:** December 13, 2026  
 **Backup/refinement deadline:** December 20, 2026  
 **Birthday:** December 28, 2026
-
-The landscape lily-clearing background and assets/flowers/lily_only_no_stem.png have been uploaded to GitHub and integrated locally. The selected autumn tree-and-bench photograph is integrated locally as the Leo clearing background; the background, cleaned gold frame asset, and Leo photographs have not yet been uploaded to GitHub. The local Leo bench model uses assets/photos/Leo/leo-photo-actual.png in a static image container positioned over the existing bench; its placement is acceptable as a first pass, but some background residue and cropped body areas still need careful cleanup/reconstruction when the source image can be inspected. The hanging-photo plan remains three permanent frames using leo-photo-2.png, leo-photo-4.png, and leo-photo-5.png; frame layout/compositing and the enlarged viewer are deferred until the creator can share screenshots/assets for visual review. The Forest currently has a two-panel path layout. Beach and Puzzle remain placeholder scenes; final artwork and progression gates remain unimplemented.
 
 ## 2. Completed
 
@@ -346,3 +350,43 @@ The La Push photograph and initial Beach styling work locally. The three propose
 - This checkpoint documents local work only. The latest local HTML, CSS, JavaScript, and image assets have not been uploaded to GitHub by this documentation update.
 - Do not overwrite the creator's newer local bench values with older values from the repository. Keep private Leo photographs and personal assets out of the public repository unless publication is explicitly approved.
 - Next: style the enlarged viewer, test all three frame clicks and close paths, then tune frame positions/sizes/angles using the actual scene screenshot.
+
+
+---
+
+## November 25, 2026 — Beach discoveries and calm ambience checkpoint
+
+This is the latest implementation-status record and supersedes older Beach entries that describe the scene or its interactions as placeholders.
+
+### Beach — implemented and browser-tested locally
+
+- The selected La Push Beach photograph is used as the Beach background.
+- Two seashells are interactive discoveries. Each has its own discovery identity and message panel.
+- Beach discovery state is saved so discoveries are not counted repeatedly after refresh.
+- Looping ocean-wave ambience starts when entering the Beach. It fades in over approximately **3 seconds** to a low volume of **20%**, then fades out over approximately **1 second** when returning to the Forest.
+- Seagull calls play at randomized intervals of approximately **5–10 seconds**, at **40%** volume, while the Beach scene is active.
+- Seagull playback stops when leaving the Beach. The ocean loop is paused and reset after its fade-out.
+- The creator explicitly prefers a calm coastal atmosphere. **Do not add wind ambience**; the chosen Beach soundscape is waves with occasional seagulls.
+
+### Other current local implementation status
+
+- The Lily Clearing currently has one special test lily, a working discovery counter/message flow, a Discovery Journal, and saved discovery persistence. The five-lily content and full puzzle gate are not complete.
+- Leo's Hidden Clearing has its autumn tree-and-bench background, cinematic introduction, static bench cutout, three hanging photographs, and an enlarged photo viewer with close-button, backdrop, and Escape closing methods.
+- Current hanging-photo assignments are `leo-photo-2.png`, `leo-photo-4.png`, and `leo-photo-6.png`. Keep `leo-photo-actual.png` reserved for Leo's bench cutout. Do not revert to the older proposed photo-5 assignment without the creator's direction.
+- Leo's tap-to-meow, press-and-hold-to-purr, and quiet breathing ambience are implemented locally. The purr loop still needs a dedicated listening check for seamless joins.
+
+### Immediate priorities
+
+1. Expand the Lily Clearing to five distinct special discoveries and preserve the existing journal/persistence behaviour.
+2. Design and implement the clue system spanning the Forest, Lily Clearing, and Beach.
+3. Build the hidden bush, sealed stone doorway, puzzle conditions, and passage to Leo's clearing.
+4. Add remaining Beach/Forest environmental details without disturbing the calm La Push atmosphere.
+5. Test the complete visitor journey, mobile layout, audio behaviour, accessibility, and asset licensing.
+
+### Development workflow and synchronization
+
+- The creator develops on Windows using Notepad and Chrome, opening `index.html` directly with a `file://` URL; do not assume a local development server is running.
+- Continue in small, testable steps and explain code changes so the creator can implement and understand them.
+- This checkpoint records locally tested work; it does not claim that all local coding files or private assets have been synchronized to GitHub.
+- Keep personal photographs and private message content out of the public repository unless publication is explicitly approved.
+
