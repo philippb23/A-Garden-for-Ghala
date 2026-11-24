@@ -337,19 +337,50 @@
     <!-- Beach discoveries -->
     <div class="beach-objects">
 
-        <img
-            src="assets/photos/beach/shell-cropped-1.png"
-            alt="A seashell resting on the beach"
-            class="beach-shell beach-shell-one"
-        >
+        <button
+    class="beach-shell beach-shell-one"
+    data-shell-id="shell-one"
+    aria-label="Discover the first seashell"
+>
+    <img
+        src="assets/photos/beach/shell-cropped-1.png"
+        alt=""
+    >
+</button>
 
-        <img
-            src="assets/photos/beach/shell-cropped-2.png"
-            alt="Another seashell resting on the beach"
-            class="beach-shell beach-shell-two"
-        >
+<button
+    class="beach-shell beach-shell-two"
+    data-shell-id="shell-two"
+    aria-label="Discover the second seashell"
+>
+    <img
+        src="assets/photos/beach/shell-cropped-2.png"
+        alt=""
+    >
+</button>
 
     </div>
+
+	<div class="beach-discovery" id="beach-discovery" hidden>
+
+    <h2 id="beach-discovery-title"></h2>
+
+    <p id="beach-discovery-text"></p>
+
+    <button class="enter-button" id="close-beach-discovery">
+        Close
+    </button>
+
+</div>
+
+<!-- Beach ambience -->
+<audio id="beach-waves"
+       src="assets/audio/beach/beach-waves.mp3"
+       loop preload="auto"></audio>
+
+<audio id="beach-seagulls"
+       src="assets/audio/beach/beach-seagulls.mp3"
+       preload="auto"></audio>
 
 </section>
 
