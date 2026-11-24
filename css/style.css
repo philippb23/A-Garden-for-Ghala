@@ -1075,11 +1075,36 @@ p {
 .beach-shell {
     position: absolute;
     height: auto;
-    object-fit: contain;
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
     pointer-events: auto;
     user-select: none;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
 }
 
+.beach-shell img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.beach-shell:hover {
+    filter: brightness(1.2);
+}
+
+.beach-shell:focus-visible {
+    outline: 2px solid #fff4e8;
+    outline-offset: 5px;
+    border-radius: 50%;
+}
 /* First shell */
 
 .beach-shell-one {
@@ -1097,4 +1122,45 @@ p {
     left: 65%;
     bottom: 13%;
     transform: rotate(18deg);
+}
+
+/* =================================
+   Beach Discovery Message
+================================= */
+
+.beach-discovery {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(85%, 420px);
+    padding: 30px;
+
+    background: rgba(25, 30, 40, 0.82);
+    border: 1px solid rgba(255, 244, 232, 0.45);
+    border-radius: 18px;
+
+    color: #fff4e8;
+    text-align: center;
+
+    backdrop-filter: blur(8px);
+
+    z-index: 5;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+}
+
+.beach-discovery h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.beach-discovery p {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
