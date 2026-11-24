@@ -1,3 +1,6 @@
+/* =================================
+   1. Screens and Buttons
+================================= */
 
 // Find the screens
 const welcomeScreen = document.getElementById("welcome-screen");
@@ -25,6 +28,12 @@ const leoLilyBackButton = document.getElementById("leo-lily-back-button");
 const leoForestBackButton = document.getElementById("leo-forest-back-button");
 
 
+/* =================================
+   2. Screen Navigation
+================================= */
+
+/* ---------- Welcome and Forest ---------- */
+
 // Enter the Forgotten Forest
 enterButton.addEventListener("click", function () {
 
@@ -42,6 +51,8 @@ backButton.addEventListener("click", function () {
 
 });
 
+
+/* ---------- Lily Clearing ---------- */
 
 // Follow the Path of Light to the Lily Clearing
 lilyButton.addEventListener("click", function () {
@@ -61,22 +72,133 @@ lilyBackButton.addEventListener("click", function () {
 });
 
 
+
+/* ---------- Beach ---------- */
+
+// Beach ambience audio
+const beachWaves = document.getElementById("beach-waves");
+const beachSeagulls = document.getElementById("beach-seagulls");
+
+// Volume settings
+beachWaves.volume = 0.2;
+beachWaves.loop = true;
+
+beachSeagulls.volume = 0.4;
+
+// Smooth ocean volume transition
+let waveFadeInterval = null;
+
+function fadeWaves(targetVolume, duration) {
+
+    // Stop any previous fade
+    clearInterval(waveFadeInterval);
+
+    const startVolume = beachWaves.volume;
+    const difference = targetVolume - startVolume;
+    const steps = 30;
+    const intervalTime = duration / steps;
+    let currentStep = 0;
+
+    waveFadeInterval = setInterval(function () {
+
+        currentStep++;
+
+        beachWaves.volume = startVolume +
+            (difference * currentStep / steps);
+
+        if (currentStep >= steps) {
+            beachWaves.volume = targetVolume;
+            clearInterval(waveFadeInterval);
+            waveFadeInterval = null;
+        }
+
+    }, intervalTime);
+}
+
+
+// Randomized seagull calls
+let seagullTimer = null;
+
+function scheduleSeagullCall() {
+
+    // Only play while the Beach is active
+    if (!beachScreen.classList.contains("active")) {
+        return;
+    }
+
+    // Wait a random 5-10 seconds
+    const delay = Math.random() * 5000 + 5000;
+
+    seagullTimer = setTimeout(function () {
+
+        if (!beachScreen.classList.contains("active")) {
+            return;
+        }
+
+        // Play the seagull recording
+        beachSeagulls.currentTime = 0;
+
+        if (beachScreen.classList.contains("active")) {
+
+    	    beachSeagulls.play().catch(function (error) {
+        	 console.log("Seagull audio could not start:", error);
+    });
+
+}
+
+        // Schedule the next call
+        scheduleSeagullCall();
+
+    }, delay);
+}
+
+
 // Follow the Path of Whispers to the Beach
 beachButton.addEventListener("click", function () {
 
     forestScreen.classList.remove("active");
     beachScreen.classList.add("active");
 
+    // Start ocean waves with fade-in
+    beachWaves.volume = 0;
+
+    beachWaves.play().then(function () {
+        fadeWaves(0.2, 3000);
+    }).catch(function (error) {
+        console.log("Beach waves could not start:", error);
+});
+	
+    // Start the Seagulls sounds
+	scheduleSeagullCall();
 });
 
 
-// Return from the Beach to the Forest
+// Return to the Forest
 beachBackButton.addEventListener("click", function () {
 
     beachScreen.classList.remove("active");
     forestScreen.classList.add("active");
 
+    // Fade out ocean waves
+    fadeWaves(0, 1000);
+
+    setTimeout(function () {
+        beachWaves.pause();
+        beachWaves.currentTime = 0;
+    }, 1000);
+
+    // Stop seagull scheduling
+    clearTimeout(seagullTimer);
+    seagullTimer = null;
+
+    // Stop any playing seagull audio immediately
+    beachSeagulls.pause();
+    beachSeagulls.currentTime = 0;
+
 });
+
+
+/* ---------- Puzzle ---------- */
 
 // Enter the Puzzle
 puzzleButton.addEventListener("click", function () {
@@ -95,6 +217,8 @@ puzzleBackButton.addEventListener("click", function () {
 
 });
 
+
+/* ---------- Leo's Clearing ---------- */
 
 // Enter Leo's Hidden Clearing
 leoButton.addEventListener("click", function () {
@@ -132,7 +256,7 @@ leoLilyBackButton.addEventListener("click", function () {
     leoScreen.classList.remove("active");
     leoScreen.classList.remove("leo-intro-playing", "leo-controls-hidden");
     lilyScreen.classList.add("active");
-    
+
     stopLeoBreathing();
     stopLeoPurr();
 
@@ -145,20 +269,18 @@ leoForestBackButton.addEventListener("click", function () {
     leoScreen.classList.remove("active");
     leoScreen.classList.remove("leo-intro-playing", "leo-controls-hidden");
     forestScreen.classList.add("active");
-    
+
     stopLeoBreathing();
     stopLeoPurr();
 
 });
 
 
-
-
-   
-
 /* =================================
-   Lily Discovery System
+   3. Lily Discovery System
 ================================= */
+
+/* ---------- Elements ---------- */
 
 // Find all interactive lilies
 const lilyFlowers = document.querySelectorAll(".lily-interactive");
@@ -167,7 +289,6 @@ const lilyFlowers = document.querySelectorAll(".lily-interactive");
 const discoveryCount = document.getElementById("discovery-count");
 
 // Find the message elements
-
 const lilyMessage = document.getElementById("lily-message");
 const lilyMessageTitle = document.getElementById("lily-message-title");
 const lilyMessageText = document.getElementById("lily-message-text");
@@ -179,9 +300,11 @@ const journalEntries = document.getElementById("journal-entries");
 const openJournalButton = document.getElementById("open-journal-button");
 const closeJournalButton = document.getElementById("close-journal-button");
 
-// Track discovered special lilies
-const discoveredLilies = new Set();
 
+/* ---------- State and Messages ---------- */
+
+// Track discovered special lilies
+let discoveredLilies = new Set();
 
 // Personal messages assigned to special lilies
 const lilyMessages = {
@@ -197,16 +320,59 @@ const lilyMessages = {
 };
 
 
+/* ---------- Saving and Restoring ---------- */
 
+// Save and restore discovered lilies
+
+const DISCOVERY_STORAGE_KEY = "gardenForGhala_discoveredLilies";
+
+// Load previously discovered lilies
+try {
+
+    const savedDiscoveries = JSON.parse(
+        localStorage.getItem(DISCOVERY_STORAGE_KEY) || "[]"
+    );
+
+    if (Array.isArray(savedDiscoveries)) {
+
+        savedDiscoveries.forEach(function (id) {
+
+            const exists = Object.values(lilyMessages).some(function (item) {
+                return item.id === id;
+            });
+
+            if (exists) {
+                discoveredLilies.add(id);
+            }
+
+        });
+
+    }
+
+} catch (error) {
+
+    console.log("Could not load saved discoveries.");
+
+}
+
+// Update the counter when the garden opens
+discoveryCount.textContent = discoveredLilies.size;
 
 
 /* =================================
-   Discovery Journal System
+   4. Discovery Journal System
 ================================= */
+
+/* ---------- State ---------- */
 
 // Remember where the message was opened from
 let returnToJournal = false;
 
+// Track which lily currently has its message open
+let activeLilyId = null;
+
+
+/* ---------- Message and Journal Display ---------- */
 
 // Display a discovery message
 function showDiscovery(discovery, fromJournal = false) {
@@ -248,34 +414,30 @@ function renderJournal() {
 
     entries.forEach(function (discovery) {
 
-    const entryButton = document.createElement("button");
+        const entryButton = document.createElement("button");
 
-    entryButton.type = "button";
-    entryButton.classList.add("journal-entry");
-    entryButton.textContent = discovery.title;
+        entryButton.type = "button";
+        entryButton.classList.add("journal-entry");
+        entryButton.textContent = discovery.title;
 
-    entryButton.addEventListener("click", function (event) {
+        entryButton.addEventListener("click", function (event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        console.log("Journal entry clicked:", discovery.id);
+            console.log("Journal entry clicked:", discovery.id);
 
-        showDiscovery(discovery, true);
+            showDiscovery(discovery, true);
+
+        });
+
+        journalEntries.appendChild(entryButton);
 
     });
-
-    journalEntries.appendChild(entryButton);
-
-});
 
 }
 
 
-// Handle lily clicks
-
-// Track which lily currently has its message open
-let activeLilyId = null;
-
+/* ---------- Lily Clicks ---------- */
 
 // Handle lily clicks
 lilyFlowers.forEach(function (lily) {
@@ -287,23 +449,23 @@ lilyFlowers.forEach(function (lily) {
         // If the lily is already bloomed, close it
         if (lily.classList.contains("bloomed")) {
 
-    // Start the closing animation
-    lily.classList.remove("bloomed");
-    lily.classList.add("closing");
+            // Start the closing animation
+            lily.classList.remove("bloomed");
+            lily.classList.add("closing");
 
-    // Remove the closing class after the animation
-    setTimeout(function () {
-        lily.classList.remove("closing");
-    }, 500);
+            // Remove the closing class after the animation
+            setTimeout(function () {
+                lily.classList.remove("closing");
+            }, 500);
 
-    // Close its message if it is currently displayed
-    if (activeLilyId === lilyId) {
-        lilyMessage.hidden = true;
-        activeLilyId = null;
-    }
+            // Close its message if it is currently displayed
+            if (activeLilyId === lilyId) {
+                lilyMessage.hidden = true;
+                activeLilyId = null;
+            }
 
-    return;
-}
+            return;
+        }
 
         // Bloom the lily
         lily.classList.add("bloomed");
@@ -327,7 +489,14 @@ lilyFlowers.forEach(function (lily) {
 
             discoveredLilies.add(lilyId);
 
+            // Update the discovery counter
             discoveryCount.textContent = discoveredLilies.size;
+
+            // Save discoveries in the browser
+            localStorage.setItem(
+                DISCOVERY_STORAGE_KEY,
+                JSON.stringify(Array.from(discoveredLilies))
+            );
 
         }
 
@@ -341,6 +510,8 @@ lilyFlowers.forEach(function (lily) {
 
 });
 
+
+/* ---------- Journal and Message Buttons ---------- */
 
 // Open the journal
 openJournalButton.addEventListener("click", function () {
@@ -381,12 +552,17 @@ closeMessageButton.addEventListener("click", function () {
 
 
 /* =================================
-   Leo Interaction System
+   5. Leo Interaction System
 ================================= */
+
+/* ---------- Elements ---------- */
 
 // Leo's interaction elements
 const leoBench = document.getElementById("leo-bench");
 const leoResponse = document.getElementById("leo-cat-response");
+
+
+/* ---------- Sounds ---------- */
 
 // Sound files (we will add the actual recordings later)
 const leoMeowSounds = [
@@ -409,6 +585,9 @@ const leoBreathingSound = new Audio(
 
 leoBreathingSound.volume = 0.08;
 leoBreathingSound.loop = true;
+
+
+/* ---------- Breathing Controls ---------- */
 
 // Start Leo's breathing
 function startLeoBreathing() {
@@ -440,6 +619,9 @@ function stopLeoBreathing() {
 
 }
 
+
+/* ---------- Interaction Settings and State ---------- */
+
 // Interaction settings
 const holdDuration = 250;
 
@@ -451,6 +633,8 @@ let currentMeow = -1;
 let currentPurr = -1;
 let interactionActive = false;
 
+
+/* ---------- Helpers ---------- */
 
 // Choose a random sound without immediately repeating the previous one
 function chooseSound(sounds, previousIndex) {
@@ -491,6 +675,8 @@ function hideLeoResponse() {
 
 }
 
+
+/* ---------- Meow and Purr Playback ---------- */
 
 // Play a random meow
 function playLeoMeow() {
@@ -537,6 +723,8 @@ function stopLeoPurr() {
 }
 
 
+/* ---------- Begin and End Interaction ---------- */
+
 // Begin interaction
 function beginLeoInteraction() {
 
@@ -546,7 +734,7 @@ function beginLeoInteraction() {
 
     interactionActive = true;
     pauseLeoBreathing();
-    
+
     isHolding = false;
 
     leoBench.classList.add("leo-reacting");
@@ -600,11 +788,13 @@ function endLeoInteraction() {
     isHolding = false;
 
     hideLeoResponse();
-    
+
     startLeoBreathing();
 
 }
 
+
+/* ---------- Input Listeners ---------- */
 
 // Mouse and touchscreen interaction
 leoBench.addEventListener("pointerdown", function (event) {
@@ -630,7 +820,7 @@ leoBench.addEventListener("pointerup", function () {
 
 
 leoBench.addEventListener("pointercancel", function () {
-    
+
     startLeoBreathing();
 
     if (isHolding) {
@@ -701,14 +891,19 @@ window.addEventListener("blur", function () {
 
 
 /* =================================
-   Leo's Photograph Viewer
+   6. Leo's Photograph Viewer
 ================================= */
+
+/* ---------- Elements ---------- */
 
 // Find the photograph viewer elements
 const leoPhotoFrames = document.querySelectorAll(".leo-photo-frame");
 const leoPhotoViewer = document.getElementById("leo-photo-viewer");
 const leoEnlargedPhoto = document.getElementById("leo-enlarged-photo");
 const closeLeoPhotoButton = document.getElementById("close-leo-photo");
+
+
+/* ---------- Open ---------- */
 
 // Open a photograph when its frame is clicked
 leoPhotoFrames.forEach(function (frame) {
@@ -730,6 +925,9 @@ leoPhotoFrames.forEach(function (frame) {
     });
 
 });
+
+
+/* ---------- Close ---------- */
 
 // Close the photograph viewer
 function closeLeoPhotoViewer() {
@@ -767,6 +965,115 @@ document.addEventListener("keydown", function (event) {
 });
 
 
+/* =================================
+   7. Beach Discovery System
+================================= */
+
+/* ---------- Elements ---------- */
+
+// Beach discovery elements
+const beachShells = document.querySelectorAll(".beach-shell");
+
+const beachDiscovery = document.getElementById("beach-discovery");
+const beachDiscoveryTitle = document.getElementById("beach-discovery-title");
+const beachDiscoveryText = document.getElementById("beach-discovery-text");
+const closeBeachDiscoveryButton = document.getElementById("close-beach-discovery");
 
 
+/* ---------- State and Messages ---------- */
 
+// Separate storage for Beach discoveries
+const BEACH_STORAGE_KEY = "gardenForGhala_beachDiscoveries";
+
+// Track discovered shells
+const discoveredShells = new Set();
+
+// Beach discovery messages
+const beachMessages = {
+
+    "shell-one": {
+        title: "A Little Piece of the Shore",
+        message: "The waves have carried this little shell a long way. Now it has found its way here."
+    },
+
+    "shell-two": {
+        title: "A Quiet Moment",
+        message: "Some things are worth slowing down for. Even the smallest discoveries can make a place feel special."
+    }
+
+};
+
+
+/* ---------- Saving and Restoring ---------- */
+
+// Load previously discovered shells
+try {
+
+    const savedShells = JSON.parse(
+        localStorage.getItem(BEACH_STORAGE_KEY) || "[]"
+    );
+
+    if (Array.isArray(savedShells)) {
+
+        savedShells.forEach(function (id) {
+
+            if (beachMessages[id]) {
+                discoveredShells.add(id);
+            }
+
+        });
+
+    }
+
+} catch (error) {
+
+    console.log("Could not load saved Beach discoveries.");
+
+}
+
+
+/* ---------- Shell Clicks ---------- */
+
+// Handle shell clicks
+beachShells.forEach(function (shell) {
+
+    shell.addEventListener("click", function () {
+
+        const shellId = shell.dataset.shellId;
+        const discovery = beachMessages[shellId];
+
+        if (!discovery) {
+            return;
+        }
+
+        // Display the discovery
+        beachDiscoveryTitle.textContent = discovery.title;
+        beachDiscoveryText.textContent = discovery.message;
+
+        beachDiscovery.hidden = false;
+
+        // Save the discovery only once
+        if (!discoveredShells.has(shellId)) {
+
+            discoveredShells.add(shellId);
+
+            localStorage.setItem(
+                BEACH_STORAGE_KEY,
+                JSON.stringify(Array.from(discoveredShells))
+            );
+
+        }
+
+    });
+
+});
+
+
+/* ---------- Close ---------- */
+
+// Close the Beach discovery message
+closeBeachDiscoveryButton.addEventListener("click", function () {
+
+    beachDiscovery.hidden = true;
+
+});
