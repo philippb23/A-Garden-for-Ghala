@@ -4,9 +4,9 @@ A personal interactive birthday-gift experience built with HTML, CSS, and JavaSc
 
 ## Overall project completion
 
-`████░░░░░░` **40%**
+`████░░░░░░` **42%**
 
-**40% complete** — approximate milestone-based estimate, updated November 24, 2026.
+**42% complete** — approximate milestone-based estimate, updated November 25, 2026.
 
 The percentage represents progress across the whole experience, including scene development, interactions, puzzle logic, and final testing. It is a planning estimate rather than an automated code metric.
 
@@ -17,6 +17,9 @@ The percentage represents progress across the whole experience, including scene 
 - Forgotten Forest hub with two routes: Path of Light to the Lily Clearing and Path of Whispers to the Beach.
 - Basic Lily Clearing scene with one interactive test lily, discovery counter, message panel, and discovery journal.
 - Basic Beach scene with return navigation and beach background.
+- Two interactive seashell discoveries, each with its own message and saved discovery state.
+- Beach ambience with looping ocean waves, a gradual fade-in and fade-out, and randomized seagull calls.
+- Beach audio stops when returning to the forest, keeping the ambience limited to the Beach scene.
 - Leo's Hidden Clearing woodland background, bench, and Leo cutout.
 - Leo's meow and purr interactions, including press-and-hold behavior and breathing ambience.
 - Three hanging photo frames positioned along the tree branch.
@@ -32,7 +35,7 @@ The percentage represents progress across the whole experience, including scene 
 - Build the full puzzle and its discovery/unlock conditions.
 - Add the concealed stone doorway and passage into Leo's Hidden Clearing.
 - Develop the remaining Forgotten Forest environment and path interactions.
-- Add the remaining beach details and shell interactions.
+- Expand the Beach environment with additional details and discoveries.
 - Remove temporary testing shortcuts once the real progression and unlock sequence are ready.
 
 ### Final polish and testing
