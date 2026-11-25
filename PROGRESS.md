@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 25, 2026 — Beach shell discoveries and calm coastal ambience implemented and browser-tested locally; Leo's photo viewer and core interactions also working locally*
+*Last updated: November 25, 2026 — Beach clue-gathering direction and separate pre-Leo puzzle screen confirmed; existing Beach shell discoveries and calm ambience tested locally*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -8,11 +8,11 @@ This is the living development log. For the full creative brief, see [PROJECT_CO
 
 ## 1. Current status
 
-**Overall phase:** Core scene foundations and interaction prototypes are working locally; the project is moving into world-spanning clues, puzzle progression, and final scene integration. Current approximate completion: **42%**. This is a milestone-based planning estimate, not an automated code metric.
+**Overall phase:** Core scene foundations and interaction prototypes are working locally; the project is moving into world-spanning clue discovery and a dedicated hands-on puzzle screen immediately before Leo's Hidden Clearing. Current approximate completion: **42%**. This is a milestone-based planning estimate, not an automated code metric.
 
 **Working locally in Chrome:** Welcome and Forgotten Forest navigation; Path of Light to the Lily Clearing; Path of Whispers to the Beach; one test lily with saved discovery state and a Discovery Journal; Leo's Hidden Clearing with cinematic entrance, three hanging photographs and an enlarged viewer, meow/purr interaction, and quiet breathing ambience; and the Beach with two interactive shell discoveries plus calm ocean/seagull ambience. The Beach waves fade in and out smoothly, while randomized seagull calls play during the Beach visit and stop when leaving.
 
-**Still incomplete:** Expand the Lily Clearing to five unique special lilies; build the distributed clues and puzzle; implement the concealed bush/stone doorway and puzzle-gated passage; complete remaining Forest/Beach details; finish final responsive, accessibility, licensing, and end-to-end testing. Do not treat the temporary Puzzle/Leo testing shortcuts as final progression.
+**Still incomplete:** Expand the Lily Clearing to five unique special lilies; design and add clue discoveries across the Beach and other areas; build the actual drag/rotate/move/arrange puzzle on the dedicated screen immediately before Leo's Clearing; implement the concealed bush/stone doorway and puzzle-gated passage; complete remaining Forest details and final responsive, accessibility, licensing, and end-to-end testing. Do not treat the temporary Puzzle/Leo testing shortcuts as final progression.
 
 **Repository synchronization:** This documentation checkpoint updates only `PROGRESS.md` and `PROJECT_CONTEXT.md` (alongside the README update). The creator maintains the HTML, CSS, JavaScript, and asset changes locally and will synchronize coding files separately. Do not assume the public repository's code/assets fully match the latest local working copy.
 
@@ -390,3 +390,31 @@ This is the latest implementation-status record and supersedes older Beach entri
 - This checkpoint records locally tested work; it does not claim that all local coding files or private assets have been synchronized to GitHub.
 - Keep personal photographs and private message content out of the public repository unless publication is explicitly approved.
 
+
+
+---
+
+## November 25, 2026 — Beach clues and separate puzzle-screen decision
+
+This is the latest design decision for the relationship between the Beach and Leo's Hidden Clearing. It supersedes any earlier suggestion that the Beach itself should contain the full multi-piece placement puzzle.
+
+### Confirmed structure
+
+- **Beach = exploration and clue gathering.** The Beach should contain optional, natural-feeling discoveries that reveal hints, symbols, markings, or other information relevant to the later puzzle.
+- The two existing seashell discoveries remain part of the Beach. Additional discoveries may include the washed-up tree/log and other shoreline details, but their exact interactions and clue content are not finalized.
+- The washed-up tree idea remains: investigating it should reveal something concealed beneath or around it. The reveal should function as a clue for the later puzzle, not become the full object-manipulation puzzle on the Beach.
+- **Dedicated Puzzle screen = hands-on puzzle.** The actual puzzle takes place on the screen immediately before entering Leo's Hidden Clearing. This is where Ghala can drag, rotate, move, position, and arrange physical-looking pieces or objects.
+- **Leo's Hidden Clearing = destination/reward.** Solving the dedicated puzzle unlocks the passage into Leo's Clearing.
+
+### Interaction boundary
+
+- Do not put the main drag/rotate/move/arrange puzzle mechanics on the Beach.
+- Beach interactions should focus on observing, inspecting, revealing, and collecting clues. Keep them simple and grounded in the shoreline environment.
+- The Beach clues should be designed to make the later puzzle understandable and satisfying, but the exact symbols, clue sequence, and final puzzle mechanism remain undecided.
+- Do not invent the final puzzle solution or mark any of these new clue interactions as implemented.
+
+### Current implementation status
+
+- The two existing shells, their individual messages, saved discovery state, waves, and seagull ambience remain implemented and browser-tested locally as recorded above.
+- The washed-up tree, additional clue discoveries, and dedicated drag/rotate/move puzzle are design plans only; they have not yet been implemented or tested.
+- This is a documentation-only GitHub update. Do not change HTML, CSS, JavaScript, or assets as part of this checkpoint.
