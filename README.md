@@ -32,11 +32,11 @@ The percentage represents progress across the whole experience, including scene 
 
 ### In progress / next priorities
 - Expand the Lily Clearing from one test lily to five special lilies, each with its own discovery and message.
-- Build the full drag/rotate/move/arrange puzzle on the dedicated screen immediately before Leo's Clearing, using clues gathered in the Beach and other areas.
+- Build the four-piece drag/rotate/move/arrange puzzle on the dedicated screen immediately before Leo's Clearing. Three pieces are planned beneath the washed-up Beach log; the fourth must be found elsewhere by following clues.
 - Add the concealed stone doorway and passage into Leo's Hidden Clearing.
 - Develop the remaining Forgotten Forest environment and path interactions.
-- Expand the Beach with simple clue-gathering discoveries (including the planned washed-up tree reveal); keep the Beach as an exploration area, not the main manipulation puzzle.
-- Build the dedicated Puzzle screen immediately before Leo's Clearing, with the drag/rotate/move/arrange mechanics informed by clues gathered around the garden.
+- Expand the Beach with message-based clues in the two existing shell discoveries (do not alter their artwork) and a planned washed-up log reveal containing three of the four wooden puzzle pieces; keep the Beach as an exploration area, not the main manipulation puzzle.
+- Give every puzzle piece multiple possible orientations so the arrangement and rotations require interpreting clues gathered around the garden. Finding and inserting the missing fourth piece completes the set; solving the mechanism opens Leo's Clearing. Exact piece shapes, clue wording, missing-piece location, and final solution remain undecided.
 - Remove temporary testing shortcuts once the real progression and unlock sequence are ready.
 
 ### Final polish and testing

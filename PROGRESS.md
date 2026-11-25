@@ -1,6 +1,6 @@
 # A Garden for Ghala — Progress
 
-*Last updated: November 25, 2026 — Beach clue-gathering direction and separate pre-Leo puzzle screen confirmed; existing Beach shell discoveries and calm ambience tested locally*
+*Last updated: November 25, 2026 — Four-piece puzzle concept, message-based Beach clues, and missing-piece trail defined; existing Beach shell discoveries and calm ambience tested locally*
 
 This is the living development log. For the full creative brief, see [PROJECT_CONTEXT.md](./PROJECT_CONTEXT.md). The latest navigation and storytelling decisions are recorded in [PROJECT_UPDATE_2026-11-14.md](./PROJECT_UPDATE_2026-11-14.md); that update supersedes the older forest-last progression.
 
@@ -418,3 +418,41 @@ This is the latest design decision for the relationship between the Beach and Le
 - The two existing shells, their individual messages, saved discovery state, waves, and seagull ambience remain implemented and browser-tested locally as recorded above.
 - The washed-up tree, additional clue discoveries, and dedicated drag/rotate/move puzzle are design plans only; they have not yet been implemented or tested.
 - This is a documentation-only GitHub update. Do not change HTML, CSS, JavaScript, or assets as part of this checkpoint.
+
+
+---
+
+## November 25, 2026 — Four-piece puzzle and missing-piece trail
+
+The creator refined the Beach-to-Leo puzzle concept. This section supersedes the earlier November 25 note that left the puzzle's piece count, clue mechanism, and solution undecided.
+
+### Beach discoveries and clue delivery
+
+- Preserve the existing two shell illustrations exactly as they are. Do not add symbols, engravings, markings, or other visual alterations to the shells.
+- The shells' existing discovery messages may be extended or supplemented with poetic written clues. The clues should feel like environmental discoveries rather than direct instructions.
+- The Beach remains a clue-gathering environment, not the location of the main manipulation puzzle.
+- The washed-up log/tree is planned to conceal three wooden puzzle pieces. Investigating it should reveal the pieces and a message suggesting that the set is incomplete.
+- The Beach clues should collectively communicate the correct arrangement and orientations of the pieces. Their exact wording and the precise clue-to-rule mapping remain to be written.
+
+### Four-piece puzzle
+
+- The dedicated Puzzle screen remains immediately before Leo's Hidden Clearing.
+- The complete mechanism uses four distinct pieces and four corresponding positions.
+- Three pieces are discovered beneath the washed-up log. The fourth piece is missing and must be found elsewhere by following clues through another part of the garden/Forest. Its exact location and discovery interaction are intentionally undecided.
+- Each piece must have multiple possible orientations. The solution must not be trivially apparent from placing three pieces in a simple order; the visitor should need to interpret the clues gathered around the environment to determine both placement and rotation.
+- A quarter-turn rotation system (four orientations per piece) is a possible implementation approach, but the final piece shapes, slot geometry, rotation increments, and exact solution remain to be designed.
+- The visitor can drag, rotate, remove, reposition, and experiment with the pieces at their own pace. No timer and no penalty for incorrect arrangements.
+- Finding and inserting the missing fourth piece completes the set and allows the mechanism to be solved. The correctly assembled four-piece puzzle activates/opens the passage into Leo's Hidden Clearing.
+
+### Intended progression
+
+1. Explore the Beach and discover the two existing shells; their messages provide written clues without changing the shell artwork.
+2. Investigate the washed-up log/tree and uncover three wooden pieces plus a hint that one is missing.
+3. Follow a clue into another part of the garden/Forest to locate the fourth piece.
+4. Reach the dedicated Puzzle screen immediately before Leo's Clearing.
+5. Insert all four pieces, use the gathered clues to determine their arrangement and orientations, and experiment freely.
+6. Solve the mechanism to open the passage into Leo's Hidden Clearing.
+
+### Status and scope
+
+This is a design update, not an implementation claim. The two shell discoveries and calm Beach ambience work locally. The shell artwork is locked; message-based clues, the washed-up log reveal, three wooden pieces, the missing-piece trail, the four-piece manipulation puzzle, and the puzzle-gated passage remain to be implemented and tested. Do not change local code or assets during documentation-only updates.
